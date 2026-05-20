@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ubuntu LTD Brand Guidelines</title>
+<title>Ubuntu LTD &amp; Common Ground Initiative — Brand Guidelines · v1.0</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -94,7 +94,6 @@
 
   .pill{display:inline-block;padding:4px 10px;border:.5px solid var(--rule);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
   .pill.gold{border-color:var(--gold);color:var(--gold)}
-  .pill.on-ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 
   /* ---------- placeholder ---------- */
   .ph{
@@ -131,33 +130,10 @@
   .corner.tl{top:20px;left:var(--pad)}
   .corner.tr{top:20px;right:var(--pad)}
 
-  /* ---------- logo (wordmark) — stacked, sturdy, no italics ---------- */
-  .wm{
-    font-family:'Newsreader',serif;
-    font-weight:500;
-    letter-spacing:-.025em;
-    line-height:.92;
-    display:inline-flex;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:.22em;
-  }
-  .wm > span:first-child{font-weight:500;font-style:normal}
-  .wm .dot{display:none}
-  .wm .b{
-    font-family:'JetBrains Mono',monospace;
-    font-style:normal;
-    font-weight:500;
-    font-size:.22em;
-    letter-spacing:.22em;
-    line-height:1;
-    text-transform:uppercase;
-    white-space:nowrap;
-  }
-  /* very small uses: hide descriptor entirely */
-  .wm.wm-mono > span:first-child{font-size:1em}
-  .wm[style*="font-size:14px"] .b,
-  .wm[style*="font-size:13px"] .b{display:none}
+  /* ---------- logo (wordmark) ---------- */
+  .wm{font-family:'Newsreader',serif;font-weight:300;letter-spacing:-.03em;line-height:.9;display:inline-flex;align-items:baseline;gap:.18em}
+  .wm .b{font-style:italic;font-weight:400}
+  .wm .dot{width:.18em;height:.18em;border-radius:50%;background:currentColor;display:inline-block;margin-bottom:.08em}
   .lockup{display:inline-flex;flex-direction:column;align-items:flex-start;gap:.4em;line-height:1}
   .lockup .tag{font-family:'JetBrains Mono',monospace;font-size:.13em;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:currentColor;opacity:.85}
 
@@ -199,10 +175,10 @@
   /* ---------- icon system ---------- */
   .icon{width:32px;height:32px;stroke:var(--ink);stroke-width:1.25;fill:none;stroke-linecap:square;stroke-linejoin:miter}
 
-  /* ---------- footer (page level only) ---------- */
-  body > footer{padding:64px var(--pad);background:var(--navy);color:var(--paper);margin-top:96px}
-  body > footer a{color:var(--gold)}
-  body > footer .colophon{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:.5px solid rgba(255,255,255,.2);padding-top:24px;font-size:13px}
+  /* ---------- footer ---------- */
+  footer{padding:64px var(--pad);background:var(--navy);color:var(--paper);margin-top:96px}
+  footer a{color:var(--gold)}
+  footer .colophon{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:.5px solid rgba(255,255,255,.2);padding-top:24px;font-size:13px}
 
   /* ---------- responsive nudge ---------- */
   @media (max-width:1100px){
@@ -215,6 +191,110 @@
     .misuse .cell{border-right:.5px solid var(--rule)!important}
     .misuse .cell:nth-child(2n){border-right:none!important}
   }
+
+  /* =================== PRINT =================== */
+  @page{ size: A4 landscape; margin: 0.5cm; }
+
+  @media print {
+    html,body{
+      background:var(--paper)!important;
+      -webkit-print-color-adjust:exact!important;
+      print-color-adjust:exact!important;
+      color-adjust:exact!important;
+    }
+    *{
+      -webkit-print-color-adjust:exact!important;
+      print-color-adjust:exact!important;
+    }
+
+    /* hide chrome */
+    .topbar, #__tweaks_root, .tweaks-panel,
+    [id^="__edit"], [class*="edit-mode"]{ display:none!important; }
+
+    /* page break every section, no top border */
+    section{
+      break-before: page;
+      page-break-before: always;
+      break-inside: avoid-page;
+      padding: 32px 0!important;
+      border-top: none!important;
+      min-height: 0!important;
+    }
+    section:first-of-type{
+      break-before: avoid;
+      page-break-before: avoid;
+    }
+
+    /* cover */
+    .cover{
+      min-height: 0!important;
+      padding: 0!important;
+    }
+    .cover .shell{
+      padding-top: 32px!important;
+      padding-bottom: 32px!important;
+    }
+    .cover h1{ font-size: 64px!important; }
+    .cover h2{ font-size: 28px!important; }
+
+    /* tame oversized headings */
+    h1{ font-size: 56px!important; line-height: 1!important; }
+    h2{ font-size: 36px!important; line-height: 1.05!important; }
+    h3{ font-size: 22px!important; }
+
+    /* section corner labels */
+    .sec-num, .sec-name{
+      position: absolute!important;
+      top: 12px!important;
+    }
+    .corner{ top: 10px!important; }
+
+    /* tighten vertical rhythm */
+    .shell{ padding: 0 32px!important; }
+
+    /* keep image/figure-like blocks together */
+    figure, article, .card, .swatch, .surface, .post,
+    .tag-card, .lk, .pair, .ic, .vocab, .vp,
+    .tbl, pre.code, .cgi-stat, .aud-row, .toc-item{
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* footer */
+    footer{
+      break-before: page;
+      page-break-before: always;
+      margin-top: 0!important;
+      padding: 48px var(--pad)!important;
+    }
+
+    /* lift max width restrictions for landscape */
+    .shell, footer .colophon, footer .row,
+    .topbar-inner{
+      max-width: none!important;
+    }
+
+    /* remove sticky positioning on anything */
+    *{ position: static; }
+    .sec-num, .sec-name, .corner,
+    .swatch .pct, .swatch .vl,
+    .misuse .cell .x, .misuse .cell .lab,
+    .ph .ph-lbl, [style*="position:absolute"], [style*="position: absolute"]{
+      position: absolute!important;
+    }
+
+    /* avoid huge gaps from height spacers on cover */
+    .cover [style*="height:96px"]{ height: 32px!important; }
+    .cover [style*="height:36px"]{ height: 16px!important; }
+    .cover [style*="height:48px"]{ height: 24px!important; }
+
+    /* preserve dark backgrounds */
+    .surface.dark, footer, .cover, [style*="background:var(--navy)"],
+    [style*="background:var(--ink)"], [style*="background:var(--navy-deep)"]{
+      -webkit-print-color-adjust:exact!important;
+      print-color-adjust:exact!important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -222,13 +302,13 @@
 <!-- =============== TOP BAR =============== -->
 <header class="topbar">
   <div class="topbar-inner">
-    <span class="mono-sm">Ubuntu LTD · Brand Guidelines · v2.0</span>
+    <span class="mono-sm">Ubuntu LTD · Brand Guidelines · v1.0</span>
     <nav>
       <a href="#story">Story</a>
       <a href="#cgi">CGI</a>
       <a href="#voice">Voice</a>
       <a href="#logo">Logo</a>
-      <a href="#color">Colour</a>
+      <a href="#color">Color</a>
       <a href="#type">Type</a>
       <a href="#numerals">Numerals</a>
       <a href="#imagery">Imagery</a>
@@ -247,18 +327,18 @@
     <div style="padding-top:48px">
       <span class="mono" style="color:var(--gold)">Ubuntu LTD · Common Ground Initiative · Canada</span>
       <div style="height:96px"></div>
-      <h1 style="font-weight:500;letter-spacing:-.025em">Ubuntu<br>Land Trust<br>&amp; Developments.</h1>
+      <h1>Ubuntu <em>Land</em>&nbsp;Trust<br>&amp; Developments.</h1>
       <div style="height:36px"></div>
       <span class="mono" style="color:var(--paper);opacity:.55;letter-spacing:.18em">— Flagship program —</span>
       <h2 style="margin-top:14px;color:var(--paper);font-size:42px;font-weight:300">The <em style="color:var(--gold);font-style:italic">Common Ground</em> Initiative.</h2>
       <div style="height:36px"></div>
       <p class="lead" style="color:rgba(255,255,255,.78);max-width:48ch;font-weight:300">
-        Unlocking land for affordable housing
-        at scale across Canada.
+        Unlocking privately owned land for permanent affordable
+        housing — at portfolio scale, across Canada.
       </p>
     </div>
     <div class="meta">
-      <dl><dt>Document</dt><dd>Ubuntu LTD Brand Guidelines</dd></dl>
+      <dl><dt>Document</dt><dd>Brand Guidelines · Ubuntu LTD + CGI</dd></dl>
       <dl><dt>Version</dt><dd>1.0 · May 2026</dd></dl>
       <dl><dt>Owner</dt><dd>Brand &amp; Communications</dd></dl>
       <dl><dt>Status</dt><dd>Working draft, internal review</dd></dl>
@@ -275,8 +355,8 @@
         <h2>What's<br>inside.</h2>
         <p class="small" style="margin-top:24px;max-width:36ch">
           A working manual for anyone building, writing, or speaking on behalf
-          of Ubuntu LTD. Read it linearly — or use the table of contents
-          to jump. Send corrections to <a href="#" style="color:var(--gold)">brand@ubuntultd.com</a>.
+          of Ubuntu Land Trust. Read it linearly — or use the table of contents
+          to jump. Send corrections to <a href="#" style="color:var(--gold)">brand@ubuntulandtrust.ca</a>.
         </p>
       </div>
       <ol style="grid-column:span 8;list-style:none;padding:0;margin:0;border-top:.5px solid var(--rule);columns:2;column-gap:48px">
@@ -287,7 +367,6 @@
         <li class="toc-item"><span class="num">02</span><span class="t">Contents</span><span class="p">002</span></li>
         <li class="toc-item"><span class="num">03</span><span class="t">Brand at a glance</span><span class="p">003</span></li>
         <li class="toc-item"><span class="num">04</span><span class="t">Mission &amp; story</span><span class="p">004</span></li>
-        <li class="toc-item"><span class="num">04c</span><span class="t">Leadership &amp; governance</span><span class="p">005</span></li>
         <li class="toc-item"><span class="num">05</span><span class="t">Audiences</span><span class="p">006</span></li>
         <li class="toc-item"><span class="num">06</span><span class="t">Tagline system</span><span class="p">007</span></li>
         <li class="toc-item"><span class="num">07</span><span class="t">Voice principles</span><span class="p">008</span></li>
@@ -297,10 +376,10 @@
         <li class="toc-item"><span class="num">11</span><span class="t">Construction &amp; clearspace</span><span class="p">016</span></li>
         <li class="toc-item"><span class="num">12</span><span class="t">Lockups &amp; sizing</span><span class="p">017</span></li>
         <li class="toc-item"><span class="num">13</span><span class="t">Misuse</span><span class="p">019</span></li>
-        <li class="toc-item"><span class="num">14</span><span class="t">Colour — primary</span><span class="p">020</span></li>
-        <li class="toc-item"><span class="num">15</span><span class="t">Colour — extended</span><span class="p">022</span></li>
-        <li class="toc-item"><span class="num">16</span><span class="t">Colour — tokens</span><span class="p">024</span></li>
-        <li class="toc-item"><span class="num">17</span><span class="t">Colour — pairing &amp; AA</span><span class="p">026</span></li>
+        <li class="toc-item"><span class="num">14</span><span class="t">Color — primary</span><span class="p">020</span></li>
+        <li class="toc-item"><span class="num">15</span><span class="t">Color — extended</span><span class="p">022</span></li>
+        <li class="toc-item"><span class="num">16</span><span class="t">Color — tokens</span><span class="p">024</span></li>
+        <li class="toc-item"><span class="num">17</span><span class="t">Color — pairing &amp; AA</span><span class="p">026</span></li>
         <li class="toc-item"><span class="num">18</span><span class="t">Typefaces</span><span class="p">028</span></li>
         <li class="toc-item"><span class="num">19</span><span class="t">Type scale</span><span class="p">030</span></li>
         <li class="toc-item"><span class="num">20</span><span class="t">Numerals &amp; data</span><span class="p">032</span></li>
@@ -335,7 +414,7 @@
       <div style="grid-column:span 7;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:.5px solid var(--rule)">
         <div style="background:var(--paper);padding:24px">
           <span class="label">Who</span>
-          <p style="margin:0"><strong>Ubuntu Land Trust &amp; Developments</strong> &mdash; a Canadian organization bringing together private landowners with non-profit housing operators to create inclusive and affordable housing.</p>
+          <p style="margin:0"><strong>Ubuntu Land Trust &amp; Developments</strong> — a national platform pairing private landowners with non-profit housing operators.</p>
         </div>
         <div style="background:var(--paper);padding:24px">
           <span class="label">Flagship program</span>
@@ -343,11 +422,11 @@
         </div>
         <div style="background:var(--paper);padding:24px">
           <span class="label">Why now</span>
-          <p style="margin:0">An estimated <strong>50,000</strong> entitled, privately-owned sites across Canada are stalled by capital constraints. Non-profits have the mandate; landowners have the land. <em>The math needs a bridge.</em></p>
+          <p style="margin:0">An estimated <strong>50,000</strong> entitled, privately-owned sites across Canada are stalled by capital constraints. Non-profits have the mandate; landowners have the land. The math just needed a bridge.</p>
         </div>
         <div style="background:var(--paper);padding:24px">
           <span class="label">How we sound</span>
-          <p style="margin:0"><em>Plain. Civic. Specific.</em> A trusted partner with a balance sheet — not an advocate with a megaphone.</p>
+          <p style="margin:0"><em>Plain. Civic. Specific.</em> A trustee with a balance sheet — not an advocate with a megaphone.</p>
         </div>
       </div>
     </div>
@@ -357,7 +436,7 @@
       <div>
         <span class="label">Wordmark</span>
         <div style="background:var(--paper-pure);border:.5px solid var(--rule);padding:32px;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1">
-          <span class="wm" style="font-size:36px"><span>Ubuntu</span><span class="dot"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <span class="wm" style="font-size:36px"><span>Ubuntu</span><span class="dot"></span><span class="b">Land&nbsp;Trust</span></span>
         </div>
       </div>
       <div>
@@ -382,7 +461,7 @@
       <div>
         <span class="label">Tagline</span>
         <div style="background:var(--navy);color:var(--paper);border:.5px solid var(--rule);padding:24px;aspect-ratio:1/1;display:flex;align-items:flex-end">
-          <span style="font-family:'Newsreader',serif;font-size:18px;line-height:1.25">Unlocking land<br>for affordable housing<br><em style="color:var(--gold)">at scale across Canada.</em></span>
+          <span style="font-family:'Newsreader',serif;font-size:18px;line-height:1.25">Connecting land<br>with non-profit<br><em style="color:var(--gold)">housing delivery.</em></span>
         </div>
       </div>
     </div>
@@ -396,7 +475,7 @@
     <div class="grid-12">
       <div style="grid-column:span 4">
         <span class="mono" style="color:var(--gold)">004 — Story</span>
-        <h2 style="margin-top:24px">Land sits.<br>Mandate waits.<br>We make the<br><em>deal move.</em></h2>
+        <h2 style="margin-top:24px">Land sits.<br>Mandate waits.<br>We make the<br><em>deal pencil.</em></h2>
       </div>
       <div style="grid-column:span 7;grid-column-start:6">
         <p class="lead">
@@ -409,19 +488,17 @@
         </p>
         <p style="margin-top:32px;max-width:62ch">
           <strong>Ubuntu Land Trust &amp; Developments</strong> is the
-          <em>connector</em> that innovatively closes the gap. We are not a fund
+          <em>service provider</em> that closes the gap. We are not a fund
           assembling a portfolio; we do not buy and bank land. We are the
           platform that brings landowners, non-profit operators, and the
           federal capital stack into a single deal structure, project by project.
         </p>
         <p style="margin-top:16px;max-width:62ch">
           That structure is the <strong>Common Ground Initiative</strong>.
-          Landowners contribute entitled sites as equity into a project
-          <abbr title="Special-Purpose Vehicle — a single-project company set up to hold one parcel and one development." style="text-decoration:underline dotted var(--gold);cursor:help">SPV</abbr>
-          (a special-purpose vehicle established for a single project);
+          Landowners contribute entitled sites as equity into a project SPV;
           non-profit operators own the buildings from day one; CMHC Mortgage
           Loan Insurance and a 40% Build Canada Homes forgivable loan create
-          the wedge that makes the math move; the non-profit acquires the
+          the wedge that makes the math pencil; the non-profit acquires the
           land fee-simple at Year 20. The portfolio is theirs — ours is the
           coordination, the structuring, the underwriting, the relationships.
         </p>
@@ -430,23 +507,14 @@
           payroll, and corporate tax — a self-funding mechanism, not a net subsidy.
         </p>
         <p style="margin-top:16px;max-width:62ch">
-          The platform began as the <strong>African Canadian Affordable Housing
-          (ACAH) Village</strong> — a CMHC-funded initiative led by Kizito
-          Musabimana through the Rwandan Canadian Healing Centre. ACAH proved
-          that community-led housing could be assembled, financed, and stewarded
-          to institutional standards. Ubuntu LTD scales that delivery logic
-          nationally.
-        </p>
-        <p style="margin-top:16px;max-width:62ch">
-          The name — <em>Ubuntu</em> — is borrowed with care from Africa.
-          <em>I am because we are.</em> It names what the model runs on:
-          together we are more than the sum of our parts. Together we can
-          build housing for everyone.
+          The name — <em>Ubuntu</em> — is borrowed with care from southern
+          Africa. <em>I am because we are.</em> It names what the model assumes:
+          that none of us has housing until all of us do.
         </p>
 
         <div class="kv" style="margin-top:48px">
           <dt>Entity</dt><dd>Ubuntu Land Trust &amp; Developments ("Ubuntu LTD")</dd>
-          <dt>What we are</dt><dd>A connector — not a fund, not a landbank</dd>
+          <dt>What we are</dt><dd>A service provider — not a fund, not a landbank</dd>
           <dt>What we do</dt><dd>Structure, coordinate, and underwrite deals between landowners, non-profits, and federal capital</dd>
           <dt>Flagship</dt><dd>The Common Ground Initiative</dd>
           <dt>Geography</dt><dd>Canada · nationally scalable</dd>
@@ -502,7 +570,7 @@
             <div>
               <h3>Financial structure</h3>
               <p>CMHC Mortgage Loan Insurance plus a <strong>40% Build Canada Homes
-              forgivable loan</strong> provides the public capital that makes the deal move.</p>
+              forgivable loan</strong> creates the equity wedge that makes the deal pencil.</p>
             </div>
           </li>
           <li>
@@ -525,7 +593,7 @@
       </div>
       <div class="cgi-stat">
         <span class="num" style="font-family:'Newsreader',serif;font-weight:300;font-size:64px;line-height:1">156</span>
-        <p class="mono-sm" style="margin-top:8px">Launchpad · site-ready · 4 sites</p>
+        <p class="mono-sm" style="margin-top:8px">Launchpad · Barrie · Toronto · Listowel</p>
       </div>
       <div class="cgi-stat">
         <span class="num" style="font-family:'Newsreader',serif;font-weight:300;font-size:64px;line-height:1">2026</span>
@@ -545,75 +613,6 @@
     .cgi-steps p{margin:0;font-size:15px;line-height:1.5;max-width:62ch}
     .cgi-stat{border:.5px solid var(--rule);background:var(--paper-pure);padding:20px;min-height:160px;display:flex;flex-direction:column;justify-content:flex-end}
   </style>
-</section>
-
-<!-- =============== 04c · LEADERSHIP =============== -->
-<section id="leadership" data-screen-label="04c Leadership">
-  <span class="sec-num mono">04c</span><span class="sec-name mono">Leadership &amp; governance</span>
-  <div class="shell">
-    <div class="grid-12">
-      <div style="grid-column:span 4">
-        <span class="mono" style="color:var(--gold)">004c — Who is behind this</span>
-        <h2 style="margin-top:24px">A team built<br>for the <em>scale</em><br>of the mandate.</h2>
-        <p class="small" style="max-width:42ch;margin-top:24px">
-          Ubuntu LTD is governed by a Black-led Board of Directors and led by
-          an executive team with decades of combined experience in housing
-          systems, settlement, community institutions, and capital structuring.
-          Together, the team brings the credibility public capital requires
-          and the trust community delivery demands.
-        </p>
-      </div>
-      <div style="grid-column:span 8">
-
-        <span class="label" style="margin-bottom:18px">Board of Directors</span>
-        <div class="grid-3" style="row-gap:32px">
-          <div>
-            <h4 style="font-size:17px;font-weight:600">Kemi Jacobs</h4>
-            <div class="mono-sm" style="margin-top:2px">Director</div>
-            <p class="small" style="margin-top:10px">30+ years across non-profit, public, and community sectors. Former Director of Housing, Toronto Community Housing; past President, Canadian Council for Refugees; Chair, National Anti-Racism Council of Canada.</p>
-          </div>
-          <div>
-            <h4 style="font-size:17px;font-weight:600">Amanuel Melles</h4>
-            <div class="mono-sm" style="margin-top:2px">Director</div>
-            <p class="small" style="margin-top:10px">Executive Director, Network for the Advancement of Black Communities (NABC). Senior leadership at United Way Toronto, Family Service Toronto, OCASI. Public-sector and funder fluency.</p>
-          </div>
-          <div>
-            <h4 style="font-size:17px;font-weight:600">Nadine Miller</h4>
-            <div class="mono-sm" style="margin-top:2px">Director</div>
-            <p class="small" style="margin-top:10px">Executive Director, Pilgrim's Feast Tabernacle Church. Senior community leader; governance, stewardship, and mission-driven operations within trusted community institutions.</p>
-          </div>
-        </div>
-
-        <span class="label" style="margin-top:48px;margin-bottom:18px">Executive Management</span>
-        <div class="grid-2" style="row-gap:32px;gap:32px">
-          <div>
-            <h4 style="font-size:17px;font-weight:600">Kizito Musabimana</h4>
-            <div class="mono-sm" style="margin-top:2px">Chief Executive Officer</div>
-            <p class="small" style="margin-top:10px">Founder &amp; ED, Rwandan Canadian Healing Centre. Led the CMHC-funded African Canadian Affordable Housing (ACAH) Village — the initiative that established the foundational partnerships and delivery logic the Ubuntu platform now scales nationally.</p>
-          </div>
-          <div>
-            <h4 style="font-size:17px;font-weight:600">Jonathan Okubay</h4>
-            <div class="mono-sm" style="margin-top:2px">Managing Director</div>
-            <p class="small" style="margin-top:10px">Principal architect of the Ubuntu platform model. Real estate development strategy, construction, financial structuring. Chair, Eritrean Community Network (New Nakfa). Owns platform design, partnerships, and capital alignment.</p>
-          </div>
-        </div>
-
-        <span class="label" style="margin-top:48px;margin-bottom:18px">Development &amp; Financial Advisory</span>
-        <div class="grid-2" style="gap:32px">
-          <div>
-            <h4 style="font-size:17px;font-weight:600">Jason Allen-John</h4>
-            <div class="mono-sm" style="margin-top:2px">Development Consultant &amp; Strategic Partner</div>
-            <p class="small" style="margin-top:10px">Real estate finance and development advisor. Background in banking and financial services — financial analysis, risk assessment, capital structuring. Supports project structuring, feasibility, and capital alignment across the portfolio.</p>
-          </div>
-          <div style="border-left:.5px solid var(--rule);padding-left:24px">
-            <span class="mono-sm" style="color:var(--gold)">How this team shows up</span>
-            <p class="small" style="margin-top:12px">Deep community trust and leadership · public-sector and funder fluency · housing systems and delivery experience · financial and institutional discipline. Four capabilities that, together, give Ubuntu LTD the standing to steward public funding, coordinate complex partnerships, and deliver inclusive housing at scale.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- =============== 05 · AUDIENCES =============== -->
@@ -744,7 +743,7 @@
     <div class="grid-12">
       <div style="grid-column:span 4">
         <span class="mono" style="color:var(--gold)">007 — Voice</span>
-        <h2 style="margin-top:24px">Trusted,<br>not an <em>advocate.</em></h2>
+        <h2 style="margin-top:24px">Trustee,<br>not <em>advocate.</em></h2>
         <p class="small" style="max-width:36ch;margin-top:16px">
           Our brand of warmth comes from <em>specificity</em>, not from
           adjectives. We are the institution that does the boring work
@@ -779,7 +778,7 @@
         </article>
         <article class="vp">
           <span class="mono-sm">Principle 06</span>
-          <h3 style="margin:8px 0 12px">Honour the borrowing.</h3>
+          <h3 style="margin:8px 0 12px">Honor the borrowing.</h3>
           <p class="small">Ubuntu is a word from southern Africa. When we explain the name, we credit it once, plainly, and don't romanticize it.</p>
         </article>
       </div>
@@ -794,7 +793,7 @@
 <section data-screen-label="08 Voice do/don't">
   <span class="sec-num mono">08</span><span class="sec-name mono">Voice — do &amp; don't</span>
   <div class="shell">
-    <h2 style="max-width:18ch">If in doubt,<br>read it back<br>as a <em>trusted partner.</em></h2>
+    <h2 style="max-width:18ch">If in doubt,<br>read it back<br>as a <em>trustee.</em></h2>
     <p class="small" style="margin-top:24px;max-width:60ch">
       Below: paired examples drawn from real working drafts. The
       "instead" column is what shipped. The "annotation" explains why.
@@ -822,9 +821,8 @@
         </div>
         <div class="dd-good">
           <span class="mono-sm" style="color:var(--moss)">+ Instead</span>
-          <p>"Ubuntu LTD connects landowners with non-profit operators so
-          they can build affordable housing without bidding against private
-          developers for land."</p>
+          <p>"Ubuntu Land Trust holds land so that non-profit operators can
+          build housing without bidding against private developers for it."</p>
         </div>
         <div class="dd-note small">The first sentence is a banner; the second is a description of what we do. Banners belong on placards. Descriptions belong on websites.</div>
       </article>
@@ -835,9 +833,8 @@
         </div>
         <div class="dd-good">
           <span class="mono-sm" style="color:var(--moss)">+ Instead</span>
-          <p>"As of May 2026: 18 sites in pipeline, 5,131 units total. Four
-          Launchpad sites — Oakwood Avenue and 27 Blake Street in Toronto, 844 Veterans Drive
-          in Barrie, Main Street in Listowel — start construction this year."</p>
+          <p>"As of May 2026: 18 sites in pipeline, 5,131 units total. Three
+          Launchpad sites — Toronto, Barrie, Listowel — start construction this year."</p>
         </div>
         <div class="dd-note small">When tempted to write a metaphor, write the receipt instead. Receipts age better.</div>
       </article>
@@ -863,7 +860,7 @@
           <li>Contribute, equity, fee-simple<span class="why">Names what landowners actually do and receive.</span></li>
           <li>Operator, non-profit, co-op<span class="why">Names who builds, owns, and runs the housing.</span></li>
           <li>Entitled, shovel-ready, pipeline<span class="why">Verbs and nouns that describe the mechanism.</span></li>
-          <li>CMHC, Build Canada Homes, wedge capital<span class="why">Names the public stack that makes the math move.</span></li>
+          <li>CMHC, Build Canada Homes, wedge capital<span class="why">Names the public stack that makes the math pencil.</span></li>
           <li>Generational, decades<span class="why">Honest about our time horizon.</span></li>
           <li>Specific dollar figures, parcel counts, acreage<span class="why">Receipts beat adjectives.</span></li>
         </ul>
@@ -872,7 +869,7 @@
         <h4><span class="mono-sm" style="color:var(--terra)">Avoid</span> Words that flatten us</h4>
         <ul>
           <li>Solutions, ecosystem, holistic<span class="why">Consultancy filler.</span></li>
-          <li>Disrupt, reimagine, unlock<span class="why">Borrowed from venture; not how Ubuntu LTD talks.</span></li>
+          <li>Disrupt, reimagine, unlock<span class="why">Borrowed from venture; not how a trust talks.</span></li>
           <li>Fight, crisis, broken<span class="why">Advocacy grammar; we share the goal but not the rhetoric.</span></li>
           <li>Empower, give voice to<span class="why">We don't grant agency to operators — they have it.</span></li>
           <li>Innovative, world-class, leading<span class="why">If true, someone else will say it.</span></li>
@@ -923,16 +920,16 @@
           <div class="v-def">The non-profit, co-op or Indigenous-led housing entity who owns the buildings and operates the housing. Not "tenant," not "client."</div>
         </div>
         <div class="vocab">
-          <div class="v-term">Project SPV<span class="mono-sm" style="display:block;margin-top:4px;color:var(--gold);font-size:9px;letter-spacing:.16em">SPECIAL-PURPOSE VEHICLE</span></div>
-          <div class="v-def">A single-project company set up to hold one parcel and develop one building. Each Common Ground deal sits inside its own SPV; landowners contribute equity to it, the operator builds and owns inside it, and title to the land transfers out of it to the operator at Year&nbsp;20. Spell out on first reference; "the Project SPV" after.</div>
-        </div>
-        <div class="vocab">
           <div class="v-term">Entitled site</div>
           <div class="v-def">A parcel with development approvals already in place. The Common Ground Initiative works only with entitled sites — we are a delivery model, not an entitlement strategy.</div>
         </div>
         <div class="vocab">
-          <div class="v-term">Year-20 land purchase</div>
-          <div class="v-def">The defining feature of the model. At Year&nbsp;20, the non-profit operator purchases the land from the Project SPV. The payment is funded by two sources that compound over the life of the deal — <strong>twenty years of mortgage paydown</strong> together with <strong>the equity remaining in the deal</strong>. Between them, they cover a fair price for the landowner and leave the non-profit owning both the building and the land beneath it. A clean exit for the contributor; a strong balance sheet for the operator going forward.</div>
+          <div class="v-term">Equity wedge</div>
+          <div class="v-def">The portion of project capitalization created by the 40% Build Canada Homes forgivable loan plus the contributed land equity. Use the term once, define it, then move on.</div>
+        </div>
+        <div class="vocab">
+          <div class="v-term">Year-20 fee-simple purchase</div>
+          <div class="v-def">The defining feature of the model. At Year 20, the non-profit operator buys the land fee-simple, permanently securing the housing as non-profit assets. Always state the year and the buyer.</div>
         </div>
         <div class="vocab">
           <div class="v-term">Affordable housing</div>
@@ -965,9 +962,10 @@
         <span class="mono" style="color:var(--gold)">010 — Wordmark</span>
         <h2 style="margin-top:24px">A wordmark,<br>not a <em>logo.</em></h2>
         <p class="small" style="max-width:42ch;margin-top:16px">
-          The wordmark is two lines, set straight. Newsreader Medium for
-          <em>Ubuntu</em>, JetBrains Mono for <em>Land Trust &amp; Developments</em>
-          below. No italics. No lean. The model is sturdy; the mark is too.
+          A trust does not need a symbol. The wordmark — Newsreader, three weights,
+          one separator dot — does the work. The italic on <em>Land Trust</em>
+          does our small, deliberate piece of branding: it says <em>this is what
+          we are</em>, in the same sentence as our name.
         </p>
         <p class="small" style="max-width:42ch;margin-top:8px">
           When a mark is needed (favicons, social avatars, embroidery), use the
@@ -976,15 +974,16 @@
       </div>
       <div style="grid-column:span 7">
         <div style="background:var(--paper-pure);border:.5px solid var(--rule);padding:80px 48px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:18px;min-height:360px">
-          <span class="wm" style="font-size:96px;color:var(--ink)"><span>Ubuntu</span><span class="dot"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <span class="wm" style="font-size:96px;color:var(--ink)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">LTD</span></span>
+          <span class="mono-sm" style="letter-spacing:.18em;color:var(--ink-soft)">Land Trust &amp; Developments</span>
         </div>
         <div class="kv" style="margin-top:24px">
           <dt>Typeface</dt><dd>Newsreader · variable</dd>
-          <dt>Weights</dt><dd>"Ubuntu" 500 · Descriptor 500 mono</dd>
+          <dt>Weights</dt><dd>"Ubuntu" 300 · "LTD" 400 italic</dd>
           <dt>Descriptor</dt><dd>JetBrains Mono · "Land Trust &amp; Developments"</dd>
-          <dt>Tracking</dt><dd>"Ubuntu" −25 · Descriptor +220</dd>
-          <dt>Stance</dt><dd>Upright · no italics · no skew</dd>
-          <dt>Colour</dt><dd>Ink #161514 on Paper #f5efe2 (default)</dd>
+          <dt>Tracking</dt><dd>−30 (−0.030 em)</dd>
+          <dt>Separator</dt><dd>Solid round dot, 0.18 × cap-height</dd>
+          <dt>Color</dt><dd>Ink #161514 on Paper #f5efe2 (default)</dd>
         </div>
       </div>
     </div>
@@ -1015,28 +1014,29 @@
         <!-- construction diagram -->
         <div style="background:var(--paper-pure);border:.5px solid var(--rule);padding:48px;position:relative">
           <!-- guide lines -->
-          <svg viewBox="0 0 600 260" style="width:100%;height:auto;display:block" aria-hidden="true">
+          <svg viewBox="0 0 600 220" style="width:100%;height:auto;display:block" aria-hidden="true">
             <!-- grid -->
             <g stroke="rgba(184,137,58,.45)" stroke-width=".5" stroke-dasharray="2 2">
               <line x1="40" y1="40" x2="560" y2="40"/>
-              <line x1="40" y1="220" x2="560" y2="220"/>
+              <line x1="40" y1="180" x2="560" y2="180"/>
               <line x1="40" y1="60" x2="560" y2="60"/>
-              <line x1="40" y1="200" x2="560" y2="200"/>
+              <line x1="40" y1="160" x2="560" y2="160"/>
             </g>
             <!-- clearspace boxes -->
             <g stroke="var(--gold)" stroke-width=".5" stroke-dasharray="3 3" fill="none">
-              <rect x="60" y="20" width="480" height="220"/>
+              <rect x="60" y="20" width="480" height="180"/>
             </g>
-            <!-- wordmark — upright, stacked, no italic -->
-            <text x="80" y="140" font-family="Newsreader, serif" font-size="84" font-weight="500" fill="var(--ink)" letter-spacing="-2">Ubuntu</text>
-            <text x="82" y="180" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="500" fill="var(--ink)" letter-spacing="3.5">LAND TRUST &amp; DEVELOPMENTS</text>
+            <!-- wordmark text -->
+            <text x="80" y="140" font-family="Newsreader, serif" font-size="80" font-weight="300" fill="var(--ink)" letter-spacing="-2">Ubuntu</text>
+            <circle cx="320" cy="124" r="6" fill="var(--ink)"/>
+            <text x="338" y="140" font-family="Newsreader, serif" font-size="80" font-weight="400" font-style="italic" fill="var(--ink)" letter-spacing="-2">Land Trust</text>
             <!-- annotations -->
             <g font-family="JetBrains Mono, monospace" font-size="9" fill="var(--ink-soft)" letter-spacing="1">
               <text x="40" y="14">1x</text>
-              <text x="40" y="258">1x</text>
+              <text x="40" y="218">1x</text>
               <text x="558" y="14" text-anchor="end">1x</text>
-              <text x="558" y="258" text-anchor="end">1x</text>
-              <text x="20" y="130" transform="rotate(-90 20 130)">cap-height = x</text>
+              <text x="558" y="218" text-anchor="end">1x</text>
+              <text x="20" y="100" transform="rotate(-90 20 100)">cap-height = x</text>
             </g>
             <!-- bracket -->
             <g stroke="var(--gold)" stroke-width=".75" fill="none">
@@ -1073,25 +1073,25 @@
       <article class="lk">
         <header><span class="mono-sm">01 — Primary</span><span class="mono-sm">Default</span></header>
         <div class="lk-stage">
-          <span class="wm" style="font-size:48px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <span class="wm" style="font-size:48px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
         </div>
         <p class="small">Use everywhere unless one of the below applies.</p>
       </article>
       <!-- 2. with tagline -->
       <article class="lk">
         <header><span class="mono-sm">02 — With tagline</span><span class="mono-sm">Decks · Web hero</span></header>
-        <div class="lk-stage" style="flex-direction:column;align-items:flex-start;gap:14px">
-          <span class="wm" style="font-size:42px"><span>Ubuntu</span><span class="dot"></span><span class="b">Land Trust &amp; Developments</span></span>
-          <span class="mono-sm">Unlocking land for affordable housing at scale across Canada.</span>
+        <div class="lk-stage" style="flex-direction:column;align-items:flex-start;gap:8px">
+          <span class="wm" style="font-size:42px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
+          <span class="mono-sm">Where land meets housing delivery.</span>
         </div>
         <p class="small">Tagline tracked +180, set in JetBrains Mono 12 px.</p>
       </article>
       <!-- 3. stacked -->
       <article class="lk">
         <header><span class="mono-sm">03 — Stacked</span><span class="mono-sm">Square contexts</span></header>
-        <div class="lk-stage" style="flex-direction:column;align-items:flex-start;gap:10px">
-          <span style="font-family:'Newsreader',serif;font-weight:500;font-size:64px;letter-spacing:-.025em;line-height:.95">Ubuntu</span>
-          <span class="mono" style="font-size:11px;letter-spacing:.22em;color:var(--ink)">Land&nbsp;Trust&nbsp;&amp;<br>Developments</span>
+        <div class="lk-stage" style="flex-direction:column">
+          <span style="font-family:'Newsreader',serif;font-weight:300;font-size:48px;letter-spacing:-.025em;line-height:.95">Ubuntu</span>
+          <span style="font-family:'Newsreader',serif;font-weight:400;font-style:italic;font-size:48px;letter-spacing:-.025em;line-height:.95">Land Trust</span>
         </div>
         <p class="small">For square avatars, badges, and signage where stacking is forced.</p>
       </article>
@@ -1105,7 +1105,7 @@
       <article class="lk" style="grid-column:span 2">
         <header><span class="mono-sm">05 — Co-brand with operator partner</span><span class="mono-sm">Joint announcements</span></header>
         <div class="lk-stage" style="justify-content:space-between;padding:32px 48px">
-          <span class="wm" style="font-size:36px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <span class="wm" style="font-size:36px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
           <span style="height:32px;width:.5px;background:var(--rule)"></span>
           <span style="font-family:'Newsreader',serif;font-size:32px;letter-spacing:-.02em">Co-op Operator Name</span>
         </div>
@@ -1143,44 +1143,44 @@
       </div>
       <div class="cell" style="background:linear-gradient(135deg,var(--gold),var(--terra))">
         <span class="x" style="border-color:var(--paper);color:var(--paper)">×</span>
-        <span class="wm" style="font-size:24px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+        <span class="wm" style="font-size:24px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
         <span class="lab" style="color:var(--paper)">No gradient backgrounds</span>
       </div>
       <div class="cell">
         <span class="x">×</span>
-        <span class="wm" style="font-size:24px;transform:skew(-12deg);display:inline-block"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+        <span class="wm" style="font-size:24px;transform:skew(-12deg);display:inline-block"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
         <span class="lab">Don't skew or distort</span>
       </div>
       <div class="cell" style="background:#a1d490">
         <span class="x">×</span>
-        <span class="wm" style="font-size:24px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+        <span class="wm" style="font-size:24px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
         <span class="lab">Off-palette backgrounds</span>
       </div>
       <div class="cell">
         <span class="x">×</span>
-        <span class="wm" style="font-size:14px"><span>Ubuntu</span><span class="dot"></span><span class="b">Land Trust &amp; Developments</span></span>
+        <span class="wm" style="font-size:14px"><span>Ubuntu</span><span class="dot"></span><span class="b">Land&nbsp;Trust</span></span>
         <span class="lab">Below minimum size</span>
       </div>
       <div class="cell">
         <span class="x">×</span>
         <span style="display:flex;align-items:center;gap:10px">
           <span style="width:28px;height:28px;border-radius:50%;background:var(--gold)"></span>
-          <span class="wm" style="font-size:24px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <span class="wm" style="font-size:24px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
         </span>
         <span class="lab">Don't add a symbol</span>
       </div>
       <div class="cell">
         <span class="x">×</span>
-        <span class="wm" style="font-size:24px;text-decoration:underline"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+        <span class="wm" style="font-size:24px;text-decoration:underline"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
         <span class="lab">No underlines or strokes</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =============== 14 · COLOUR — PRIMARY =============== -->
+<!-- =============== 14 · COLOR — PRIMARY =============== -->
 <section id="color" data-screen-label="14 Color primary">
-  <span class="sec-num mono">14</span><span class="sec-name mono">Colour — primary</span>
+  <span class="sec-num mono">14</span><span class="sec-name mono">Color — primary</span>
   <div class="shell">
     <p class="small" style="color:var(--ink-soft);max-width:62ch;margin-bottom:32px">
       Note on use — the wordmark above appears throughout this document
@@ -1192,7 +1192,7 @@
     <div class="grid-12">
       <div style="grid-column:span 4">
         <span class="mono" style="color:var(--gold)">014 — Primary</span>
-        <h2 style="margin-top:24px">Four colours,<br><em>load-bearing.</em></h2>
+        <h2 style="margin-top:24px">Four colors,<br><em>load-bearing.</em></h2>
         <p class="small" style="max-width:36ch;margin-top:16px">
           Aged savannah cream, warm umber, savannah gold, ink. The palette is
           earthen — fired clay, deep loam, sun — not corporate blue.
@@ -1228,7 +1228,7 @@
       <span class="label">Usage proportions</span>
       <div style="display:flex;height:48px;border:.5px solid var(--rule)">
         <div style="flex:60;background:var(--paper);position:relative"><span class="mono-sm" style="position:absolute;left:14px;top:50%;transform:translateY(-50%)">Paper · 60</span></div>
-        <div style="flex:25;background:var(--navy)"><span class="mono-sm" style="position:relative;color:rgba(255,255,255,.85);padding-left:14px;line-height:48px">Umber · 25</span></div>
+        <div style="flex:25;background:var(--navy)"><span class="mono-sm" style="position:relative;color:rgba(255,255,255,.85);padding-left:14px;line-height:48px">Navy · 25</span></div>
         <div style="flex:10;background:var(--gold)"></div>
         <div style="flex:5;background:var(--ink)"></div>
       </div>
@@ -1237,14 +1237,14 @@
   </div>
 </section>
 
-<!-- =============== 15 · COLOUR — EXTENDED =============== -->
+<!-- =============== 15 · COLOR — EXTENDED =============== -->
 <section data-screen-label="15 Color extended">
-  <span class="sec-num mono">15</span><span class="sec-name mono">Colour — extended</span>
+  <span class="sec-num mono">15</span><span class="sec-name mono">Color — extended</span>
   <div class="shell">
     <div class="grid-12">
       <div style="grid-column:span 4">
         <span class="mono" style="color:var(--gold)">015 — Extended</span>
-        <h2 style="margin-top:24px">Staff colours.</h2>
+        <h2 style="margin-top:24px">Staff colors.</h2>
         <p class="small" style="max-width:36ch;margin-top:16px">
           Use sparingly and with reason. Each has a defined job — never
           deploy them decoratively.
@@ -1306,14 +1306,14 @@
 
 <!-- =============== 16 · COLOR TOKENS =============== -->
 <section data-screen-label="16 Color tokens">
-  <span class="sec-num mono">16</span><span class="sec-name mono">Colour — tokens</span>
+  <span class="sec-num mono">16</span><span class="sec-name mono">Color — tokens</span>
   <div class="shell">
     <div class="grid-12">
       <div style="grid-column:span 4">
         <span class="mono" style="color:var(--gold)">016 — Tokens</span>
         <h2 style="margin-top:24px">For engineers.</h2>
         <p class="small" style="max-width:36ch;margin-top:16px">
-          Token names are role-based, not colour-based. <code>--ink</code>, not
+          Token names are role-based, not color-based. <code>--ink</code>, not
           <code>--black</code>. <code>--accent</code>, not <code>--gold</code>.
           Names should survive a palette refresh; values shouldn't.
         </p>
@@ -1365,7 +1365,7 @@
 
 <!-- =============== 17 · PAIRING =============== -->
 <section data-screen-label="17 Pairing" data-comment-anchor="6489231073-section">
-  <span class="sec-num mono">17</span><span class="sec-name mono">Colour — pairing &amp; AA</span>
+  <span class="sec-num mono">17</span><span class="sec-name mono">Color — pairing &amp; AA</span>
   <div class="shell">
     <h2>Pairings<br>that <em>work.</em></h2>
     <p class="small" style="margin-top:16px;max-width:60ch">
@@ -1438,7 +1438,7 @@
             <span class="mono-sm">Display + body · Variable</span>
           </div>
           <div style="font-family:'Newsreader',serif;font-size:128px;font-weight:300;line-height:1;letter-spacing:-.025em;margin-top:24px">Aa Bb</div>
-          <div style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;font-size:48px;line-height:1.1;margin-top:8px;color:var(--gold)">Together, at scale.</div>
+          <div style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;font-size:48px;line-height:1.1;margin-top:8px;color:var(--gold)">In trust, forever.</div>
           <p style="font-family:'Newsreader',serif;font-size:14px;line-height:1.6;margin-top:24px;max-width:60ch;color:var(--ink-soft)">
             Newsreader is a free serif by Production Type, designed for long-form
             reading on screens. Optical sizing means we can use one family at
@@ -1618,7 +1618,7 @@
           <dt>Stroke</dt><dd>1.25 px · linecap square</dd>
           <dt>Corners</dt><dd>Sharp · no radius</dd>
           <dt>Style</dt><dd>Outline only · no fills</dd>
-          <dt>Colour</dt><dd>currentColor</dd>
+          <dt>Color</dt><dd>currentColor</dd>
         </div>
       </div>
       <div style="grid-column:span 8">
@@ -1664,24 +1664,91 @@
 <section id="imagery" data-screen-label="22 Imagery">
   <span class="sec-num mono">22</span><span class="sec-name mono">Imagery direction</span>
   <div class="shell">
-    <div style="display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
-      <div>
-        <span class="mono" style="color:var(--gold)">022 — Imagery direction</span>
-        <h2 style="margin-top:24px">Removed,<br><em>pending&nbsp;direction.</em></h2>
+    <h2 style="max-width:18ch">Photography<br><em>of land</em>, not<br>of <em>people.</em></h2>
+    <p class="small" style="margin-top:24px;max-width:62ch">
+      Until residents are housed, we do not stage photographs of them. Until
+      buildings are built, we do not render them. Our visuals are honest
+      to the stage of the work: <em>the land we hold</em>, <em>the maps we
+      use</em>, and <em>the documents we sign.</em> Three categories. Captioned. Dated.
+    </p>
+
+    <div class="grid-3" style="margin-top:48px">
+      <figure>
+        <div class="ph" style="aspect-ratio:4/3"><span class="ph-lbl">Photograph · land · 4:3</span></div>
+        <figcaption class="mono-sm" style="margin-top:8px">01 — Landscape · the parcel itself, undressed. Wide, flat-light, no people, no logos.</figcaption>
+      </figure>
+      <figure>
+        <div class="ph" style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,rgba(184,137,58,.16) 0 1px,transparent 1px 8px),var(--navy);color:var(--paper)">
+          <span class="ph-lbl" style="background:var(--navy);color:var(--paper);border-color:rgba(255,255,255,.3)">Map crop · 4:3</span>
+        </div>
+        <figcaption class="mono-sm" style="margin-top:8px">02 — Cartography · cadastral maps, regulation plans, neighbourhood crops. Not stylized.</figcaption>
+      </figure>
+      <figure>
+        <div class="ph" style="aspect-ratio:4/3;background:var(--paper-pure)">
+          <span class="ph-lbl">Document scan · 4:3</span>
+        </div>
+        <figcaption class="mono-sm" style="margin-top:8px">03 — Document · MOUs, term sheets, deed pages — the receipts of the work.</figcaption>
+      </figure>
+    </div>
+
+    <!-- Stylized Canada map -->
+    <div style="margin-top:64px">
+      <span class="label">Stylized map · Canada · for use in decks, web, signage</span>
+      <div style="background:var(--navy);border:.5px solid var(--rule);padding:48px;color:var(--paper)">
+        <svg viewBox="0 0 1180 720" style="width:100%;height:auto;display:block" aria-label="Stylized map of Canada">
+          <defs>
+            <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+            </pattern>
+          </defs>
+          <rect width="1180" height="720" fill="url(#grid2)"/>
+          <!-- Canada outline (stylized, west to east) -->
+          <path d="M40,360 L60,260 L100,200 L160,160 L220,150 L260,180
+                   L300,170 L340,180 L380,160 L420,170 L470,160 L520,170
+                   L580,160 L640,150 L700,160 L760,150 L820,160 L880,170
+                   L940,180 L1000,200 L1060,230 L1100,280 L1130,340
+                   L1140,400 L1100,440 L1040,460 L980,470 L920,470
+                   L860,500 L800,520 L740,520 L680,540 L620,560 L560,560
+                   L500,540 L440,540 L380,520 L320,500 L260,490 L200,480
+                   L150,460 L110,440 L70,400 Z"
+                fill="rgba(184,137,58,.08)" stroke="var(--gold)" stroke-width="1.5" stroke-linejoin="miter"/>
+          <!-- markers — Launchpad -->
+          <g font-family="JetBrains Mono, monospace" font-size="11" fill="var(--paper)" letter-spacing="1">
+            <circle cx="680" cy="500" r="6" fill="var(--gold)" stroke="var(--paper)" stroke-width="1"/>
+            <text x="696" y="505">Toronto · Launchpad</text>
+            <circle cx="660" cy="480" r="5" fill="var(--gold)"/>
+            <text x="540" y="475">Barrie · Launchpad</text>
+            <circle cx="640" cy="500" r="5" fill="var(--gold)"/>
+            <text x="460" y="515">Listowel · Launchpad</text>
+            <!-- Pipeline: pan-Canada -->
+            <circle cx="760" cy="480" r="3" fill="rgba(255,255,255,.5)"/>
+            <text x="776" y="485" fill="rgba(255,255,255,.55)">Ottawa</text>
+            <circle cx="850" cy="480" r="3" fill="rgba(255,255,255,.5)"/>
+            <text x="866" y="485" fill="rgba(255,255,255,.55)">Montréal</text>
+            <circle cx="380" cy="460" r="3" fill="rgba(255,255,255,.5)"/>
+            <text x="310" y="480" fill="rgba(255,255,255,.55)">Winnipeg</text>
+            <circle cx="260" cy="440" r="3" fill="rgba(255,255,255,.5)"/>
+            <text x="190" y="460" fill="rgba(255,255,255,.55)">Calgary</text>
+            <circle cx="160" cy="420" r="3" fill="rgba(255,255,255,.5)"/>
+            <text x="80" y="440" fill="rgba(255,255,255,.55)">Vancouver</text>
+            <circle cx="940" cy="480" r="3" fill="rgba(255,255,255,.5)"/>
+            <text x="956" y="485" fill="rgba(255,255,255,.55)">Halifax</text>
+          </g>
+          <g transform="translate(1080,140)" stroke="var(--paper)" stroke-width=".75" fill="none">
+            <circle cx="0" cy="0" r="22"/>
+            <polygon points="0,-22 4,0 0,22 -4,0" fill="var(--gold)" stroke="var(--gold)"/>
+            <text x="0" y="-32" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--paper)" text-anchor="middle">N</text>
+          </g>
+          <g font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(255,255,255,.55)" letter-spacing="1">
+            <text x="40" y="40">UBUNTU LTD · COMMON GROUND INITIATIVE · MAY 2026</text>
+            <text x="40" y="700">Solid markers — Launchpad sites · Outlined markers — active pipeline</text>
+          </g>
+        </svg>
       </div>
-      <div style="border:.5px dashed var(--terra);background:rgba(161,74,35,.06);padding:32px;color:var(--ink)">
-        <span class="mono-sm" style="color:var(--terra);letter-spacing:.18em">⚠ Editorial note · 2026-05-20</span>
-        <p style="margin-top:14px;max-width:60ch">
-          The previous page (three placeholder crops + a stylized map of Canada) was
-          flagged in review as not adding to the system. <strong>It has been removed
-          from this draft.</strong> A consolidated treatment of photography lives
-          later in this document under <em>"What we photograph"</em> (§35).
-        </p>
-        <p class="small" style="margin-top:12px;color:var(--ink-soft);max-width:60ch">
-          If a Canada map is needed for decks or web, it will be re-added as a
-          stand-alone application asset rather than as imagery direction.
-        </p>
-      </div>
+      <p class="small" style="margin-top:8px;color:var(--ink-soft)">
+        The map is illustrative, not surveyor-accurate. Use for narrative
+        context only. Update markers when sites enter or leave the pipeline.
+      </p>
     </div>
   </div>
 </section>
@@ -1766,26 +1833,18 @@
       The hero is the brand at full volume — but full volume is still very
       quiet. One headline, one paragraph, one fact, one map.
     </p>
-    <div style="margin-top:16px;display:inline-block;border:.5px dashed var(--terra);background:rgba(161,74,35,.06);padding:10px 14px;color:var(--ink)">
-      <span class="mono-sm" style="color:var(--terra);letter-spacing:.16em">⚠ Editorial note</span>
-      <p style="margin:6px 0 0;font-size:13px;max-width:62ch">
-        This is a brand-system mock of how a hero <em>would</em> compose
-        — not the live ubuntultd.com site. Final site design will be specified
-        separately and replace this page.
-      </p>
-    </div>
 
     <div class="surface" style="margin-top:48px">
       <!-- browser chrome -->
       <div style="display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:.5px solid var(--rule);background:var(--paper);font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft)">
         <span style="display:inline-flex;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:#d3cdbe"></span><span style="width:10px;height:10px;border-radius:50%;background:#d3cdbe"></span><span style="width:10px;height:10px;border-radius:50%;background:#d3cdbe"></span></span>
-        <span style="flex:1;text-align:center">ubuntultd.com</span>
+        <span style="flex:1;text-align:center">ubuntulandtrust.ca</span>
       </div>
       <!-- web hero -->
       <div style="background:var(--paper);padding:32px 48px 0">
         <header style="display:flex;justify-content:space-between;align-items:center;border-bottom:.5px solid var(--rule);padding-bottom:16px">
-          <span class="wm" style="font-size:22px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
-          <nav style="display:flex;gap:24px"><span class="mono-sm">About</span><span class="mono-sm">Parcels</span><span class="mono-sm">Operators</span><span class="mono-sm">Capital</span><span class="mono-sm">Press</span></nav>
+          <span class="wm" style="font-size:22px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
+          <nav style="display:flex;gap:24px"><span class="mono-sm">The Trust</span><span class="mono-sm">Parcels</span><span class="mono-sm">Operators</span><span class="mono-sm">Capital</span><span class="mono-sm">Press</span></nav>
         </header>
         <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;padding:64px 0">
           <div>
@@ -1795,7 +1854,7 @@
               Landowners contribute entitled sites as equity. Non-profit
               operators own the buildings from day one and the land
               fee-simple at Year 20. CMHC and Build Canada Homes provide
-              the wedge that makes the math move.
+              the wedge that makes the math pencil.
             </p>
             <div style="margin-top:32px;display:flex;gap:12px">
               <span style="background:var(--ink);color:var(--paper);padding:14px 22px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase">Read the model →</span>
@@ -1839,7 +1898,7 @@
       <!-- letter cover page -->
       <div class="surface" style="aspect-ratio:8.5/11;padding:48px 56px;display:flex;flex-direction:column;justify-content:space-between">
         <div>
-          <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
           <div style="height:120px"></div>
           <span class="mono-sm">Letter to landowners &amp; operators · 2026</span>
           <h2 style="font-size:54px;line-height:1;letter-spacing:-.025em;font-weight:300;margin-top:16px">Sixteen sites.<br><em style="color:var(--gold)">Five thousand<br>two hundred<br>ninety-nine.</em></h2>
@@ -1860,15 +1919,14 @@
           <article>
             <h3 style="font-size:22px;line-height:1.2;font-weight:500">A note on the year.</h3>
             <p style="font-size:13px;line-height:1.55;margin-top:12px;text-align:justify;hyphens:auto">
-              <span style="float:left;font-family:'Newsreader',serif;font-weight:300;font-size:54px;line-height:.85;padding:6px 8px 0 0;color:var(--gold)">L</span>and contributed as equity is land that carries the math. The Common
+              <span style="float:left;font-family:'Newsreader',serif;font-weight:300;font-size:54px;line-height:.85;padding:6px 8px 0 0;color:var(--gold)">L</span>and contributed as equity is land that pencils. The Common
               Ground Initiative closed its first full year with eighteen entitled
               sites in pipeline and 5,131 units of permanent affordable housing
               under development across Canada. The arithmetic that follows is
               plain; the work behind it was not.
             </p>
             <p style="font-size:13px;line-height:1.55;margin-top:8px;text-align:justify;hyphens:auto">
-              Four of those sites — 844 Veterans Drive (Barrie), Main Street
-              (Listowel), Oakwood Avenue and 27 Blake Street (Toronto) — are our
+              Three of those sites — Toronto, Barrie, and Listowel — are our
               Launchpad cohort and break ground in 2026, delivering 156 units
               by 2028. Non-profit operators own the buildings from day one and
               acquire the land fee-simple at Year 20. CMHC and Build Canada
@@ -1882,14 +1940,14 @@
           </article>
           <aside style="border-left:.5px solid var(--rule);padding-left:16px">
             <span class="mono-sm">At a glance</span>
-            <div style="margin-top:8px"><div class="num" style="font-family:'Newsreader',serif;font-weight:300;font-size:32px;line-height:1;color:var(--gold)">11.4<span style="font-size:14px;color:var(--ink-soft)"> ac</span></div><div class="mono-sm" style="margin-top:2px">Contributed</div></div>
+            <div style="margin-top:8px"><div class="num" style="font-family:'Newsreader',serif;font-weight:300;font-size:32px;line-height:1;color:var(--gold)">11.4<span style="font-size:14px;color:var(--ink-soft)"> ac</span></div><div class="mono-sm" style="margin-top:2px">In trust</div></div>
             <div style="margin-top:14px"><div class="num" style="font-family:'Newsreader',serif;font-weight:300;font-size:32px;line-height:1">816</div><div class="mono-sm" style="margin-top:2px">Units pipeline</div></div>
             <div style="margin-top:14px"><div class="num" style="font-family:'Newsreader',serif;font-weight:300;font-size:32px;line-height:1">$42M</div><div class="mono-sm" style="margin-top:2px">Capital</div></div>
             <div style="margin-top:14px"><div class="num" style="font-family:'Newsreader',serif;font-weight:300;font-size:32px;line-height:1">4</div><div class="mono-sm" style="margin-top:2px">Operator partners</div></div>
           </aside>
         </div>
         <div style="margin-top:auto;display:flex;justify-content:space-between;border-top:.5px solid var(--rule);padding-top:8px">
-          <span class="mono-sm">Ubuntu LTD</span>
+          <span class="mono-sm">Ubuntu Land Trust</span>
           <span class="mono-sm">04 · Letter</span>
         </div>
       </div>
@@ -1915,8 +1973,8 @@
             <span class="ph-lbl" style="background:var(--navy);color:var(--paper);border-color:rgba(255,255,255,.4)">Photograph · parcel</span>
           </div>
           <span class="mono-sm" style="position:absolute;top:24px;left:24px;color:var(--gold)">P-024-A · Toronto</span>
-          <h3 style="position:absolute;left:24px;bottom:64px;right:24px;font-size:32px;line-height:1.05;letter-spacing:-.02em;color:var(--paper);font-weight:400">A new parcel<br><em style="color:var(--gold)">under CGI.</em></h3>
-          <span class="wm" style="position:absolute;bottom:24px;left:24px;font-size:16px;color:var(--paper)"><span>Ubuntu</span><span class="dot"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <h3 style="position:absolute;left:24px;bottom:64px;right:24px;font-size:32px;line-height:1.05;letter-spacing:-.02em;color:var(--paper);font-weight:400">A new parcel<br><em style="color:var(--gold)">in trust.</em></h3>
+          <span class="wm" style="position:absolute;bottom:24px;left:24px;font-size:16px;color:var(--paper)"><span>Ubuntu</span><span class="dot"></span><span class="b">Land&nbsp;Trust</span></span>
         </div>
         <p class="mono-sm" style="margin-top:8px">Caption · "Acquired 2.4 acres in Mt. Dennis. Operator: St. Clair Co-op. 312 units."</p>
       </article>
@@ -1928,7 +1986,7 @@
             <div class="num" style="font-family:'Newsreader',serif;font-weight:300;font-size:120px;line-height:1;letter-spacing:-.03em;color:var(--gold)">816</div>
             <p style="margin-top:8px;font-size:18px;line-height:1.3">units of non-profit housing in the operator pipeline.</p>
           </div>
-          <span class="wm" style="font-size:14px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <span class="wm" style="font-size:14px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
         </div>
         <p class="mono-sm" style="margin-top:8px">Caption · "Eleven point four acres. Eight hundred and sixteen homes. One year."</p>
       </article>
@@ -1938,7 +1996,7 @@
           <span class="mono-sm">Vocabulary · 03</span>
           <h3 style="font-size:36px;line-height:1.05;letter-spacing:-.02em;font-weight:400">Operator<br><em>partner.</em></h3>
           <p style="font-size:14px;line-height:1.4">The non-profit, co-op or Indigenous-led housing entity who builds on land we hold. Not a tenant. Not a client.</p>
-          <span class="wm" style="font-size:14px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <span class="wm" style="font-size:14px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
         </div>
         <p class="mono-sm" style="margin-top:8px">Caption · "Naming the work — a small dictionary."</p>
       </article>
@@ -1953,26 +2011,41 @@
 <section data-screen-label="27 Signage">
   <span class="sec-num mono">27</span><span class="sec-name mono">Application — signage</span>
   <div class="shell">
-    <div style="display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+    <h2>On the land<br><em>itself.</em></h2>
+    <p class="small" style="margin-top:16px;max-width:60ch">
+      A site sign installed on every parcel within 30 days of acquisition.
+      Aluminum, two colors, mono caption type, no marketing copy. The sign
+      is a record of an act, not a billboard.
+    </p>
+    <div style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start">
+      <!-- field photo -->
       <div>
-        <span class="mono" style="color:var(--gold)">027 — Application · signage</span>
-        <h2 style="margin-top:24px">Removed,<br><em>pending&nbsp;direction.</em></h2>
+        <div class="ph" style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,rgba(22,21,20,.06) 0 1px,transparent 1px 12px),#a89d83">
+          <span class="ph-lbl">Field photograph · parcel · sign in situ</span>
+        </div>
+        <p class="mono-sm" style="margin-top:8px;color:var(--ink-soft)">Photo · 4:3 · staple post · 1.2 m off ground · facing public sidewalk</p>
       </div>
-      <div style="border:.5px dashed var(--terra);background:rgba(161,74,35,.06);padding:32px;color:var(--ink)">
-        <span class="mono-sm" style="color:var(--terra);letter-spacing:.18em">⚠ Editorial note · 2026-05-20</span>
-        <p style="margin-top:14px;max-width:60ch">
-          The site-sign page was flagged in review. The previous artwork read
-          <em>"This land is held in trust, forever"</em> — which misstates the
-          model. Ubuntu LTD <strong>is not a trust and does not hold the land
-          forever</strong>; landowners contribute the parcel as equity, the
-          non-profit operator acquires it fee-simple at Year&nbsp;20.
-        </p>
-        <p style="margin-top:12px;max-width:60ch">
-          <strong>The page has been removed from this draft.</strong> A signage
-          spec will be re-issued once the on-site sign copy is approved by Legal
-          and the operator partners. Hoarding artwork (§37) is unaffected and
-          still applies.
-        </p>
+      <!-- sign artwork -->
+      <div>
+        <div style="aspect-ratio:4/3;background:var(--navy);color:var(--paper);padding:32px;display:flex;flex-direction:column;justify-content:space-between;border:.5px solid var(--rule)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <span class="wm" style="font-size:22px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
+            <span class="mono-sm" style="color:var(--gold)">P-024-A</span>
+          </div>
+          <div>
+            <h3 style="font-size:36px;line-height:1.05;letter-spacing:-.02em;font-weight:400">This land is held<br>in trust, <em style="color:var(--gold)">forever.</em></h3>
+            <p style="margin-top:16px;max-width:42ch;font-size:13px;line-height:1.5;color:rgba(255,255,255,.85)">
+              Acquired by Ubuntu Land Trust in March 2025. Operator partner —
+              St. Clair Co-op. 312 units of non-profit housing planned for
+              completion in 2029.
+            </p>
+          </div>
+          <div style="display:flex;justify-content:space-between;border-top:.5px solid rgba(255,255,255,.2);padding-top:8px">
+            <span class="mono-sm" style="color:rgba(255,255,255,.7)">2025-03-14</span>
+            <span class="mono-sm" style="color:rgba(255,255,255,.7)">ubuntulandtrust.ca/p/024</span>
+          </div>
+        </div>
+        <p class="mono-sm" style="margin-top:8px;color:var(--ink-soft)">Sign · 1200 × 900 mm · digital print on aluminum composite · two colors</p>
       </div>
     </div>
   </div>
@@ -2021,28 +2094,28 @@
       <!-- cards -->
       <div style="grid-column:span 12;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px">
         <article class="card">
-          <header><span class="mono-sm">Parcel · P-024-A</span><span class="pill on-ink">Active</span></header>
+          <header><span class="mono-sm">Parcel · P-024-A</span><span class="pill gold">In trust</span></header>
           <h3 style="font-size:22px;margin:8px 0 4px">Mt. Dennis</h3>
           <p class="small">2.4 acres acquired March 2025. Operator: St. Clair Co-op.</p>
-          <footer><span class="num" style="font-size:32px;font-family:'Newsreader',serif;font-weight:500;color:var(--ink)">312</span><span class="mono-sm" style="color:var(--ink)">units planned</span></footer>
+          <footer><span class="num" style="font-size:32px;font-family:'Newsreader',serif;font-weight:300">312</span><span class="mono-sm">units planned</span></footer>
         </article>
         <article class="card">
-          <header><span class="mono-sm">Parcel · P-031-C</span><span class="pill on-ink">Active</span></header>
+          <header><span class="mono-sm">Parcel · P-031-C</span><span class="pill gold">In trust</span></header>
           <h3 style="font-size:22px;margin:8px 0 4px">West Harbour</h3>
           <p class="small">4.1 acres acquired June 2025. Operator: Indigenous Housing ON.</p>
-          <footer><span class="num" style="font-size:32px;font-family:'Newsreader',serif;font-weight:500;color:var(--ink)">188</span><span class="mono-sm" style="color:var(--ink)">units planned</span></footer>
+          <footer><span class="num" style="font-size:32px;font-family:'Newsreader',serif;font-weight:300">188</span><span class="mono-sm">units planned</span></footer>
         </article>
         <article class="card">
           <header><span class="mono-sm">Parcel · P-046-B</span><span class="pill">Pre-development</span></header>
           <h3 style="font-size:22px;margin:8px 0 4px">Vanier</h3>
           <p class="small">1.85 acres acquired September 2025. Operator: Ottawa CLT.</p>
-          <footer><span class="num" style="font-size:32px;font-family:'Newsreader',serif;font-weight:500;color:var(--ink)">96</span><span class="mono-sm" style="color:var(--ink)">units planned</span></footer>
+          <footer><span class="num" style="font-size:32px;font-family:'Newsreader',serif;font-weight:300">96</span><span class="mono-sm">units planned</span></footer>
         </article>
       </div>
 
       <!-- callouts -->
       <div style="grid-column:span 12;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:8px">
-        <div class="callout"><span class="cl-mark" style="background:var(--moss)"></span><div><span class="mono-sm">Note</span><p>Non-profit operators own the buildings from day one and acquire the land fee-simple at Year&nbsp;20.</p></div></div>
+        <div class="callout"><span class="cl-mark" style="background:var(--moss)"></span><div><span class="mono-sm">Note</span><p>Operator partners hold the lease and the building; we hold the land beneath it.</p></div></div>
         <div class="callout"><span class="cl-mark" style="background:var(--gold)"></span><div><span class="mono-sm">Reminder</span><p>Use parcel IDs (P-024-A) on first reference; the city name in body copy.</p></div></div>
         <div class="callout"><span class="cl-mark" style="background:var(--terra)"></span><div><span class="mono-sm">Caution</span><p>Don't refer to capital partners as "investors." Use the term "capital partners."</p></div></div>
       </div>
@@ -2060,8 +2133,8 @@
     .fld input,.fld select,.fld textarea{font-family:'Newsreader',serif;font-size:15px;padding:10px 12px;background:var(--paper);border:.5px solid var(--rule);border-radius:0;color:var(--ink);width:100%}
     .fld textarea{resize:vertical}
     .card{border:.5px solid var(--rule);background:var(--paper-pure);padding:20px;display:flex;flex-direction:column;gap:8px;min-height:180px}
-    .card header{display:flex;justify-content:space-between;align-items:center;background:transparent;color:inherit;padding:0}
-    .card footer{display:flex;align-items:baseline;gap:10px;margin-top:auto;padding:16px 0 0 0;border-top:.5px solid var(--rule);background:transparent;color:inherit}
+    .card header{display:flex;justify-content:space-between;align-items:center}
+    .card footer{display:flex;align-items:baseline;gap:10px;margin-top:auto;padding-top:16px;border-top:.5px solid var(--rule)}
     .callout{display:flex;gap:12px;border:.5px solid var(--rule);background:var(--paper-pure);padding:16px}
     .cl-mark{width:6px;flex:0 0 6px;align-self:stretch}
     .callout p{margin:6px 0 0;font-size:14px}
@@ -2076,7 +2149,7 @@
     <p class="small" style="margin-top:16px;max-width:64ch">
       Ubuntu's paper feels institutional but not corporate. Mostly type, set
       generously. A thin gold rule, used sparingly. A monospace ledger at the
-      bottom of every document with the organization's particulars. No drop shadows,
+      bottom of every document with the trust's particulars. No drop shadows,
       no gradients, no decorative flourishes — the rest of the document is
       where the work shows up.
     </p>
@@ -2116,7 +2189,7 @@
         <!-- card front (navy) -->
         <div>
           <div class="surface dark" style="aspect-ratio:85/55;padding:20px;display:flex;align-items:center;justify-content:center;position:relative">
-            <span class="wm" style="font-size:22px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land Trust &amp; Developments</span></span>
+            <span class="wm" style="font-size:22px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land&nbsp;Trust</span></span>
             <span class="mono-sm" style="position:absolute;bottom:12px;right:14px;color:rgba(255,255,255,.4);letter-spacing:.18em">EST. 2024</span>
           </div>
           <p class="mono-sm" style="margin-top:8px;color:var(--ink-soft)">Front · navy · gold foil wordmark</p>
@@ -2142,7 +2215,7 @@
             <span class="mono-sm" style="color:var(--gold);letter-spacing:.18em">BOARD · CHAIR</span>
             <div>
               <div style="font-family:'Newsreader',serif;font-size:18px;line-height:1.1;color:var(--paper);font-style:italic">Dr. Naledi Khumalo</div>
-              <div class="mono-sm" style="margin-top:2px;color:rgba(255,255,255,.7)">Chair, Board of Directors</div>
+              <div class="mono-sm" style="margin-top:2px;color:rgba(255,255,255,.7)">Chair, Board of Trustees</div>
               <div class="mono-sm" style="margin-top:8px;color:rgba(255,255,255,.7)">naledi@ubuntultd.com · +1 416 555 0101</div>
             </div>
             <span style="position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--gold)"></span>
@@ -2180,7 +2253,7 @@
           <dt>Format</dt><dd>US Letter</dd>
           <dt>Margins</dt><dd>38 / 28 / 24 / 28 mm</dd>
           <dt>Body</dt><dd>10.5 / 14 pt Newsreader</dd>
-          <dt>Footer</dt><dd>Single-line ledger · entity left · doc-ID right · hairline rule</dd>
+          <dt>Footer</dt><dd>4-col ledger, hairline rule</dd>
         </div>
       </div>
       <div style="grid-column:span 8;display:grid;grid-template-columns:1fr 1fr;gap:24px">
@@ -2188,7 +2261,7 @@
         <div>
           <div class="surface" style="aspect-ratio:8.5/11;padding:42px 40px 28px;display:flex;flex-direction:column">
             <header style="display:flex;justify-content:space-between;align-items:flex-start">
-              <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+              <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
               <div style="text-align:right">
                 <div class="mono-sm">100 King St W</div>
                 <div class="mono-sm">Toronto ON M5X 1G5</div>
@@ -2217,9 +2290,11 @@
               <p style="margin-top:24px;font-family:'Newsreader',serif;font-size:14px;font-style:italic">Aisha Mensah</p>
               <div class="mono-sm" style="color:var(--ink-soft)">Director, Land Acquisition</div>
             </div>
-            <footer style="margin-top:auto;border-top:.5px solid var(--rule);padding-top:10px;display:flex;justify-content:space-between;align-items:baseline">
-              <span class="mono" style="font-size:8px;color:var(--ink)">UBUNTU LTD &middot; UBUNTULTD.CA</span>
-              <span class="mono-sm" style="font-size:7.5px;color:var(--ink-soft)">UBT-26-048-COV</span>
+            <footer style="margin-top:auto;border-top:.5px solid var(--rule);padding-top:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+              <div><div class="mono-sm" style="color:var(--ink-soft);font-size:6.5px">CRA</div><div class="mono" style="font-size:7.5px">88293 4421 RR0001</div></div>
+              <div><div class="mono-sm" style="color:var(--ink-soft);font-size:6.5px">Doc ID</div><div class="mono" style="font-size:7.5px">UBT-26-048-COV</div></div>
+              <div><div class="mono-sm" style="color:var(--ink-soft);font-size:6.5px">Email</div><div class="mono" style="font-size:7.5px">hello@ubuntultd.com</div></div>
+              <div><div class="mono-sm" style="color:var(--ink-soft);font-size:6.5px">Web</div><div class="mono" style="font-size:7.5px">ubuntultd.com</div></div>
             </footer>
           </div>
           <p class="mono-sm" style="margin-top:8px;color:var(--ink-soft)">Letterhead · first sheet</p>
@@ -2249,7 +2324,7 @@
               <p style="margin-top:24px;font-family:'Newsreader',serif;font-size:14px;font-style:italic">Aisha Mensah</p>
             </div>
             <footer style="margin-top:auto;border-top:.5px solid var(--rule);padding-top:8px;display:flex;justify-content:space-between">
-              <span class="mono-sm" style="color:var(--ink-soft);font-size:7.5px">UBUNTU LTD · 100 KING ST W · TORONTO</span>
+              <span class="mono-sm" style="color:var(--ink-soft);font-size:7.5px">UBUNTU LAND TRUST · 100 KING ST W · TORONTO</span>
               <span class="mono-sm" style="color:var(--ink-soft);font-size:7.5px">02 OF 02</span>
             </footer>
           </div>
@@ -2276,7 +2351,7 @@
       <div>
         <div class="surface" style="aspect-ratio:9.5/4.125;padding:18px 24px;display:flex;flex-direction:column;justify-content:space-between;position:relative">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
-            <span class="wm" style="font-size:14px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+            <span class="wm" style="font-size:14px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
           </div>
           <div class="mono-sm" style="font-size:8.5px;color:var(--ink-soft)">100 KING ST W · TORONTO ON · M5X 1G5</div>
           <div style="position:absolute;right:24px;top:50%;transform:translateY(-50%);text-align:right;font-size:9.5px;line-height:1.5;font-family:'Newsreader',serif">
@@ -2291,7 +2366,7 @@
       <!-- A2 envelope -->
       <div>
         <div class="surface dark" style="aspect-ratio:5.75/4.375;padding:18px 24px;display:flex;flex-direction:column;justify-content:space-between;position:relative">
-          <span class="wm" style="font-size:13px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <span class="wm" style="font-size:13px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land&nbsp;Trust</span></span>
           <div style="text-align:center;font-family:'Newsreader',serif;font-size:11px;font-style:italic;color:var(--paper);letter-spacing:.02em">— Personal —</div>
           <div class="mono-sm" style="font-size:7.5px;color:rgba(255,255,255,.5)">100 KING ST W · TORONTO</div>
         </div>
@@ -2301,7 +2376,7 @@
       <div style="grid-column:1 / -1">
         <div class="surface" style="aspect-ratio:8.27/2.92;padding:24px 32px;display:flex;justify-content:space-between;align-items:center;position:relative;border-top:2px solid var(--gold)">
           <div>
-            <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+            <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
             <div style="margin-top:14px;font-family:'Newsreader',serif;font-style:italic;font-size:22px">With compliments,</div>
           </div>
           <div style="text-align:right">
@@ -2325,13 +2400,13 @@
         <p class="small" style="margin-top:16px">
           One signature, four lines, no images. No "Sent from my…", no quotes,
           no rotating banners, no pronouns inside the signature block (they
-          go elsewhere if you want them). The signature ends with the organization's
-          address, in monospace, dimmed. CRA charity numbers belong on contracts and tax receipts, not in every email.
+          go elsewhere if you want them). The signature ends with the trust's
+          address and the CRA charity number, in monospace, dimmed.
         </p>
         <div class="kv" style="margin-top:24px;grid-template-columns:120px 1fr">
           <dt>Body</dt><dd>Georgia 13 px / Charter fallback</dd>
           <dt>Mono</dt><dd>SF Mono 11 px / Consolas fallback</dd>
-          <dt>Colour</dt><dd>Name navy <span class="mono">#0F2235</span>, meta <span class="mono">#7A6E5C</span></dd>
+          <dt>Color</dt><dd>Name navy <span class="mono">#0F2235</span>, meta <span class="mono">#7A6E5C</span></dd>
           <dt>Width</dt><dd>Max <span class="mono">520 px</span> · no logo image</dd>
         </div>
       </div>
@@ -2357,13 +2432,13 @@
             <div style="margin-top:14px">
               <div style="font-family:Georgia,serif;font-size:13px;line-height:1.35;color:var(--navy)">
                 <strong style="font-weight:600">Aisha Mensah</strong> · Director, Land Acquisition<br>
-                <span style="color:var(--ink)">Ubuntu Land Trust &amp; Developments</span><br>
-                <span style="font-style:italic;color:var(--ink-soft)">Unlocking land for affordable housing at scale across Canada.</span>
+                <span style="color:var(--ink)">Ubuntu Land Trust</span><br>
+                <span style="font-style:italic;color:var(--ink-soft)">Connecting land with non-profit housing delivery.</span>
               </div>
               <div style="margin-top:10px;font-family:'SF Mono',Consolas,monospace;font-size:10.5px;line-height:1.5;color:var(--ink-soft);letter-spacing:.02em">
                 +1 416 555 0142  ·  ubuntultd.com<br>
                 100 KING ST W  ·  TORONTO ON  ·  M5X 1G5<br>
-                <span style="color:#A89C88">Confidential — see footer</span>
+                <span style="color:#A89C88">CRA 88293 4421 RR0001  ·  Confidential — see footer</span>
               </div>
             </div>
           </div>
@@ -2398,7 +2473,7 @@
       <div style="grid-column:span 4">
         <h2>Invoice.</h2>
         <p class="small" style="margin-top:16px">
-          Ubuntu LTD does not invoice for housing. We invoice operator
+          The trust does not invoice for housing. We invoice operator
           partners for shared services — predevelopment work, third-party
           coordination, planning fees recovered. Invoices are plain, totals
           are large, the math reconciles in front of the reader.
@@ -2414,7 +2489,7 @@
       <div style="grid-column:span 8">
         <div class="surface" style="aspect-ratio:8.5/11;padding:40px 44px;display:flex;flex-direction:column">
           <header style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:.5px solid var(--rule);padding-bottom:14px">
-            <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+            <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
             <div style="text-align:right">
               <div style="font-family:'Newsreader',serif;font-size:24px;line-height:1;letter-spacing:-.01em">Invoice</div>
               <div class="mono-sm" style="margin-top:4px">UBT-INV-2026-0048</div>
@@ -2499,7 +2574,7 @@
       <div>
         <div class="surface" style="aspect-ratio:8.5/11;padding:42px 44px;display:flex;flex-direction:column">
           <header style="display:flex;justify-content:space-between;align-items:flex-end;border-bottom:.5px solid var(--rule);padding-bottom:10px">
-            <span class="wm" style="font-size:16px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+            <span class="wm" style="font-size:16px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
             <div style="text-align:right">
               <div class="mono-sm" style="color:var(--gold);letter-spacing:.16em">LETTER OF INTENT</div>
               <div class="mono-sm" style="color:var(--ink-soft)">Non-binding · except §6, §9, §11</div>
@@ -2559,7 +2634,7 @@
               <div style="margin-top:6px;display:flex;justify-content:space-between"><span>Daniel Park, Director</span><span class="mono">2026-05-07</span></div>
             </div>
             <div>
-              <div class="mono-sm" style="color:var(--ink-soft)">For Ubuntu LTD</div>
+              <div class="mono-sm" style="color:var(--ink-soft)">For Ubuntu Land Trust</div>
               <div style="height:48px;border-bottom:.5px solid var(--ink);margin-top:18px;font-family:'Newsreader',serif;font-style:italic;font-size:18px;display:flex;align-items:flex-end;color:var(--navy);padding-bottom:2px">A. Mensah</div>
               <div style="margin-top:6px;display:flex;justify-content:space-between"><span>Aisha Mensah, Director</span><span class="mono">2026-05-07</span></div>
             </div>
@@ -2591,7 +2666,7 @@
         <div class="kv" style="margin-top:24px;grid-template-columns:140px 1fr">
           <dt>Used for</dt><dd>Term sheets, NDAs, Operator Leases, Contribution Agreements, board minutes</dd>
           <dt>Filing</dt><dd>Cover doc-ID matches enclosed document, suffixed <span class="mono">-CV</span></dd>
-          <dt>Colour</dt><dd>Navy field <span class="mono">#0F2235</span> + gold hairline</dd>
+          <dt>Color</dt><dd>Navy field <span class="mono">#0F2235</span> + gold hairline</dd>
         </div>
       </div>
       <div style="grid-column:span 7;display:grid;grid-template-columns:1fr 1fr;gap:24px">
@@ -2599,7 +2674,7 @@
         <div>
           <div class="surface dark" style="aspect-ratio:8.5/11;padding:42px 44px;display:flex;flex-direction:column;justify-content:space-between;color:var(--paper);position:relative">
             <header>
-              <span class="wm" style="font-size:18px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land Trust &amp; Developments</span></span>
+              <span class="wm" style="font-size:18px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land&nbsp;Trust</span></span>
               <div style="height:2px;background:var(--gold);margin-top:24px;width:48px"></div>
             </header>
             <div>
@@ -2620,11 +2695,11 @@
         <div>
           <div class="surface" style="aspect-ratio:8.5/11;padding:42px 44px;display:flex;flex-direction:column;justify-content:space-between;position:relative;border-top:4px solid var(--gold)">
             <header>
-              <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+              <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
             </header>
             <div>
               <div class="mono-sm" style="color:var(--gold);letter-spacing:.18em">MUTUAL NDA</div>
-              <h2 style="margin-top:14px;font-size:34px;line-height:1.05;letter-spacing:-.02em;font-weight:300">Between<br>Ubuntu&nbsp;LTD<br>&amp; <em style="color:var(--gold)">Park Family<br>Holdings ULC.</em></h2>
+              <h2 style="margin-top:14px;font-size:34px;line-height:1.05;letter-spacing:-.02em;font-weight:300">Between<br>Ubuntu Land Trust<br>&amp; <em style="color:var(--gold)">Park Family<br>Holdings ULC.</em></h2>
               <p style="margin-top:18px;font-size:11px;line-height:1.5;max-width:38ch;color:var(--ink-soft);font-family:'Newsreader',serif;font-style:italic">
                 For the purpose of evaluating a proposed contribution under
                 Ubuntu's Common Ground Initiative.
@@ -2650,7 +2725,7 @@
   <div class="shell">
     <h2>Volumes I, II, III.</h2>
     <p class="small" style="margin-top:16px;max-width:64ch">
-      The organization publishes one document a year that gets a real cover —
+      The trust publishes one document a year that gets a real cover —
       annual report, capital deck, or governance review. Three covers,
       same grid, same wordmark position, three completely different
       faces. The system flexes; it does not become inconsistent.
@@ -2660,7 +2735,7 @@
       <div>
         <div class="surface" style="aspect-ratio:8.5/11;padding:42px 38px;display:flex;flex-direction:column;justify-content:space-between;position:relative">
           <header style="display:flex;justify-content:space-between;align-items:flex-start">
-            <span class="wm" style="font-size:14px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+            <span class="wm" style="font-size:14px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
             <span class="mono-sm" style="color:var(--gold);letter-spacing:.18em">VOL.&nbsp;I</span>
           </header>
           <div>
@@ -2678,7 +2753,7 @@
       <div>
         <div class="surface dark" style="aspect-ratio:8.5/11;padding:42px 38px;display:flex;flex-direction:column;justify-content:space-between;color:var(--paper);position:relative">
           <header style="display:flex;justify-content:space-between;align-items:flex-start">
-            <span class="wm" style="font-size:14px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land Trust &amp; Developments</span></span>
+            <span class="wm" style="font-size:14px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land&nbsp;Trust</span></span>
             <span class="mono-sm" style="color:var(--gold);letter-spacing:.18em">VOL.&nbsp;II</span>
           </header>
           <div style="text-align:center">
@@ -2699,7 +2774,7 @@
             <span class="ph-lbl" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--paper);border-color:var(--rule)">Photograph · Mt. Dennis groundbreaking</span>
           </div>
           <header style="position:relative;padding:42px 38px 0;display:flex;justify-content:space-between">
-            <span class="wm" style="font-size:14px;color:var(--paper);text-shadow:0 1px 8px rgba(15,34,53,.4)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land Trust &amp; Developments</span></span>
+            <span class="wm" style="font-size:14px;color:var(--paper);text-shadow:0 1px 8px rgba(15,34,53,.4)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land&nbsp;Trust</span></span>
             <span class="mono-sm" style="color:var(--gold);letter-spacing:.18em;text-shadow:0 1px 8px rgba(15,34,53,.4)">VOL.&nbsp;III</span>
           </header>
           <div style="margin-top:auto;position:relative;background:linear-gradient(transparent,rgba(15,34,53,.85));padding:64px 38px 36px;color:var(--paper)">
@@ -2719,9 +2794,9 @@
   <div class="shell">
     <div style="background:var(--navy);color:var(--paper);padding:120px 96px;margin-top:32px;position:relative">
       <span class="mono-sm" style="color:var(--gold);letter-spacing:.2em;position:absolute;top:32px;left:96px">— THE ONE PARAGRAPH —</span>
-      <span class="mono-sm" style="color:rgba(255,255,255,.4);letter-spacing:.18em;position:absolute;top:32px;right:96px">FOR THE INSIDE COVER OF EACH ANNUAL REPORT</span>
+      <span class="mono-sm" style="color:rgba(255,255,255,.4);letter-spacing:.18em;position:absolute;top:32px;right:96px">RECITED AT EVERY BOARD MEETING</span>
       <p style="font-family:'Newsreader',serif;font-weight:200;font-size:60px;line-height:1.1;letter-spacing:-.022em;max-width:22ch;color:var(--paper);text-wrap:pretty">
-        Land that's already <em style="color:var(--gold);font-style:italic">entitled</em> can carry the math.
+        Land that's already <em style="color:var(--gold);font-style:italic">entitled</em> can pencil.
         Buildings that are <em style="color:var(--gold);font-style:italic">non-profit-owned</em> can hold rents.
         Capital that is <em style="color:var(--gold);font-style:italic">patient</em> can wait twenty years.
         We sit at the seam where those three things meet, and we do the paperwork.
@@ -2734,7 +2809,8 @@
     <p class="small" style="margin-top:24px;max-width:64ch;color:var(--ink-soft)">
       The manifesto is the only piece of brand copy that is set as art.
       Everywhere else, we serve the reader; here we serve the idea. It is
-      reproduced verbatim on the inside cover of the annual report. Do not paraphrase.
+      reproduced, verbatim, on the inside cover of every annual report and
+      on the wall behind the boardroom table. Do not paraphrase.
     </p>
   </div>
 </section>
@@ -2766,14 +2842,14 @@
         </div>
         <div style="padding:36px 56px">
           <span class="mono-sm" style="color:var(--gold);letter-spacing:.18em">300 · ITALIC · PULL</span>
-          <div style="font-family:'Newsreader',serif;font-weight:300;font-style:italic;font-size:36px;line-height:1.15;color:var(--gold);margin-top:8px;text-wrap:balance">"Land contributed as equity is land that carries the math."</div>
+          <div style="font-family:'Newsreader',serif;font-weight:300;font-style:italic;font-size:36px;line-height:1.15;color:var(--gold);margin-top:8px;text-wrap:balance">"Land contributed as equity is land that pencils."</div>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:1.4fr 1fr;border-bottom:.5px solid var(--rule)">
         <div style="padding:32px 56px;border-right:.5px solid var(--rule)">
           <span class="mono-sm" style="color:var(--gold);letter-spacing:.18em">400 · BODY · 14/22</span>
           <p style="font-size:14px;line-height:1.55;margin-top:10px;max-width:62ch;text-wrap:pretty">
-            Ubuntu LTD acquires entitled, shovel-ready parcels from
+            Ubuntu Land Trust acquires entitled, shovel-ready parcels from
             private landowners and contributes them as equity into project
             SPVs developed by non-profit and co-op operators. CMHC and Build
             Canada Homes provide the wedge capital. The operator owns the
@@ -2818,7 +2894,7 @@
       <div class="surface" style="aspect-ratio:16/9;padding:0;display:flex;align-items:center;justify-content:center;position:relative">
         <span class="mono-sm" style="position:absolute;top:12px;left:14px;color:var(--ink-soft)">01 · 0.00s</span>
         <span class="mono-sm" style="position:absolute;top:12px;right:14px;color:var(--gold)">in</span>
-        <span class="wm" style="font-size:36px;opacity:.06"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+        <span class="wm" style="font-size:36px;opacity:.06"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
       </div>
       <div class="surface" style="aspect-ratio:16/9;padding:0;display:flex;align-items:center;justify-content:center;position:relative">
         <span class="mono-sm" style="position:absolute;top:12px;left:14px;color:var(--ink-soft)">02 · 0.30s</span>
@@ -2835,12 +2911,12 @@
       </div>
       <div class="surface" style="aspect-ratio:16/9;padding:0;display:flex;align-items:center;justify-content:center;position:relative">
         <span class="mono-sm" style="position:absolute;top:12px;left:14px;color:var(--ink-soft)">05 · 1.10s</span>
-        <span class="wm" style="font-size:36px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+        <span class="wm" style="font-size:36px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
       </div>
       <div class="surface dark" style="aspect-ratio:16/9;padding:0;display:flex;align-items:center;justify-content:center;position:relative;color:var(--paper)">
         <span class="mono-sm" style="position:absolute;top:12px;left:14px;color:rgba(255,255,255,.5)">06 · 1.40s</span>
         <span class="mono-sm" style="position:absolute;top:12px;right:14px;color:var(--gold)">hold</span>
-        <span class="wm" style="font-size:36px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land Trust &amp; Developments</span></span>
+        <span class="wm" style="font-size:36px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land&nbsp;Trust</span></span>
       </div>
     </div>
     <div class="kv" style="margin-top:48px;grid-template-columns:200px 1fr">
@@ -2858,7 +2934,7 @@
   <div class="shell">
     <h2>Charts &amp; tables.</h2>
     <p class="small" style="margin-top:16px;max-width:64ch">
-      Ubuntu LTD talks in numbers. Charts use the four-colour encoding below;
+      A trust talks in numbers. Charts use the four-color encoding below;
       every axis is labeled in monospace; every total is set in Newsreader
       so the eye lands there first. No 3D, no doughnut holes with
       decorative icons, no chart-junk gradients.
@@ -3162,7 +3238,7 @@
     <h2>On the building.<br>On the fence.</h2>
     <p class="small" style="margin-top:16px;max-width:64ch">
       Two physical artifacts. The dedication plaque is mounted at the
-      entrance of every completed building in the organization's portfolio,
+      entrance of every completed building in the trust's portfolio,
       cast in solid brass. The construction hoarding is the printed
       vinyl that wraps the site fence during the build.
     </p>
@@ -3173,7 +3249,7 @@
           <div style="text-align:center">
             <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14px;letter-spacing:.06em;color:#3a2a10">— Common Ground Initiative —</div>
             <div style="height:.5px;background:rgba(60,40,15,.5);margin:14px 30px"></div>
-            <div style="font-family:'Newsreader',serif;font-weight:300;font-size:32px;line-height:1.05;letter-spacing:-.01em;color:#1a1207">312 homes,<br>permanent &amp; affordable,<br><em>here.</em></div>
+            <div style="font-family:'Newsreader',serif;font-weight:300;font-size:32px;line-height:1.05;letter-spacing:-.01em;color:#1a1207">312 homes,<br>held in trust,<br><em>here.</em></div>
           </div>
           <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:8px;line-height:1.7;letter-spacing:.14em;color:#3a2a10">
             <div>P-024-A · MT DENNIS</div>
@@ -3189,7 +3265,7 @@
         <div style="aspect-ratio:21/9;background:var(--navy);color:var(--paper);padding:36px 44px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(184,137,58,.06) 0 12px,transparent 12px 24px)"></div>
           <header style="position:relative;display:flex;justify-content:space-between;align-items:flex-start">
-            <span class="wm" style="font-size:18px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land Trust &amp; Developments</span></span>
+            <span class="wm" style="font-size:18px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land&nbsp;Trust</span></span>
             <div style="text-align:right">
               <div class="mono-sm" style="color:var(--gold);letter-spacing:.18em">SITE · P-024-A</div>
               <div class="mono-sm" style="color:rgba(255,255,255,.5)">CONSTRUCTION · 2026 → 2029</div>
@@ -3228,7 +3304,7 @@
       <!-- 01 title -->
       <div>
         <div class="surface dark" style="aspect-ratio:16/9;padding:18px;display:flex;flex-direction:column;justify-content:space-between;color:var(--paper);position:relative">
-          <span class="wm" style="font-size:11px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <span class="wm" style="font-size:11px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land&nbsp;Trust</span></span>
           <div>
             <span class="mono-sm" style="color:var(--gold);font-size:7px">CAPITAL PARTNERS · 2026</span>
             <div style="font-family:'Newsreader',serif;font-weight:300;font-size:22px;line-height:1;letter-spacing:-.02em;margin-top:4px">From parcel<br>to <em style="color:var(--gold)">portfolio.</em></div>
@@ -3282,7 +3358,7 @@
             <div style="font-family:'Newsreader',serif;font-style:italic;font-weight:300;font-size:18px;line-height:1.05">Aisha Mensah</div>
             <div class="mono-sm" style="color:rgba(255,255,255,.6);font-size:7px;margin-top:2px">aisha@ubuntultd.com · +1 416 555 0142</div>
           </div>
-          <span class="wm" style="font-size:10px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land Trust &amp; Developments</span></span>
+          <span class="wm" style="font-size:10px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land&nbsp;Trust</span></span>
         </div>
         <p class="mono-sm" style="margin-top:6px;color:var(--ink-soft)">05 · End-card</p>
       </div>
@@ -3315,7 +3391,7 @@
         <span class="mono-sm" style="position:absolute;top:14px;right:18px;color:var(--gold)">12 WORDS · NOMINAL</span>
         <span class="mono-sm" style="color:var(--ink-soft)">L01 · For: nameplates, footers, single-line bios</span>
         <p style="font-family:'Newsreader',serif;font-size:24px;line-height:1.25;margin-top:18px;font-weight:300;text-wrap:balance">
-          Ubuntu LTD unlocks land for affordable housing at scale across&nbsp;Canada.
+          Ubuntu Land Trust unlocks privately-owned land for permanent affordable housing across&nbsp;Canada.
         </p>
         <div style="margin-top:18px;display:flex;justify-content:space-between;border-top:.5px solid var(--rule);padding-top:10px">
           <span class="mono-sm" style="color:var(--ink-soft)">UBT-CPY-L01-v3</span>
@@ -3327,7 +3403,9 @@
         <span class="mono-sm" style="position:absolute;top:14px;right:18px;color:var(--gold)">30 WORDS · BIO</span>
         <span class="mono-sm" style="color:var(--ink-soft)">L02 · For: panel intros, conference programs, partner pages</span>
         <p style="font-family:'Newsreader',serif;font-size:18px;line-height:1.45;margin-top:18px;font-weight:300;text-wrap:pretty">
-          Ubuntu Land Trust &amp; Developments ("Ubuntu LTD") is a Canadian organization that connects private landowners with non-profit and co-op operators — contributing entitled land as equity so the operators can deliver inclusive, permanent affordable housing at portfolio scale.
+          Ubuntu Land Trust is a Canadian non-profit that acquires entitled land
+          and contributes it as equity into projects developed by non-profit and
+          co-op operators — delivering permanent affordable housing at portfolio scale.
         </p>
         <div style="margin-top:18px;display:flex;justify-content:space-between;border-top:.5px solid var(--rule);padding-top:10px">
           <span class="mono-sm" style="color:var(--ink-soft)">UBT-CPY-L02-v3</span>
@@ -3339,7 +3417,8 @@
         <span class="mono-sm" style="position:absolute;top:14px;right:18px;color:var(--gold)">100 WORDS · STANDARD</span>
         <span class="mono-sm" style="color:var(--ink-soft)">L03 · For: press releases, "About" sections, grant applications</span>
         <p style="font-family:'Newsreader',serif;font-size:17px;line-height:1.55;margin-top:18px;font-weight:300;max-width:80ch;text-wrap:pretty">
-          Ubuntu Land Trust &amp; Developments ("Ubuntu LTD") is a Canadian organization that unlocks privately-owned land for inclusive, permanent affordable housing. Through the Common Ground
+          Ubuntu Land Trust is a Canadian non-profit that unlocks privately-owned
+          land for permanent affordable housing. Through the Common Ground
           Initiative, landowners contribute entitled, shovel-ready parcels as
           equity into project SPVs developed by non-profit and co-op operators;
           CMHC and Build Canada Homes provide the wedge capital that closes the
@@ -3356,15 +3435,14 @@
       <article class="surface" style="padding:32px;position:relative;grid-column:span 2">
         <span class="mono-sm" style="position:absolute;top:14px;right:18px;color:var(--gold)">250 WORDS · LONG</span>
         <span class="mono-sm" style="color:var(--ink-soft)">L04 · For: policy submissions, profile articles, founder talks, board orientations</span>
-        <span class="mono-sm" style="margin-left:12px;color:var(--terra);letter-spacing:.16em">⚠ TO VERIFY</span>
         <div style="columns:2;column-gap:32px;margin-top:18px;font-family:'Newsreader',serif;font-size:14px;line-height:1.55;font-weight:300;text-wrap:pretty">
-          <p>Ubuntu Land Trust &amp; Developments ("Ubuntu LTD") is a Canadian organization established in 2024 to address one of the most stubborn constraints on affordable-housing delivery: privately-held land that is entitled, well-located, and uneconomic to develop at affordable rents on its own.</p>
-          <p style="margin-top:10px">Ubuntu LTD's primary vehicle is the Common Ground Initiative, a partnership model that brings four parties to one table: a landowner, a non-profit or co-op operator, public-capital agencies (CMHC and Build Canada Homes), and Ubuntu LTD itself. The landowner contributes the parcel as equity into a project special-purpose vehicle in exchange for preferred-equity units. The operator builds and owns the housing from day one. Public capital — through CMHC's Apartment Construction Loan Program, the Affordable Housing Fund, and Build Canada Homes wedge equity — closes the funding gap that conventional debt cannot. At Year 20, preferred-equity units are redeemed and title to the land transfers, fee simple, to the operator.</p>
-          <p style="margin-top:10px">As of May 2026, Ubuntu LTD has 18 sites and 5,131 units of permanent affordable housing in pipeline across Canada. Four Launchpad sites — 844 Veterans Drive in Barrie, Main Street in Listowel, Oakwood Avenue and 27 Blake Street in Toronto — break ground in 2026 and deliver 156 units by 2028. Ubuntu LTD does not develop, build, or operate housing itself; it sits at the seam between land, operators, and public capital, and does the legal and financial paperwork that lets the math move.</p>
+          <p>Ubuntu Land Trust is a Canadian non-profit established in 2024 to address one of the most stubborn constraints on affordable-housing delivery: privately-held land that is entitled, well-located, and uneconomic to develop at affordable rents on its own.</p>
+          <p style="margin-top:10px">The trust's primary vehicle is the Common Ground Initiative, a partnership model that brings four parties to one table: a landowner, a non-profit or co-op operator, public-capital agencies (CMHC and Build Canada Homes), and the trust itself. The landowner contributes the parcel as equity into a project special-purpose vehicle in exchange for preferred-equity units. The operator builds and owns the housing from day one. Public capital — through CMHC's Apartment Construction Loan Program, the Affordable Housing Fund, and Build Canada Homes wedge equity — closes the funding gap that conventional debt cannot. At Year 20, preferred-equity units are redeemed and title to the land transfers, fee simple, to the operator.</p>
+          <p style="margin-top:10px">As of May 2026, the trust has 18 sites and 5,131 units of permanent affordable housing in pipeline across Canada. Three Launchpad sites — in Toronto, Barrie, and Listowel — break ground in 2026 and deliver 156 units by 2028. The trust does not develop, build, or operate housing itself; it sits at the seam between land, operators, and public capital, and does the legal and financial paperwork that lets the math pencil.</p>
         </div>
         <div style="margin-top:18px;display:flex;justify-content:space-between;border-top:.5px solid var(--rule);padding-top:10px">
-          <span class="mono-sm" style="color:var(--ink-soft)">UBT-CPY-L04-v4</span>
-          <span class="mono-sm" style="color:var(--terra)">Pending re-approval · 2026-05-20</span>
+          <span class="mono-sm" style="color:var(--ink-soft)">UBT-CPY-L04-v3</span>
+          <span class="mono-sm" style="color:var(--ink-soft)">Approved 2026-04-22</span>
         </div>
       </article>
     </div>
@@ -3377,7 +3455,7 @@
   <div class="shell">
     <h2>Annual report.</h2>
     <p class="small" style="margin-top:16px;max-width:64ch">
-      The organization's most public document, published every March. The cover
+      The trust's most public document, published every March. The cover
       changes year-to-year — the system inside does not. Below: Vol. I and
       Vol. II covers, then a four-page inside spread showing the Year-2
       letter, the cohort ledger, and the unit pipeline.
@@ -3387,7 +3465,7 @@
       <div>
         <div class="surface" style="aspect-ratio:8.5/11;padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between;position:relative">
           <header style="display:flex;justify-content:space-between;align-items:flex-start">
-            <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+            <span class="wm" style="font-size:18px"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
             <span class="mono-sm" style="color:var(--gold);letter-spacing:.18em">VOL. I · 2025</span>
           </header>
           <div>
@@ -3406,7 +3484,7 @@
       <div>
         <div class="surface dark" style="aspect-ratio:8.5/11;padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between;color:var(--paper);position:relative">
           <header style="display:flex;justify-content:space-between;align-items:flex-start">
-            <span class="wm" style="font-size:18px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land Trust &amp; Developments</span></span>
+            <span class="wm" style="font-size:18px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em;background:var(--gold)"></span><span class="b">Land&nbsp;Trust</span></span>
             <span class="mono-sm" style="color:var(--gold);letter-spacing:.18em">VOL. II · 2026</span>
           </header>
           <div style="text-align:right">
@@ -3437,12 +3515,12 @@
           <h4 style="font-family:'Newsreader',serif;font-weight:300;font-size:34px;line-height:1.05;letter-spacing:-.02em;margin-top:8px">A second year<br>of <em style="color:var(--gold)">arithmetic.</em></h4>
         </div>
         <div style="margin-top:24px;column-count:1;font-family:'Newsreader',serif;font-size:11px;line-height:1.65;text-wrap:pretty">
-          <p style="text-align:justify;hyphens:auto"><span style="float:left;font-family:'Newsreader',serif;font-weight:200;font-size:54px;line-height:.85;padding:6px 8px 0 0;color:var(--gold)">L</span>and contributed as equity is land that carries the math. The year that ended was Ubuntu LTD's second full year, and the Common Ground Initiative closed it with eighteen entitled sites and 5,131 units of permanent affordable housing in pipeline across Canada.</p>
-          <p style="margin-top:10px;text-align:justify;hyphens:auto">Four of those sites — 844 Veterans Drive in Barrie, Main Street in Listowel, Oakwood Avenue and 27 Blake Street in Toronto — are our Launchpad cohort. They break ground this year and deliver 156 homes by 2028. Non-profit operators own the buildings from day one and acquire the land, fee simple, at Year 20.</p>
+          <p style="text-align:justify;hyphens:auto"><span style="float:left;font-family:'Newsreader',serif;font-weight:200;font-size:54px;line-height:.85;padding:6px 8px 0 0;color:var(--gold)">L</span>and contributed as equity is land that pencils. The year that ended was the trust's second full year, and the Common Ground Initiative closed it with eighteen entitled sites and 5,131 units of permanent affordable housing in pipeline across Canada.</p>
+          <p style="margin-top:10px;text-align:justify;hyphens:auto">Three of those sites — Toronto, Barrie, and Listowel — are our Launchpad cohort. They break ground this year and deliver 156 homes by 2028. Non-profit operators own the buildings from day one and acquire the land, fee simple, at Year 20.</p>
           <p style="margin-top:10px;text-align:justify;hyphens:auto">The rest of this report is structured the way our balance sheet is: sites, capital, operators, governance. We owe each of you a clear accounting of all four. The numbers, in this report, do most of the work.</p>
         </div>
         <div style="margin-top:24px;font-family:'Newsreader',serif;font-style:italic;font-size:18px">Dr. Naledi Khumalo</div>
-        <div class="mono-sm" style="color:var(--ink-soft)">Chair, Board of Directors</div>
+        <div class="mono-sm" style="color:var(--ink-soft)">Chair, Board of Trustees</div>
       </div>
       <!-- RIGHT page · pull stats + ledger -->
       <div class="surface" style="aspect-ratio:8.5/11;padding:48px 48px 28px;display:flex;flex-direction:column;border-radius:0">
@@ -3530,7 +3608,7 @@
   <div class="shell">
     <h2>Public, gated,<br>internal.</h2>
     <p class="small" style="margin-top:16px;max-width:64ch">
-      Three rings. Ubuntu LTD is open about the model and closed about the
+      Three rings. The trust is open about the model and closed about the
       deal. The matrix below is the rule; everything published, sent, or
       filed should be classifiable into one ring at a glance. When in
       doubt, the inner ring.
@@ -3565,7 +3643,7 @@
       <!-- internal -->
       <div style="padding:32px;border-top:3px solid var(--terra)">
         <span class="mono-sm" style="color:var(--terra);letter-spacing:.18em">RING 03 · INTERNAL</span>
-        <h4 style="font-family:'Newsreader',serif;font-weight:300;font-size:28px;line-height:1.1;letter-spacing:-.02em;margin-top:10px">What stays<br>in the <em>organization.</em></h4>
+        <h4 style="font-family:'Newsreader',serif;font-weight:300;font-size:28px;line-height:1.1;letter-spacing:-.02em;margin-top:10px">What stays<br>in the trust.</h4>
         <ul style="margin-top:18px;font-size:13px;line-height:1.55;list-style:none;padding:0">
           <li style="border-bottom:.5px solid var(--rule);padding:8px 0">Board minutes &amp; in-camera notes</li>
           <li style="border-bottom:.5px solid var(--rule);padding:8px 0">Pricing memos · negotiation correspondence</li>
@@ -3597,12 +3675,12 @@
       </div>
       <div style="grid-column:span 8">
         <div class="kv" style="grid-template-columns:200px 1fr">
-          <dt>Owner</dt><dd>Brand &amp; Communications · brand@ubuntultd.com</dd>
+          <dt>Owner</dt><dd>Brand &amp; Communications · brand@ubuntulandtrust.ca</dd>
           <dt>Approval — Tier 1</dt><dd>Wordmark, palette, type, voice principles. Changes require board approval.</dd>
           <dt>Approval — Tier 2</dt><dd>Lockups, components, application templates. Changes require Director, Brand sign-off.</dd>
           <dt>Approval — Tier 3</dt><dd>Per-application creative within these rules. Approved by team lead.</dd>
           <dt>Review cycle</dt><dd>Annually, Q1. Documented via versioned changelog.</dd>
-          <dt>Asset library</dt><dd>brand.ubuntultd.com · access via Okta</dd>
+          <dt>Asset library</dt><dd>brand.ubuntulandtrust.ca · access via Okta</dd>
           <dt>External use</dt><dd>Operator partners may use the co-brand lockup with written permission.</dd>
         </div>
 
@@ -3627,28 +3705,109 @@
   <div style="max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);display:flex;flex-direction:column;gap:48px">
     <div class="grid-12" style="align-items:end">
       <div style="grid-column:span 7">
-        <span class="wm" style="font-size:64px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land Trust &amp; Developments</span></span>
+        <span class="wm" style="font-size:64px;color:var(--paper)"><span>Ubuntu</span><span class="dot" style="margin:0 .1em .15em"></span><span class="b">Land&nbsp;Trust</span></span>
         <p class="lead" style="color:rgba(255,255,255,.78);margin-top:24px;max-width:46ch;font-weight:300">
           A platform for non-profit housing — assembling land at portfolio scale,
           and delivering it to the operators who can build on it.
         </p>
       </div>
       <div style="grid-column:span 5;display:grid;grid-template-columns:1fr 1fr;gap:24px">
-        <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Brand &amp; Comms</div><div style="margin-top:6px">brand@ubuntultd.com</div></div>
-        <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Press</div><div style="margin-top:6px">press@ubuntultd.com</div></div>
-        <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Operators</div><div style="margin-top:6px">operators@ubuntultd.com</div></div>
-        <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Capital</div><div style="margin-top:6px">capital@ubuntultd.com</div></div>
+        <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Brand &amp; Comms</div><div style="margin-top:6px">brand@ubuntulandtrust.ca</div></div>
+        <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Press</div><div style="margin-top:6px">press@ubuntulandtrust.ca</div></div>
+        <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Operators</div><div style="margin-top:6px">operators@ubuntulandtrust.ca</div></div>
+        <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Capital</div><div style="margin-top:6px">capital@ubuntulandtrust.ca</div></div>
       </div>
     </div>
 
     <div class="colophon">
-      <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Document</div><div style="margin-top:6px">Brand Guidelines · v2.0</div></div>
+      <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Document</div><div style="margin-top:6px">Brand Guidelines · v1.0</div></div>
       <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Set in</div><div style="margin-top:6px">Newsreader · JetBrains Mono</div></div>
       <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Issued</div><div style="margin-top:6px">May 7, 2026 · Toronto</div></div>
       <div><div class="mono-sm" style="color:rgba(255,255,255,.5)">Status</div><div style="margin-top:6px">Internal · Working draft</div></div>
     </div>
   </div>
 </footer>
+
+<!-- =============== TWEAKS PANEL =============== -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+
+<div id="__tweaks_root"></div>
+<script type="text/babel">
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "gold": "#d4a04a",
+    "navy": "#1f1612",
+    "paper": "#ebdfc4",
+    "soil": "#6e4524",
+    "terra": "#a14a23",
+    "royal": "#2b3aa3",
+    "purple": "#3d2553"
+  }/*EDITMODE-END*/;
+
+  function applyTweaks(t){
+    const r = document.documentElement;
+    r.style.setProperty('--gold', t.gold);
+    r.style.setProperty('--navy', t.navy);
+    r.style.setProperty('--paper', t.paper);
+    r.style.setProperty('--soil', t.soil);
+    r.style.setProperty('--terra', t.terra);
+    r.style.setProperty('--royal', t.royal);
+    r.style.setProperty('--purple', t.purple);
+    // derived navy-deep — keeps warmth when navy goes warm-brown
+    if(t.navy === '#1f1612') r.style.setProperty('--navy-deep','#120b07');
+    else if(t.navy === '#2a1a0e') r.style.setProperty('--navy-deep','#1a0e07');
+    else if(t.navy === '#0f2235') r.style.setProperty('--navy-deep','#08172a');
+    else r.style.setProperty('--navy-deep', t.navy);
+  }
+  applyTweaks(TWEAK_DEFAULTS);
+
+  function App(){
+    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+    React.useEffect(()=>applyTweaks(t),[t]);
+    return (
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="Savannah gold" />
+        <TweakColor label="Hue" value={t.gold}
+          options={['#b8893a','#c89344','#d4a04a','#e0ad53']}
+          onChange={(v)=>setTweak('gold', v)} />
+        <TweakSection label="Depth — warm earth" />
+        <TweakColor label="Anchor" value={t.navy}
+          options={['#120b07','#1f1612','#2a1a0e','#3a2a1e','#0f2235']}
+          onChange={(v)=>setTweak('navy', v)} />
+        <TweakSection label="Paper — savannah cream" />
+        <TweakColor label="Body" value={t.paper}
+          options={['#faf6ea','#f3ead6','#ebdfc4','#e3d4b3','#d8c69e']}
+          onChange={(v)=>setTweak('paper', v)} />
+        <TweakSection label="Soil — deep loam" />
+        <TweakColor label="Earth" value={t.soil}
+          options={['#4a2d18','#6e4524','#8a5a32','#a07042']}
+          onChange={(v)=>setTweak('soil', v)} />
+        <TweakSection label="Terracotta" />
+        <TweakColor label="Clay" value={t.terra}
+          options={['#6e2e12','#8a3b1f','#a14a23','#b8602d']}
+          onChange={(v)=>setTweak('terra', v)} />
+        <TweakSection label="Royal blue — ceremony" />
+        <TweakColor label="Cobalt" value={t.royal}
+          options={['#28266a','#3d3a8c','#5063d6','#2b3aa3']}
+          onChange={(v)=>setTweak('royal', v)} />
+        <TweakSection label="Royal purple — signature" />
+        <TweakColor label="Plum" value={t.purple}
+          options={['#3d2553','#5c3a6e','#7a52b0','#9670c8']}
+          onChange={(v)=>setTweak('purple', v)} />
+      </TweaksPanel>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('__tweaks_root')).render(<App/>);
+
+  // ===== auto-print =====
+  (async () => {
+    try { if (document.fonts && document.fonts.ready) await document.fonts.ready; } catch(e){}
+    await new Promise(r => setTimeout(r, 600));
+    window.print();
+  })();
+</script>
 
 </body>
 </html>
