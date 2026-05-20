@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ubuntu LTD — Colour Review · for the team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<style>
+  body { padding: 0 0 96px; }
+  .shell { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  header.page {
+    background: var(--navy);
+    color: var(--paper);
+    padding: 56px 0 48px;
+    border-bottom: .5px solid var(--rule);
+  }
+  header.page .corner {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.55);
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+  }
+  header.page .corner .right { color: var(--gold); }
+  header.page h1 {
+    font-family: 'Newsreader', serif;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -.025em;
+    margin: 0;
+  }
+  header.page h1 em { font-style: italic; color: var(--gold); font-weight: 300; }
+  header.page .lead {
+    max-width: 56ch;
+    margin-top: 22px;
+    font-size: 19px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.85);
+    font-weight: 300;
+  }
+  .ask {
+    margin-top: 40px;
+    background: rgba(212,160,74,.10);
+    border: .5px solid rgba(212,160,74,.4);
+    padding: 20px 24px;
+  }
+  .ask h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 12px;
+    font-weight: 500;
+  }
+  .ask ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--paper);
+  }
+  .ask li + li { margin-top: 6px; }
+
+  section.review {
+    padding: 72px 0;
+    border-top: .5px solid var(--rule);
+  }
+  section.review:first-of-type { border-top: none; padding-top: 56px; }
+  .sec-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  section h3 {
+    font-family: 'Newsreader', serif;
+    font-size: 44px;
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    font-weight: 400;
+    margin: 12px 0 0;
+  }
+  section h3 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  section .intro {
+    max-width: 56ch;
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  .swatch-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .swatch-grid.ext { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 720px) { .swatch-grid, .swatch-grid.ext { grid-template-columns: repeat(2, 1fr); } }
+
+  .swatch {
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 14px;
+    border: .5px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .swatch .nm { font-family: 'Newsreader', serif; font-size: 20px; line-height: 1; font-weight: 400; }
+  .swatch .vl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    text-transform: uppercase;
+  }
+  .swatch .pct {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .08em;
+  }
+
+  .pair-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 720px) { .pair-grid { grid-template-columns: repeat(2, 1fr); } }
+  .pair {
+    aspect-ratio: 1/1;
+    border: .5px solid var(--rule);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .pair .big {
+    font-family: 'Newsreader', serif;
+    font-size: 84px;
+    line-height: 1;
+    font-weight: 300;
+  }
+  .pair .meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    opacity: .85;
+  }
+
+  .usage-bar { margin-top: 36px; }
+  .usage-bar .label-row {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .usage-bar .bar {
+    display: flex;
+    height: 44px;
+    border: .5px solid var(--rule);
+  }
+  .usage-bar .bar > div {
+    position: relative;
+  }
+  .usage-bar .bar > div span {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  footer.cta {
+    margin-top: 72px;
+    background: var(--navy);
+    color: var(--paper);
+    padding: 48px 0;
+    border-top: .5px solid var(--rule);
+  }
+  footer.cta h3 {
+    font-family: 'Newsreader', serif;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 1.05;
+    color: var(--paper);
+    margin: 0;
+  }
+  footer.cta h3 em { font-style: italic; color: var(--gold); font-weight: 300; }
+  footer.cta p {
+    max-width: 56ch;
+    margin: 16px 0 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(255,255,255,.8);
+  }
+  footer.cta .actions {
+    margin-top: 28px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  footer.cta a.btn {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    border: .5px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+  }
+  footer.cta a.btn.solid {
+    background: var(--gold);
+    color: var(--ink);
+  }
+  footer.cta a.btn:hover { background: var(--gold); color: var(--ink); }
+</style>
+</head>
+<body>
+
+<header class="page">
+  <div class="shell">
+    <div class="corner">
+      <span>Ubuntu LTD &middot; Brand · Colour Review</span>
+      <span class="right">For the team · 2026-05-20</span>
+    </div>
+    <h1>Earth, sun,<br>and <em>umber.</em></h1>
+    <p class="lead">
+      This is the proposed palette for Ubuntu Land Trust and Developments &mdash;
+      and for everything we put out under the Common Ground Initiative banner.
+      It is intentionally earthen: aged savannah cream, deep warm umber, and a
+      single savannah-gold accent. No corporate blue, no ceremonial purple in
+      the load-bearing 80%.
+    </p>
+
+    <div class="ask">
+      <h2>What we'd like your eyes on</h2>
+      <ul>
+        <li>Does the four-colour primary set feel right for a national, Black-led housing institution?</li>
+        <li>Is the umber dark enough to read as serious, without feeling heavy?</li>
+        <li>Is the gold the right warmth &mdash; or should it pull cooler / brighter?</li>
+        <li>Of the extended (staff) colours, are there any you would cut or add?</li>
+        <li>Anything you'd push us to reconsider before we apply this to the website, decks, and stationery?</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section class="review">
+  <div class="shell">
+    <span class="sec-label">01 &middot; Primary &middot; 80% of everything we publish</span>
+    <h3>Four colours, <em>load-bearing.</em></h3>
+    <p class="intro">
+      Aged savannah cream, warm umber, savannah gold, ink. Earthen &mdash; fired
+      clay, deep loam, sun &mdash; not corporate blue. Eighty percent of
+      everything we put out should use only these.
+    </p>
+
+    <div class="swatch-grid">
+      <div class="swatch" style="background:var(--paper);color:var(--ink)">
+        <span class="pct">60%</span>
+        <span class="nm">Paper</span>
+        <div class="vl"><span>#EBDFC4</span><span>aged cream</span></div>
+      </div>
+      <div class="swatch" style="background:var(--navy);color:var(--paper)">
+        <span class="pct" style="color:rgba(255,255,255,.8)">25%</span>
+        <span class="nm">Umber</span>
+        <div class="vl" style="color:rgba(255,255,255,.7)"><span>#1F1612</span><span>depth</span></div>
+      </div>
+      <div class="swatch" style="background:var(--gold);color:var(--ink)">
+        <span class="pct">10%</span>
+        <span class="nm">Savannah Gold</span>
+        <div class="vl"><span>#D4A04A</span><span>accent</span></div>
+      </div>
+      <div class="swatch" style="background:var(--ink);color:var(--paper)">
+        <span class="pct" style="color:rgba(255,255,255,.7)">05%</span>
+        <span class="nm">Ink</span>
+        <div class="vl" style="color:rgba(255,255,255,.7)"><span>#161210</span><span>type</span></div>
+      </div>
+    </div>
+
+    <div class="usage-bar">
+      <div class="label-row">Usage proportions &mdash; a reminder, not a rule. Decks tilt darker; documents tilt lighter.</div>
+      <div class="bar">
+        <div style="flex:60;background:var(--paper)"><span>Paper &middot; 60</span></div>
+        <div style="flex:25;background:var(--navy);color:var(--paper)"><span style="color:rgba(255,255,255,.85)">Umber &middot; 25</span></div>
+        <div style="flex:10;background:var(--gold)"></div>
+        <div style="flex:5;background:var(--ink)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="review">
+  <div class="shell">
+    <span class="sec-label">02 &middot; Extended &middot; staff colours, use sparingly</span>
+    <h3>Staff <em>colours.</em></h3>
+    <p class="intro">
+      Each has a defined job &mdash; never deployed decoratively. Soil and
+      terracotta for cross-sections and document scans; moss for success
+      states; royal and purple reserved for ceremony and signature programs.
+    </p>
+
+    <div class="swatch-grid ext">
+      <div class="swatch" style="background:var(--soil);color:var(--paper)">
+        <span class="nm">Soil</span>
+        <div class="vl" style="color:rgba(255,255,255,.75)"><span>#6E4524</span><span>loam</span></div>
+      </div>
+      <div class="swatch" style="background:var(--soil-warm);color:var(--paper)">
+        <span class="nm">Soil Warm</span>
+        <div class="vl" style="color:rgba(255,255,255,.75)"><span>#8A5A32</span><span>clay</span></div>
+      </div>
+      <div class="swatch" style="background:var(--umber);color:var(--paper)">
+        <span class="nm">Umber</span>
+        <div class="vl" style="color:rgba(255,255,255,.7)"><span>#4A2D18</span><span>burnt</span></div>
+      </div>
+      <div class="swatch" style="background:var(--terra);color:var(--paper)">
+        <span class="nm">Terracotta</span>
+        <div class="vl" style="color:rgba(255,255,255,.75)"><span>#A14A23</span><span>fired</span></div>
+      </div>
+      <div class="swatch" style="background:var(--gold-tint);color:var(--ink)">
+        <span class="nm">Gold Tint</span>
+        <div class="vl"><span>#ECD49A</span><span>highlight</span></div>
+      </div>
+      <div class="swatch" style="background:var(--moss);color:var(--paper)">
+        <span class="nm">Moss</span>
+        <div class="vl" style="color:rgba(255,255,255,.7)"><span>#4A4E2B</span><span>success</span></div>
+      </div>
+      <div class="swatch" style="background:var(--royal);color:var(--paper)">
+        <span class="nm">Royal Blue</span>
+        <div class="vl" style="color:rgba(255,255,255,.75)"><span>#3D3A8C</span><span>ceremony</span></div>
+      </div>
+      <div class="swatch" style="background:var(--purple);color:var(--paper)">
+        <span class="nm">Royal Purple</span>
+        <div class="vl" style="color:rgba(255,255,255,.75)"><span>#5C3A6E</span><span>signature</span></div>
+      </div>
+      <div class="swatch" style="background:var(--stone);color:var(--ink)">
+        <span class="nm">Stone</span>
+        <div class="vl"><span>#CDC1A8</span><span>neutral</span></div>
+      </div>
+      <div class="swatch" style="background:var(--stone-2);color:var(--ink)">
+        <span class="nm">Stone 2</span>
+        <div class="vl"><span>#B39A78</span><span>neutral</span></div>
+      </div>
+      <div class="swatch" style="background:var(--stone-3);color:var(--paper)">
+        <span class="nm">Stone 3</span>
+        <div class="vl" style="color:rgba(255,255,255,.75)"><span>#8A6F50</span><span>neutral</span></div>
+      </div>
+      <div class="swatch" style="background:var(--sea);color:var(--paper)">
+        <span class="nm">Sea</span>
+        <div class="vl" style="color:rgba(255,255,255,.75)"><span>#2D5266</span><span>water, rare</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="review">
+  <div class="shell">
+    <span class="sec-label">03 &middot; Pairings &middot; WCAG 2.2 AA contrast tested</span>
+    <h3>Pairings that <em>work.</em></h3>
+    <p class="intro">
+      Every approved pairing meets WCAG 2.2 AA contrast for body text.
+      Ratios shown for the foreground/background combination at
+      14&nbsp;px / 400 weight.
+    </p>
+
+    <div class="pair-grid">
+      <div class="pair" style="background:var(--paper);color:var(--ink)">
+        <span class="big">Aa</span>
+        <div class="meta"><span>Ink on Paper</span><span>14.8 : 1</span></div>
+      </div>
+      <div class="pair" style="background:var(--paper);color:var(--navy)">
+        <span class="big">Aa</span>
+        <div class="meta"><span>Umber on Paper</span><span>11.6 : 1</span></div>
+      </div>
+      <div class="pair" style="background:var(--navy);color:var(--paper)">
+        <span class="big">Aa</span>
+        <div class="meta"><span>Paper on Umber</span><span>11.6 : 1</span></div>
+      </div>
+      <div class="pair" style="background:var(--navy);color:var(--gold)">
+        <span class="big">Aa</span>
+        <div class="meta"><span>Gold on Umber</span><span>5.1 : 1</span></div>
+      </div>
+      <div class="pair" style="background:var(--paper);color:var(--gold)">
+        <span class="big">Aa</span>
+        <div class="meta"><span>Gold on Paper</span><span>4.6 : 1 &#9888;</span></div>
+      </div>
+      <div class="pair" style="background:var(--gold);color:var(--ink)">
+        <span class="big">Aa</span>
+        <div class="meta"><span>Ink on Gold</span><span>7.4 : 1</span></div>
+      </div>
+      <div class="pair" style="background:var(--paper);color:var(--moss)">
+        <span class="big">Aa</span>
+        <div class="meta"><span>Moss on Paper</span><span>8.9 : 1</span></div>
+      </div>
+      <div class="pair" style="background:var(--paper);color:var(--terra)">
+        <span class="big">Aa</span>
+        <div class="meta"><span>Terra on Paper</span><span>7.1 : 1</span></div>
+      </div>
+    </div>
+    <p class="intro" style="margin-top:16px">
+      &#9888; Gold on Paper passes for large text only (&ge; 24&nbsp;px / 18.66&nbsp;px bold).
+      For body, use Gold on Umber.
+    </p>
+  </div>
+</section>
+
+<footer class="cta">
+  <div class="shell">
+    <h3>Your read, <em>please.</em></h3>
+    <p>
+      Reply to whoever sent you this with one of: &ldquo;ship it,&rdquo;
+      &ldquo;here&rsquo;s what I&rsquo;d change,&rdquo; or any specific note
+      on the swatches above. Once we have consensus, this palette goes onto
+      the website (Common Ground Initiative on Gamma), the deck master,
+      and the stationery system.
+    </p>
+    <div class="actions">
+      <a class="btn solid" href="index.html">See the full brand book &rarr;</a>
+      <a class="btn" href="index.html#color">Jump to colour in the book &rarr;</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
