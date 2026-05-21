@@ -93,107 +93,213 @@
     </p>
 
     <div class="ontario-map">
-      <svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="map-title">
-        <title id="map-title">Southern Ontario corridor — Ubuntu LTD pipeline distribution map</title>
+      <svg viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="map-title">
+        <title id="map-title">Ontario — Ubuntu LTD pipeline distribution map. All 18 sites cluster in the southern corridor.</title>
 
-        <!-- Georgian Bay (top left) -->
-        <path d="M 80,80 C 180,60 280,75 340,140 C 360,175 330,220 280,225 C 220,228 160,200 120,160 C 95,135 75,105 80,80 Z"
-              fill="#9fb6c0" fill-opacity="0.35" stroke="#2d5266" stroke-width="0.5" stroke-opacity="0.4"/>
-        <text x="200" y="155" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2"
-              fill="#1a3848" fill-opacity="0.55" text-anchor="middle">GEORGIAN BAY</text>
+        <!-- subtle latitude reference lines -->
+        <line x1="0" y1="200" x2="900" y2="200" stroke="#1f1612" stroke-opacity="0.05" stroke-width="0.5" stroke-dasharray="1,4"/>
+        <line x1="0" y1="400" x2="900" y2="400" stroke="#1f1612" stroke-opacity="0.05" stroke-width="0.5" stroke-dasharray="1,4"/>
+        <line x1="0" y1="600" x2="900" y2="600" stroke="#1f1612" stroke-opacity="0.05" stroke-width="0.5" stroke-dasharray="1,4"/>
 
-        <!-- Lake Ontario (bottom right) -->
-        <path d="M 380,420 C 460,400 580,395 720,420 C 820,438 870,468 870,500 L 380,500 Z"
-              fill="#9fb6c0" fill-opacity="0.35" stroke="#2d5266" stroke-width="0.5" stroke-opacity="0.4"/>
-        <text x="620" y="475" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2.5"
-              fill="#1a3848" fill-opacity="0.6" text-anchor="middle">LAKE ONTARIO</text>
+        <!-- Hudson Bay (top, outside Ontario) -->
+        <rect x="0" y="0" width="900" height="95" fill="#9fb6c0" fill-opacity="0.18"/>
+        <text x="450" y="42" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="3.5"
+              fill="#1a3848" fill-opacity="0.55" text-anchor="middle">HUDSON BAY</text>
 
-        <!-- Lake Simcoe (small, between Toronto and Barrie) -->
-        <ellipse cx="570" cy="240" rx="32" ry="22" fill="#9fb6c0" fill-opacity="0.35" stroke="#2d5266" stroke-width="0.5" stroke-opacity="0.4"/>
-        <text x="570" y="244" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="1.2"
+        <!-- Quebec border indicator (right edge) -->
+        <text x="845" y="370" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2.5"
+              fill="#1f1612" fill-opacity="0.4" text-anchor="middle" transform="rotate(90 845 370)">QUEBEC →</text>
+
+        <!-- Manitoba border indicator (left edge) -->
+        <text x="22" y="280" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2.5"
+              fill="#1f1612" fill-opacity="0.4" text-anchor="middle" transform="rotate(-90 22 280)">← MANITOBA</text>
+
+        <!-- ============= ONTARIO SILHOUETTE ============= -->
+        <path d="
+          M 70,100
+          C 220,82 380,72 520,82
+          C 620,92 680,118 700,160
+          C 712,210 692,275 678,320
+          C 700,355 730,395 760,430
+          C 790,470 808,500 808,535
+          L 768,548
+          C 705,565 640,580 575,598
+          L 552,632
+          L 540,668
+          C 522,688 482,694 442,684
+          C 360,678 280,664 210,640
+          L 152,620 118,592
+          L 132,548
+          C 168,512 208,488 248,464
+          L 263,418 273,366
+          C 290,355 310,365 314,402
+          L 322,456
+          C 292,488 240,500 195,498
+          C 138,494 88,472 70,442
+          L 58,395 48,310 52,200 70,100 Z
+        " fill="#ebdfc4" stroke="#6e4524" stroke-width="1.2" stroke-opacity="0.55"/>
+
+        <!-- Inner shading for depth -->
+        <path d="
+          M 70,100
+          C 220,82 380,72 520,82
+          C 620,92 680,118 700,160
+          C 712,210 692,275 678,320
+        " fill="none" stroke="#6e4524" stroke-width="0.5" stroke-opacity="0.2"/>
+
+        <!-- ============= GREAT LAKES (overlays) ============= -->
+
+        <!-- Lake Superior -->
+        <path d="M 25,330 C 100,308 200,310 252,360 C 240,418 145,452 85,442 C 50,425 22,388 25,330 Z"
+              fill="#9fb6c0" fill-opacity="0.5" stroke="#2d5266" stroke-width="0.6" stroke-opacity="0.4"/>
+        <text x="130" y="385" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2.5"
+              fill="#1a3848" fill-opacity="0.65" text-anchor="middle">LAKE SUPERIOR</text>
+
+        <!-- Lake Huron -->
+        <path d="M 70,470 C 130,450 195,470 235,510 C 248,548 222,585 175,592 C 122,582 85,545 80,505 C 78,492 75,478 70,470 Z"
+              fill="#9fb6c0" fill-opacity="0.5" stroke="#2d5266" stroke-width="0.6" stroke-opacity="0.4"/>
+        <text x="155" y="548" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2.5"
+              fill="#1a3848" fill-opacity="0.65" text-anchor="middle">LAKE HURON</text>
+
+        <!-- Georgian Bay (bay extending into Ontario) -->
+        <path d="M 325,415 C 385,425 430,440 458,470 C 450,508 408,528 362,520 C 330,510 312,470 325,415 Z"
+              fill="#9fb6c0" fill-opacity="0.55" stroke="#2d5266" stroke-width="0.6" stroke-opacity="0.4"/>
+        <text x="395" y="488" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="2"
+              fill="#1a3848" fill-opacity="0.6" text-anchor="middle">GEORGIAN BAY</text>
+
+        <!-- Lake Simcoe (small, inside province) -->
+        <ellipse cx="560" cy="560" rx="22" ry="14" fill="#9fb6c0" fill-opacity="0.55"
+                 stroke="#2d5266" stroke-width="0.4" stroke-opacity="0.4"/>
+        <text x="560" y="588" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="1"
               fill="#1a3848" fill-opacity="0.55" text-anchor="middle">L. SIMCOE</text>
 
-        <!-- corridor spine (subtle) -->
-        <line x1="280" y1="320" x2="640" y2="380" stroke="#1f1612" stroke-width="0.5" stroke-opacity="0.12" stroke-dasharray="2,4"/>
-        <line x1="540" y1="180" x2="640" y2="380" stroke="#1f1612" stroke-width="0.5" stroke-opacity="0.12" stroke-dasharray="2,4"/>
+        <!-- Lake Ontario -->
+        <path d="M 580,640 C 660,625 760,625 832,650 C 820,682 740,696 660,690 C 600,680 575,665 580,640 Z"
+              fill="#9fb6c0" fill-opacity="0.55" stroke="#2d5266" stroke-width="0.6" stroke-opacity="0.4"/>
+        <text x="720" y="675" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2.5"
+              fill="#1a3848" fill-opacity="0.7" text-anchor="middle">LAKE ONTARIO</text>
 
-        <!-- CITY PINS (size proportional to unit count, sqrt scale) -->
+        <!-- Lake Erie -->
+        <path d="M 195,690 C 305,675 470,672 555,688 C 575,710 470,718 340,718 C 250,718 195,710 195,690 Z"
+              fill="#9fb6c0" fill-opacity="0.5" stroke="#2d5266" stroke-width="0.6" stroke-opacity="0.4"/>
+        <text x="380" y="710" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2.5"
+              fill="#1a3848" fill-opacity="0.65" text-anchor="middle">LAKE ERIE</text>
+
+        <!-- ============= ONTARIO label in empty north ============= -->
+        <text x="430" y="230" font-family="Newsreader, serif" font-size="56" font-weight="300" letter-spacing="8"
+              fill="#6e4524" fill-opacity="0.13" text-anchor="middle">ONTARIO</text>
+        <text x="430" y="260" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="4"
+              fill="#6e4524" fill-opacity="0.35" text-anchor="middle">PIPELINE · 18 SITES · 5,131 HOMES</text>
+
+        <!-- Subtle "concentrated in the south" hint -->
+        <text x="450" y="320" font-family="Newsreader, serif" font-size="13" font-style="italic" font-weight="300"
+              fill="#6e4524" fill-opacity="0.45" text-anchor="middle">All sites cluster along the southern corridor →</text>
+
+        <!-- ============= CITY PINS ============= -->
+
         <!-- Port Severn: 416 units, north -->
-        <g transform="translate(540, 130)">
-          <circle r="13" fill="#d4a04a" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="0" y="-22" font-family="Newsreader, serif" font-size="12" font-weight="500" fill="#1f1612" text-anchor="middle">Port Severn</text>
-          <text x="0" y="-9" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#3a2d22" text-anchor="middle">416</text>
+        <g transform="translate(495, 478)">
+          <circle r="11" fill="#d4a04a" stroke="#1f1612" stroke-width="0.7"/>
+          <line x1="0" y1="-12" x2="0" y2="-28" stroke="#1f1612" stroke-width="0.5"/>
+          <text x="0" y="-35" font-family="Newsreader, serif" font-size="12" font-weight="500" fill="#1f1612" text-anchor="middle">Port Severn</text>
+          <text x="0" y="-22" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#3a2d22" text-anchor="middle">416</text>
         </g>
 
-        <!-- Penetanguishene (Simcoe County): 560 units -->
-        <g transform="translate(490, 175)">
-          <circle r="15" fill="#d4a04a" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="-22" y="4" font-family="Newsreader, serif" font-size="12" font-weight="500" fill="#1f1612" text-anchor="end">Penetanguishene</text>
-          <text x="-22" y="18" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#3a2d22" text-anchor="end">560</text>
+        <!-- Penetanguishene: 560 units -->
+        <g transform="translate(478, 510)">
+          <circle r="13" fill="#d4a04a" stroke="#1f1612" stroke-width="0.7"/>
+          <line x1="-13" y1="-2" x2="-32" y2="-10" stroke="#1f1612" stroke-width="0.5"/>
+          <text x="-36" y="-13" font-family="Newsreader, serif" font-size="11" font-weight="500" fill="#1f1612" text-anchor="end">Penetanguishene</text>
+          <text x="-36" y="-1" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#3a2d22" text-anchor="end">560</text>
         </g>
 
-        <!-- Barrie: 1024 units (4 sites — biggest pin, Launchpad site) -->
-        <g transform="translate(610, 220)">
-          <circle r="22" fill="#a14a23" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="0" y="-30" font-family="Newsreader, serif" font-size="14" font-weight="500" fill="#1f1612" text-anchor="middle">Barrie</text>
-          <text x="0" y="-15" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="middle">1,024 · 4 sites</text>
+        <!-- Barrie: 1024 units (4 sites — biggest pin, Launchpad terracotta) -->
+        <g transform="translate(548, 545)">
+          <circle r="20" fill="#a14a23" stroke="#1f1612" stroke-width="0.8"/>
+          <line x1="20" y1="0" x2="44" y2="0" stroke="#1f1612" stroke-width="0.6"/>
+          <text x="50" y="-3" font-family="Newsreader, serif" font-size="14" font-weight="500" fill="#1f1612" text-anchor="start">Barrie</text>
+          <text x="50" y="11" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="start">1,024 · 4 sites</text>
         </g>
 
         <!-- Angus: 148 units, SW of Barrie -->
-        <g transform="translate(540, 270)">
-          <circle r="8" fill="#d4a04a" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="-14" y="4" font-family="Newsreader, serif" font-size="11" font-weight="500" fill="#1f1612" text-anchor="end">Angus</text>
-          <text x="-14" y="16" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#3a2d22" text-anchor="end">148</text>
+        <g transform="translate(498, 582)">
+          <circle r="7" fill="#d4a04a" stroke="#1f1612" stroke-width="0.6"/>
+          <line x1="-7" y1="0" x2="-22" y2="0" stroke="#1f1612" stroke-width="0.4"/>
+          <text x="-26" y="-2" font-family="Newsreader, serif" font-size="10" font-weight="500" fill="#1f1612" text-anchor="end">Angus</text>
+          <text x="-26" y="10" font-family="JetBrains Mono, monospace" font-size="8" font-weight="500" fill="#3a2d22" text-anchor="end">148</text>
         </g>
 
-        <!-- Listowel: 24 units, west (Launchpad) -->
-        <g transform="translate(240, 280)">
-          <circle r="6" fill="#a14a23" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="0" y="-14" font-family="Newsreader, serif" font-size="11" font-weight="500" fill="#1f1612" text-anchor="middle">Listowel</text>
-          <text x="0" y="-2" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#3a2d22" text-anchor="middle">24</text>
+        <!-- King City: 105 units, between Barrie and Toronto -->
+        <g transform="translate(580, 588)">
+          <circle r="6" fill="#d4a04a" stroke="#1f1612" stroke-width="0.6"/>
+          <line x1="6" y1="0" x2="24" y2="0" stroke="#1f1612" stroke-width="0.4"/>
+          <text x="28" y="-2" font-family="Newsreader, serif" font-size="10" font-weight="500" fill="#1f1612" text-anchor="start">King City</text>
+          <text x="28" y="10" font-family="JetBrains Mono, monospace" font-size="8" font-weight="500" fill="#3a2d22" text-anchor="start">105</text>
         </g>
 
-        <!-- King City: 105 units, north of Toronto -->
-        <g transform="translate(620, 305)">
-          <circle r="7" fill="#d4a04a" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="14" y="4" font-family="Newsreader, serif" font-size="11" font-weight="500" fill="#1f1612" text-anchor="start">King City</text>
-          <text x="14" y="16" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#3a2d22" text-anchor="start">105</text>
+        <!-- Listowel: 24 units, west (Launchpad terracotta) -->
+        <g transform="translate(348, 578)">
+          <circle r="5" fill="#a14a23" stroke="#1f1612" stroke-width="0.6"/>
+          <line x1="0" y1="-5" x2="0" y2="-20" stroke="#1f1612" stroke-width="0.4"/>
+          <text x="0" y="-27" font-family="Newsreader, serif" font-size="10" font-weight="500" fill="#1f1612" text-anchor="middle">Listowel</text>
+          <text x="0" y="-14" font-family="JetBrains Mono, monospace" font-size="8" font-weight="500" fill="#3a2d22" text-anchor="middle">24</text>
         </g>
 
-        <!-- Brampton: 940 units, NW of Toronto -->
-        <g transform="translate(530, 350)">
-          <circle r="20" fill="#d4a04a" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="-26" y="0" font-family="Newsreader, serif" font-size="13" font-weight="500" fill="#1f1612" text-anchor="end">Brampton</text>
-          <text x="-26" y="14" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="end">940</text>
+        <!-- Brampton: 940 units -->
+        <g transform="translate(495, 618)">
+          <circle r="19" fill="#d4a04a" stroke="#1f1612" stroke-width="0.8"/>
+          <line x1="-19" y1="0" x2="-38" y2="0" stroke="#1f1612" stroke-width="0.6"/>
+          <text x="-42" y="-3" font-family="Newsreader, serif" font-size="13" font-weight="500" fill="#1f1612" text-anchor="end">Brampton</text>
+          <text x="-42" y="10" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="end">940</text>
         </g>
 
-        <!-- Toronto: 449 units (4 sites, 2 Launchpad) -->
-        <g transform="translate(660, 380)">
-          <circle r="16" fill="#a14a23" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="22" y="-2" font-family="Newsreader, serif" font-size="14" font-weight="500" fill="#1f1612" text-anchor="start">Toronto</text>
-          <text x="22" y="14" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="start">449 · 4 sites</text>
+        <!-- Toronto: 449 units (4 sites, 2 Launchpad — terracotta) -->
+        <g transform="translate(608, 625)">
+          <circle r="15" fill="#a14a23" stroke="#1f1612" stroke-width="0.8"/>
+          <line x1="15" y1="-5" x2="40" y2="-22" stroke="#1f1612" stroke-width="0.6"/>
+          <text x="45" y="-24" font-family="Newsreader, serif" font-size="14" font-weight="500" fill="#1f1612" text-anchor="start">Toronto</text>
+          <text x="45" y="-10" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="start">449 · 4 sites</text>
         </g>
 
         <!-- Burlington: 744 units -->
-        <g transform="translate(560, 400)">
-          <circle r="18" fill="#d4a04a" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="-24" y="0" font-family="Newsreader, serif" font-size="13" font-weight="500" fill="#1f1612" text-anchor="end">Burlington</text>
-          <text x="-24" y="14" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="end">744</text>
+        <g transform="translate(538, 658)">
+          <circle r="17" fill="#d4a04a" stroke="#1f1612" stroke-width="0.8"/>
+          <line x1="-17" y1="-5" x2="-38" y2="-28" stroke="#1f1612" stroke-width="0.6"/>
+          <text x="-42" y="-31" font-family="Newsreader, serif" font-size="13" font-weight="500" fill="#1f1612" text-anchor="end">Burlington</text>
+          <text x="-42" y="-18" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="end">744</text>
         </g>
 
         <!-- Hamilton: 721 units (3 sites) -->
-        <g transform="translate(470, 410)">
-          <circle r="18" fill="#d4a04a" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="-24" y="0" font-family="Newsreader, serif" font-size="13" font-weight="500" fill="#1f1612" text-anchor="end">Hamilton</text>
-          <text x="-24" y="14" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="end">721 · 3 sites</text>
+        <g transform="translate(465, 662)">
+          <circle r="17" fill="#d4a04a" stroke="#1f1612" stroke-width="0.8"/>
+          <line x1="-17" y1="5" x2="-38" y2="22" stroke="#1f1612" stroke-width="0.6"/>
+          <text x="-42" y="20" font-family="Newsreader, serif" font-size="13" font-weight="500" fill="#1f1612" text-anchor="end">Hamilton</text>
+          <text x="-42" y="33" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="end">721 · 3 sites</text>
         </g>
 
-        <!-- compass + scale corner -->
-        <g transform="translate(810, 80)">
-          <text x="0" y="0" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2" fill="#3a2d22" fill-opacity="0.7" text-anchor="middle">N</text>
-          <line x1="0" y1="8" x2="0" y2="32" stroke="#1f1612" stroke-width="0.5" stroke-opacity="0.5"/>
-          <polygon points="-3,12 0,5 3,12" fill="#1f1612" fill-opacity="0.6"/>
+        <!-- ============= COMPASS ============= -->
+        <g transform="translate(830, 120)">
+          <text x="0" y="0" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2"
+                fill="#3a2d22" fill-opacity="0.7" text-anchor="middle">N</text>
+          <line x1="0" y1="8" x2="0" y2="38" stroke="#1f1612" stroke-width="0.6" stroke-opacity="0.5"/>
+          <polygon points="-4,14 0,5 4,14" fill="#1f1612" fill-opacity="0.6"/>
         </g>
+
+        <!-- ============= SCALE BAR ============= -->
+        <g transform="translate(720, 60)">
+          <line x1="0" y1="0" x2="80" y2="0" stroke="#1f1612" stroke-width="1.2" stroke-opacity="0.5"/>
+          <line x1="0" y1="-4" x2="0" y2="4" stroke="#1f1612" stroke-width="0.8" stroke-opacity="0.5"/>
+          <line x1="80" y1="-4" x2="80" y2="4" stroke="#1f1612" stroke-width="0.8" stroke-opacity="0.5"/>
+          <text x="40" y="-8" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.5"
+                fill="#3a2d22" fill-opacity="0.7" text-anchor="middle">~ 300 KM</text>
+        </g>
+
+        <!-- ============= CARTOUCHE (bottom corner) ============= -->
+        <g transform="translate(50, 695)">
+          <text x="0" y="0" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="2"
+                fill="#3a2d22" fill-opacity="0.55">UBUNTU LTD · PIPELINE MAP · MAY 2026</text>
+        </g>
+
       </svg>
 
       <div class="map-legend">
