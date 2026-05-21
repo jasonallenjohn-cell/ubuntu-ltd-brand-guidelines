@@ -4,59 +4,118 @@
   <meta charset="utf-8">
   <title>Ubuntu LTD — Email Signature (paste-ready)</title>
   <style>
-    body { font-family: -apple-system, system-ui, sans-serif; background:#f3ead6; color:#161210; padding:32px; max-width:760px; margin:0 auto; }
-    h1 { font-size:20px; font-weight:600; margin:0 0 6px; }
-    p  { font-size:13px; line-height:1.5; color:#3a2d22; margin:0 0 18px; }
-    .panel { background:#fff; border:.5px solid #1f1612; padding:24px 28px; margin:24px 0; }
-    .label { font-family:'JetBrains Mono', ui-monospace, monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:#3a2d22; margin-bottom:14px; display:block; }
-    code { font-family:'JetBrains Mono', ui-monospace, monospace; font-size:11px; background:#ebdfc4; padding:1px 5px; border-radius:2px; }
-    .how { background:#ebdfc4; padding:18px 24px; border-left:3px solid #d4a04a; font-size:13px; }
+    body { font-family: -apple-system, system-ui, sans-serif; background:#f3ead6; color:#161210; padding:32px; max-width:780px; margin:0 auto; }
+    h1 { font-size:24px; font-weight:600; margin:0 0 8px; }
+    h2 { font-size:14px; font-weight:600; margin:32px 0 8px; }
+    p  { font-size:14px; line-height:1.55; color:#3a2d22; margin:0 0 16px; }
+    .panel { background:#fff; border:.5px solid #1f1612; padding:28px 32px; margin:20px 0; position:relative; }
+    .label { font-family:'JetBrains Mono', ui-monospace, monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#3a2d22; margin-bottom:18px; display:block; }
+    code { font-family:'JetBrains Mono', ui-monospace, monospace; font-size:12px; background:#ebdfc4; padding:2px 6px; border-radius:2px; }
+    .how { background:#ebdfc4; padding:20px 24px; border-left:3px solid #d4a04a; font-size:14px; line-height:1.55; }
+    .how strong { color:#161210; }
+    ol { padding-left:20px; margin:8px 0 0; }
+    ol li { margin-bottom:6px; line-height:1.55; }
+    .steps { font-size:13px; color:#3a2d22; margin-bottom:24px; }
   </style>
 </head>
 <body>
 
 <h1>Ubuntu LTD — Email signature</h1>
-<p>Three variants from Brand Guidelines §29d. Replace the highlighted fields with your own. Copy the rendered signature, not the source — open this file in a browser, select-all in the box below, paste into Gmail / Outlook signature settings.</p>
-
-<!-- =================== FULL =================== -->
-<div class="panel">
-  <span class="label">Variant A · Full (external, partners, press, deal traffic)</span>
-  <div style="font-family:Georgia,'Charter',serif;font-size:13px;line-height:1.35;color:#1f1612">
-    <strong style="font-weight:600">[YOUR NAME]</strong> &middot; [YOUR TITLE]<br>
-    <span style="color:#161210">Ubuntu Land Trust &amp; Developments</span><br>
-    <span style="font-style:italic;color:#3a2d22">Unlocking land for affordable housing at scale across Canada.</span>
-  </div>
-  <div style="margin-top:10px;font-family:'SF Mono',Consolas,monospace;font-size:10.5px;line-height:1.5;color:#3a2d22;letter-spacing:.02em">
-    [PHONE]  &middot;  ubuntultd.com<br>
-    100 KING ST W  &middot;  TORONTO ON  &middot;  M5X 1G5<br>
-    <span style="color:#A89C88">Confidential &mdash; see footer</span>
-  </div>
-</div>
-
-<!-- =================== SHORT =================== -->
-<div class="panel">
-  <span class="label">Variant B · Short (internal / replies in long threads)</span>
-  <div style="font-family:Georgia,'Charter',serif;font-size:13px;line-height:1.4;color:#1f1612">
-    <strong>[FIRST NAME]</strong> &middot; [DEPT/ROLE]<br>
-    <span style="color:#3a2d22;font-style:italic">[PHONE]</span>
-  </div>
-</div>
-
-<!-- =================== OOO =================== -->
-<div class="panel">
-  <span class="label">Variant C · Out-of-office auto-reply</span>
-  <div style="font-family:Georgia,'Charter',serif;font-size:13px;line-height:1.4;color:#1f1612">
-    I'm at [WHERE] [DATE RANGE]. I'll respond on the [RETURN DATE].<br>
-    <span style="color:#3a2d22">For urgent matters please reach [COLLEAGUE] &mdash; [COLLEAGUE EMAIL].</span>
-  </div>
-</div>
+<p>Three signature variants pre-filled with Jonathan Okubay as the demo name. To use your own, replace the highlighted text fields. The signatures use inline styles only — Gmail and Outlook will preserve them when you paste.</p>
 
 <div class="how">
-  <strong>Rules (from §29d):</strong>
-  No images. No "Sent from my…". No quotes. No rotating banners.
-  No pronouns inside the signature block (they go elsewhere if you want them).
-  Four lines max for the full variant. Domain is <code>ubuntultd.com</code> (canonical).
-  Org name in full: <strong>Ubuntu Land Trust &amp; Developments</strong>.
+  <strong>How to install in Gmail:</strong>
+  <ol>
+    <li>Below, find the variant you want (Full, Short, or OOO)</li>
+    <li>Click anywhere inside the white panel for that variant</li>
+    <li>Press <code>Cmd+A</code> (Mac) or <code>Ctrl+A</code> (Windows) to select everything inside the panel</li>
+    <li>Press <code>Cmd+C</code> / <code>Ctrl+C</code> to copy</li>
+    <li>Open Gmail → ⚙️ Settings → See all settings → General tab → scroll to "Signature"</li>
+    <li>Click <strong>Create new</strong>, name it "Ubuntu LTD", paste in the signature box</li>
+    <li>Scroll down and click <strong>Save Changes</strong></li>
+  </ol>
+</div>
+
+<h2>Variant A — Full signature</h2>
+<p class="steps">Use for external messages: partners, press, government, landowners, NFP operators, deal traffic.</p>
+
+<div class="panel">
+  <span class="label">Click inside · Cmd/Ctrl-A · Cmd/Ctrl-C</span>
+
+  <!-- ===== START SIGNATURE — copy from here ===== -->
+  <div style="font-family:Georgia,'Times New Roman',serif;font-size:14px;line-height:1.4;color:#1f1612">
+    <strong style="font-weight:600;font-size:15px">Jonathan Okubay</strong>&nbsp;&middot;&nbsp;Managing Director<br>
+    <span style="color:#161210">Ubuntu Land Trust &amp; Developments</span><br>
+    <span style="font-style:italic;color:#3a2d22;font-size:13px">Unlocking land for affordable housing at scale across Canada.</span>
+  </div>
+  <div style="margin-top:10px;font-family:'SF Mono',Consolas,'Courier New',monospace;font-size:11px;line-height:1.55;color:#3a2d22;letter-spacing:.02em">
+    +1 416 555 0140&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="mailto:jonathan@ubuntultd.com" style="color:#1f1612;text-decoration:none">jonathan@ubuntultd.com</a><br>
+    <a href="https://ubuntultd.com" style="color:#1f1612;text-decoration:none">UBUNTULTD.COM</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;100 KING ST W&nbsp;&middot;&nbsp;TORONTO ON&nbsp;&middot;&nbsp;M5X 1G5
+  </div>
+  <!-- ===== END SIGNATURE ===== -->
+
+</div>
+
+<h2>Variant B — Short signature</h2>
+<p class="steps">Use for internal threads or replies deep in a thread. Same copy mechanic as above.</p>
+
+<div class="panel">
+  <span class="label">Click inside · Cmd/Ctrl-A · Cmd/Ctrl-C</span>
+
+  <!-- ===== START SIGNATURE — copy from here ===== -->
+  <div style="font-family:Georgia,'Times New Roman',serif;font-size:14px;line-height:1.45;color:#1f1612">
+    <strong style="font-weight:600">Jonathan</strong>&nbsp;&middot;&nbsp;Managing Director, Ubuntu LTD<br>
+    <span style="font-family:'SF Mono',Consolas,'Courier New',monospace;font-size:11px;color:#3a2d22">+1 416 555 0140&nbsp;&middot;&nbsp;<a href="mailto:jonathan@ubuntultd.com" style="color:#3a2d22;text-decoration:none">jonathan@ubuntultd.com</a></span>
+  </div>
+  <!-- ===== END SIGNATURE ===== -->
+
+</div>
+
+<h2>Variant C — Out-of-office auto-reply</h2>
+<p class="steps">Set this as your Gmail vacation responder (Settings → General → Vacation responder).</p>
+
+<div class="panel">
+  <span class="label">Click inside · Cmd/Ctrl-A · Cmd/Ctrl-C</span>
+
+  <!-- ===== START OOO — copy from here ===== -->
+  <div style="font-family:Georgia,'Times New Roman',serif;font-size:14px;line-height:1.5;color:#1f1612">
+    <p style="margin:0 0 12px">Thank you for your note. I&rsquo;m away from <strong>[DATE]</strong> through <strong>[RETURN DATE]</strong> and will respond on my return.</p>
+    <p style="margin:0 0 12px">For Common Ground Initiative matters that cannot wait, please reach our team at <a href="mailto:info@ubuntultd.com" style="color:#1f1612">info@ubuntultd.com</a>.</p>
+    <p style="margin:0;font-style:italic;color:#3a2d22">Jonathan Okubay<br>Managing Director, Ubuntu Land Trust &amp; Developments</p>
+  </div>
+  <!-- ===== END OOO ===== -->
+
+</div>
+
+<h2>How to change the name for your own signature</h2>
+<div class="how">
+  Open this file (<code>email-signature.html</code>) in any text editor and replace:
+  <ul style="margin:8px 0 0;padding-left:20px">
+    <li><code>Jonathan Okubay</code> → your name</li>
+    <li><code>Managing Director</code> → your title</li>
+    <li><code>jonathan@ubuntultd.com</code> → your email</li>
+    <li><code>+1 416 555 0140</code> → your phone</li>
+  </ul>
+  Then reload the file in a browser and follow the copy-paste steps above.
+</div>
+
+<h2>Brand rules to honour</h2>
+<div class="how">
+  <strong>Do</strong>
+  <ul style="margin:8px 0 16px;padding-left:20px">
+    <li>Keep it under four lines for the full variant</li>
+    <li>Use canonical domain: <code>ubuntultd.com</code></li>
+    <li>Full org name on first mention: <strong>Ubuntu Land Trust &amp; Developments</strong></li>
+  </ul>
+  <strong>Don&rsquo;t</strong>
+  <ul style="margin:8px 0;padding-left:20px">
+    <li>No images (logos, photos, social icons)</li>
+    <li>No &ldquo;Sent from my iPhone&rdquo;</li>
+    <li>No motivational quotes</li>
+    <li>No rotating banner / promo lines</li>
+    <li>No pronouns inside the signature block</li>
+    <li>Never the .ca domain &mdash; the canonical domain is .com</li>
+  </ul>
 </div>
 
 </body>

@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Downloads — Ubuntu Land Trust &amp; Developments</title>
+<meta name="description" content="Brand assets, document templates, and the Ubuntu LTD AI brand skill — free to use for the team and approved partners.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Downloads — Ubuntu LTD brand templates and AI skill">
+<meta property="og:description" content="One-click access to letterhead, LOI templates, deck master, business cards, email signatures, design tokens, and the brand AI skill.">
+<meta property="og:image" content="og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  .dl-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-top: 48px;
+    border-top: .5px solid var(--rule);
+    border-left: .5px solid var(--rule);
+  }
+  .dl-card {
+    border-right: .5px solid var(--rule);
+    border-bottom: .5px solid var(--rule);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: background .15s ease;
+  }
+  .dl-card:hover { background: var(--paper-pure); }
+  .dl-card .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .dl-card h3 {
+    font-family: 'Newsreader', serif;
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -.015em;
+    font-weight: 400;
+    margin: 0;
+  }
+  .dl-card p {
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0;
+    color: var(--ink-soft);
+    flex: 1;
+  }
+  .dl-card .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: .5px solid var(--rule);
+  }
+  .dl-card .filetype {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .dl-card a.dl-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 16px;
+    background: var(--ink);
+    color: var(--paper);
+    transition: background .15s, color .15s;
+  }
+  .dl-card a.dl-btn:hover {
+    background: var(--gold);
+    color: var(--ink);
+  }
+  .dl-card a.dl-btn.view {
+    background: transparent;
+    color: var(--ink);
+    border: .5px solid var(--ink);
+  }
+  .dl-card a.dl-btn.view:hover { background: var(--ink); color: var(--paper); }
+  @media (max-width: 720px) {
+    .dl-grid { grid-template-columns: 1fr; }
+  }
+
+  .skill-card {
+    background: var(--navy);
+    color: var(--paper);
+    padding: 48px 40px;
+    margin-top: 48px;
+    border: .5px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+  .skill-card .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .skill-card h3 {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.02;
+    letter-spacing: -.02em;
+    font-weight: 400;
+    margin: 16px 0 0;
+    color: var(--paper);
+  }
+  .skill-card h3 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  .skill-card .desc {
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 20px 0 0;
+    max-width: 64ch;
+    color: rgba(245, 236, 214, 0.85);
+  }
+  .skill-card .install-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 32px;
+    border-top: .5px solid rgba(245, 236, 214, 0.2);
+    border-left: .5px solid rgba(245, 236, 214, 0.2);
+  }
+  .skill-card .tool {
+    padding: 20px;
+    border-right: .5px solid rgba(245, 236, 214, 0.2);
+    border-bottom: .5px solid rgba(245, 236, 214, 0.2);
+  }
+  .skill-card .tool h4 {
+    font-family: 'Newsreader', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 10px;
+    color: var(--paper);
+  }
+  .skill-card .tool p {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: rgba(245, 236, 214, 0.75);
+    margin: 0;
+  }
+  .skill-card .actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 720px) {
+    .skill-card .install-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="topnav-inner">
+    <a href="index.html" class="wm">
+      <span class="wm" style="font-size:22px">
+        <span>Ubuntu</span>
+        <span class="b">Land Trust &amp; Developments</span>
+      </span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="common-ground.html">Common Ground</a>
+      <a href="pipeline.html">Pipeline</a>
+      <a href="team.html">Team</a>
+      <a href="downloads.html" class="active">Downloads</a>
+    </nav>
+    <a href="mailto:info@ubuntultd.com" class="cta">Contact</a>
+  </div>
+</header>
+
+<!-- ============== PAGE HEAD ============== -->
+<section class="page-head">
+  <div class="shell">
+    <span class="eyebrow">Brand assets &middot; for team &amp; partners</span>
+    <h1>Templates,<br>tokens, and an <em>AI skill.</em></h1>
+    <p class="deck">
+      Everything the team or an approved partner needs to produce
+      on-brand work for Ubuntu LTD and the Common Ground Initiative.
+      Word and PowerPoint templates with placeholders, a print-ready
+      business card, paste-ready email signatures, design tokens for
+      engineers &mdash; and a portable AI skill that any team member can
+      drop into Claude, ChatGPT, or Gemini to draft consistent
+      documents.
+    </p>
+  </div>
+</section>
+
+<!-- ============== AI SKILL ============== -->
+<section class="band">
+  <div class="shell">
+    <div class="skill-card">
+      <span class="tag">★ The multiplier &middot; install once, every doc on-brand forever</span>
+      <h3>The Ubuntu LTD <em>brand skill.</em></h3>
+      <p class="desc">
+        A self-contained, portable folder of markdown files that any AI
+        can ingest as a system prompt or project knowledge. Encodes the
+        voice, the facts (5,131 / 18 sites / Year-20), the team bios,
+        document templates, and what NOT to say. Drop it into Claude,
+        ChatGPT, Gemini, or any other AI tool &mdash; and ask it to draft
+        letters, LOIs, decks, social posts, board memos. Output is
+        consistent with the brand book by default.
+      </p>
+
+      <div class="install-grid">
+        <div class="tool">
+          <h4>Claude Code</h4>
+          <p>Copy folder into <code style="color:var(--gold);font-size:11px">~/.claude/skills/</code>. Auto-triggers on Ubuntu LTD mentions.</p>
+        </div>
+        <div class="tool">
+          <h4>Claude.ai Projects</h4>
+          <p>Create a Project, upload all 5 files as project knowledge, paste SKILL.md as the system prompt.</p>
+        </div>
+        <div class="tool">
+          <h4>Custom GPT</h4>
+          <p>New Custom GPT, paste SKILL.md as instructions, upload all 5 files as Knowledge.</p>
+        </div>
+        <div class="tool">
+          <h4>Gemini / others</h4>
+          <p>Concatenate the 5 files and paste into the system-prompt or NotebookLM source.</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn solid" href="../skill/ubuntu-ltd-brand/README.md">Install instructions &rarr;</a>
+        <a class="btn" style="border-color:var(--gold);color:var(--gold)" href="https://github.com/jasonallenjohn-cell/ubuntu-ltd-brand-guidelines/tree/main/skill/ubuntu-ltd-brand">Browse skill on GitHub &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== DOCUMENT TEMPLATES ============== -->
+<section class="band cream">
+  <div class="shell">
+    <span class="sec-label">01 &middot; Document templates</span>
+    <h2 class="sec-h">Production-ready, with <em>placeholders.</em></h2>
+    <p class="sec-intro">
+      Open in Word or PowerPoint, replace bracketed placeholders, and
+      send. Fonts default to Georgia / Consolas for universal rendering;
+      install Newsreader and JetBrains Mono from Google Fonts for the
+      full brand experience.
+    </p>
+
+    <div class="dl-grid">
+
+      <div class="dl-card">
+        <span class="tag">Word &middot; .docx</span>
+        <h3>Letterhead</h3>
+        <p>
+          US Letter, brand-styled header with wordmark and particulars,
+          ledger footer with doc-ID. Body area unstyled for typing.
+          Sample placeholder text shows correct date, recipient, body,
+          and signature formatting.
+        </p>
+        <div class="meta">
+          <span class="filetype">DOCX &middot; 39 KB</span>
+          <a class="dl-btn" href="../templates/ubuntu-ltd-letterhead.docx" download>Download &darr;</a>
+        </div>
+      </div>
+
+      <div class="dl-card">
+        <span class="tag">Word &middot; .docx</span>
+        <h3>Letter of Intent (LOI)</h3>
+        <p>
+          Complete 11-section LOI template with the Common Ground
+          mechanic baked in. Binding clauses flagged in terracotta
+          (Exclusivity §6, Confidentiality §9, Governing Law §11).
+          Countersigned signature block. Placeholders for parcel,
+          dates, parties.
+        </p>
+        <div class="meta">
+          <span class="filetype">DOCX &middot; 40 KB</span>
+          <a class="dl-btn" href="../templates/ubuntu-ltd-loi.docx" download>Download &darr;</a>
+        </div>
+      </div>
+
+      <div class="dl-card">
+        <span class="tag">PowerPoint &middot; .pptx</span>
+        <h3>Deck master</h3>
+        <p>
+          16:9 widescreen, five slide types: title (wordmark hero),
+          divider, content (two-column), data (4-KPI row), end-card.
+          Demonstrates correct type scale, colour usage, footer
+          treatment, and number formatting.
+        </p>
+        <div class="meta">
+          <span class="filetype">PPTX &middot; 36 KB</span>
+          <a class="dl-btn" href="../templates/ubuntu-ltd-deck-master.pptx" download>Download &darr;</a>
+        </div>
+      </div>
+
+      <div class="dl-card">
+        <span class="tag">Print &middot; PDF</span>
+        <h3>Business card</h3>
+        <p>
+          3.5&Prime; &times; 2.0&Prime; North American standard, 3 mm bleed, crop
+          marks included. Front: navy with gold-foil wordmark. Back:
+          cream with name (Jonathan Okubay), MD title, contact details.
+          Send to any commercial printer.
+        </p>
+        <div class="meta">
+          <span class="filetype">PDF &middot; 3 KB</span>
+          <a class="dl-btn" href="../templates/ubuntu-ltd-business-card.pdf" download>Download &darr;</a>
+        </div>
+      </div>
+
+      <div class="dl-card">
+        <span class="tag">HTML &middot; paste-ready</span>
+        <h3>Email signature</h3>
+        <p>
+          Three variants &mdash; Full (external), Short (internal), and
+          Out-of-Office. Inline-styled so Gmail and Outlook preserve
+          formatting on paste. Step-by-step install instructions
+          included.
+        </p>
+        <div class="meta">
+          <span class="filetype">HTML &middot; 6 KB</span>
+          <a class="dl-btn view" href="../assets/email-signature.html">View &amp; copy &rarr;</a>
+        </div>
+      </div>
+
+      <div class="dl-card">
+        <span class="tag">Markdown &middot; copy text</span>
+        <h3>Boilerplate library</h3>
+        <p>
+          Approved 12, 30, 100, and 250-word descriptions of the
+          organisation, plus Common Ground Initiative short and long
+          paragraphs. Paste verbatim into grant applications, press
+          releases, deck appendices, partner one-pagers.
+        </p>
+        <div class="meta">
+          <span class="filetype">MD &middot; 4 KB</span>
+          <a class="dl-btn view" href="../assets/boilerplate.md">View &amp; copy &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== DESIGN TOKENS + GUIDELINES ============== -->
+<section class="band">
+  <div class="shell">
+    <span class="sec-label">02 &middot; For engineers, designers, and brand reviewers</span>
+    <h2 class="sec-h">Tokens, guidelines, <em>and print files.</em></h2>
+    <p class="sec-intro">
+      The full brand book, focused colour review, design tokens, and
+      print-optimised version for PDF export.
+    </p>
+
+    <div class="dl-grid">
+
+      <div class="dl-card">
+        <span class="tag">CSS &middot; drop-in for engineers</span>
+        <h3>Design tokens</h3>
+        <p>
+          All brand colours as CSS custom properties, full type system,
+          wordmark CSS, grid helpers. Import once into any project to
+          inherit the Ubuntu LTD brand. Compatible with React, Vue,
+          plain HTML, or any framework.
+        </p>
+        <div class="meta">
+          <span class="filetype">CSS &middot; 6 KB</span>
+          <a class="dl-btn" href="../assets/tokens.css" download>Download &darr;</a>
+        </div>
+      </div>
+
+      <div class="dl-card">
+        <span class="tag">HTML &middot; live page</span>
+        <h3>Brand guidelines book</h3>
+        <p>
+          The complete 40-page brand book covering wordmark
+          construction, palette, type system, stationery, vocabulary,
+          governance, confidentiality, and applications. The source of
+          truth.
+        </p>
+        <div class="meta">
+          <span class="filetype">HTML &middot; long-form</span>
+          <a class="dl-btn view" href="../index.html">Open guidelines &rarr;</a>
+        </div>
+      </div>
+
+      <div class="dl-card">
+        <span class="tag">HTML &middot; focused review</span>
+        <h3>Colour palette review page</h3>
+        <p>
+          Single-page colour review extracted from the brand book.
+          Primary palette with usage proportions, extended staff
+          colours, WCAG AA-tested pairings. Send to anyone reviewing
+          the palette in five minutes.
+        </p>
+        <div class="meta">
+          <span class="filetype">HTML &middot; 12 KB</span>
+          <a class="dl-btn view" href="../colours.html">Open colours &rarr;</a>
+        </div>
+      </div>
+
+      <div class="dl-card">
+        <span class="tag">HTML &middot; print-ready</span>
+        <h3>Print version of brand book</h3>
+        <p>
+          Print-optimised single-file version of the full brand book.
+          Open and use your browser&rsquo;s Save as PDF (Landscape,
+          background graphics ON) to produce a portable PDF for
+          archive or vendor distribution.
+        </p>
+        <div class="meta">
+          <span class="filetype">HTML &rarr; PDF</span>
+          <a class="dl-btn view" href="../print.html">Open print version &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== USAGE NOTES ============== -->
+<section class="band cream">
+  <div class="shell split">
+    <div>
+      <span class="sec-label">03 &middot; Usage notes</span>
+      <h2 class="sec-h">How to <em>use</em> these.</h2>
+    </div>
+    <div class="prose">
+      <h3>Internal team</h3>
+      <p>
+        Use any template directly. Modify content but not formatting,
+        unless you have a specific reason to. The point is consistency
+        &mdash; recipients should recognize an Ubuntu LTD document
+        immediately.
+      </p>
+
+      <h3>Approved partners and contractors</h3>
+      <p>
+        Partner agencies, designers, lawyers, and contractors producing
+        work on Ubuntu LTD&rsquo;s behalf may use these templates
+        directly. For substantive deviations from the brand book,
+        confirm with Jonathan Okubay (Managing Director) before
+        publication.
+      </p>
+
+      <h3>Fonts</h3>
+      <p>
+        Templates default to <strong>Georgia</strong> (serif) and
+        <strong>Consolas</strong> (mono) for universal rendering on
+        any computer. For the full brand experience, install the
+        actual brand fonts free from Google Fonts:
+        <a href="https://fonts.google.com/specimen/Newsreader" style="border-bottom:.5px solid var(--gold);text-decoration:none">Newsreader</a> and
+        <a href="https://fonts.google.com/specimen/JetBrains+Mono" style="border-bottom:.5px solid var(--gold);text-decoration:none">JetBrains Mono</a>.
+        Documents will automatically render in the brand fonts once
+        installed.
+      </p>
+
+      <h3>Updates</h3>
+      <p>
+        Templates and the AI skill are versioned in the
+        <a href="https://github.com/jasonallenjohn-cell/ubuntu-ltd-brand-guidelines" style="border-bottom:.5px solid var(--gold);text-decoration:none">GitHub repository</a>.
+        When numbers change (new sites, refreshed pipeline figures, new
+        team members), the updates flow to this page. If you maintain
+        a local copy of the AI skill, refresh it quarterly.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="site-footer">
+  <div class="shell">
+    <div class="grid">
+      <div class="col brand-col">
+        <span class="wm" style="color:var(--paper)">
+          <span>Ubuntu</span>
+          <span class="b">Land Trust &amp; Developments</span>
+        </span>
+        <p style="margin-top:8px">
+          The platform behind the Common Ground Initiative &mdash;
+          unlocking land for affordable housing at scale across Canada.
+        </p>
+      </div>
+      <div class="col">
+        <h5>Explore</h5>
+        <a href="index.html">Home</a>
+        <a href="common-ground.html">Common Ground</a>
+        <a href="pipeline.html">Pipeline</a>
+        <a href="team.html">Team</a>
+        <a href="downloads.html">Downloads</a>
+      </div>
+      <div class="col">
+        <h5>Brand</h5>
+        <a href="../index.html">Brand guidelines</a>
+        <a href="../colours.html">Colour system</a>
+        <a href="../print.html">Print version</a>
+      </div>
+      <div class="col">
+        <h5>Contact</h5>
+        <a href="mailto:info@ubuntultd.com">info@ubuntultd.com</a>
+        <p>Toronto, Ontario</p>
+      </div>
+    </div>
+    <div class="meta">
+      <span>&copy; 2026 Ubuntu Land Trust and Developments</span>
+      <span>Templates v1.0 &middot; Updated 2026-05-21</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
