@@ -1,0 +1,67 @@
+name: Build & deploy to GitHub Pages
+
+# Triggers on every push to main, plus a manual button in the Actions tab.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Required permissions for GitHub Pages deployment.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment can run at a time; later pushes wait for earlier ones.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # -----------------------------------------------------------
+  # BUILD — checks out the repo, swaps __MAPBOX_TOKEN__ for the
+  # real value stored in repo secrets, packages the site.
+  # -----------------------------------------------------------
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Inject Mapbox token from secret
+        env:
+          MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+        run: |
+          if [ -z "$MAPBOX_TOKEN" ]; then
+            echo "::warning::MAPBOX_TOKEN secret is not set. The pipeline map will not load."
+            echo "Set it at: Settings → Secrets and variables → Actions → New repository secret"
+            sed -i "s|__MAPBOX_TOKEN__|MISSING-TOKEN|g" site/pipeline.html
+          else
+            # Use perl instead of sed to avoid issues with special chars in the token
+            perl -i -pe "s|__MAPBOX_TOKEN__|$MAPBOX_TOKEN|g" site/pipeline.html
+            echo "✓ Mapbox token injected into site/pipeline.html"
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload the entire repo root so all paths (/, /site/, /assets/, etc.)
+          # continue to work exactly as they did under "Deploy from branch".
+          path: '.'
+
+  # -----------------------------------------------------------
+  # DEPLOY — publishes the artifact to GitHub Pages.
+  # -----------------------------------------------------------
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

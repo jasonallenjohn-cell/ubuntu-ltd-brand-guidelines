@@ -17,6 +17,8 @@
 <meta name="twitter:image" content="og-image.svg">
 <link rel="stylesheet" href="../assets/tokens.css">
 <link rel="stylesheet" href="style.css">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
 </head>
 <body>
 
@@ -93,7 +95,9 @@
     </p>
 
     <div class="ontario-map">
-      <svg viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="map-title">
+      <div id="ontario-map-canvas" role="img" aria-label="Interactive Ontario map showing all 18 Ubuntu LTD pipeline sites clustered in the southern corridor."></div>
+      <!-- Hidden fallback SVG retained below the map for if Mapbox fails to load. -->
+      <svg style="display:none" viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="map-title">
         <title id="map-title">Ontario — Ubuntu LTD pipeline distribution map. All 18 sites cluster in the southern corridor.</title>
 
         <!-- subtle latitude reference lines -->
@@ -311,6 +315,215 @@
     </div>
   </div>
 </section>
+
+<!-- =================================================================
+     Mapbox GL JS initialisation
+     Token is a public (pk.*) token, restricted by domain at the
+     Mapbox account level so embedding it client-side is safe.
+     ================================================================= -->
+<script>
+  // Token is injected at deploy time by the GitHub Actions workflow
+  // (.github/workflows/deploy.yml) from the MAPBOX_TOKEN repo secret.
+  // Never lives in committed source — bypasses GitHub's secret scanner.
+  mapboxgl.accessToken = '__MAPBOX_TOKEN__';
+
+  // ----- Pipeline data: cities aggregated, sites listed -----
+  const PIPELINE = [
+    {
+      city: 'Toronto', province: 'ON',
+      coords: [-79.3832, 43.6532],
+      units: 449, siteCount: 4, launchpad: true,
+      sites: [
+        { name: 'Oakwood Avenue',   units: 19,  lp: true,  typology: 'Missing-middle infill' },
+        { name: '27 Blake Street',  units: 35,  lp: true,  typology: 'Mid-rise urban rental' },
+        { name: 'Lakeshore Blvd',   units: 300, lp: false, typology: 'Urban density' },
+        { name: 'Kingston Road',    units: 95,  lp: false, typology: 'Urban density' }
+      ]
+    },
+    {
+      city: 'Brampton', province: 'ON',
+      coords: [-79.7624, 43.7315],
+      units: 940, siteCount: 1, launchpad: false,
+      sites: [
+        { name: 'Queen Street East', units: 940, lp: false, typology: 'Master-planned community' }
+      ]
+    },
+    {
+      city: 'Burlington', province: 'ON',
+      coords: [-79.7990, 43.3255],
+      units: 744, siteCount: 1, launchpad: false,
+      sites: [
+        { name: 'Grahams Lane', units: 744, lp: false, typology: 'High-rise' }
+      ]
+    },
+    {
+      city: 'Hamilton', province: 'ON',
+      coords: [-79.8711, 43.2557],
+      units: 721, siteCount: 3, launchpad: false,
+      sites: [
+        { name: 'Park Street South', units: 136, lp: false, typology: 'Master-planned' },
+        { name: 'Main Street East',  units: 436, lp: false, typology: 'Master-planned' },
+        { name: '150 Standford',     units: 149, lp: false, typology: 'Master-planned' }
+      ]
+    },
+    {
+      city: 'King City', province: 'ON',
+      coords: [-79.5305, 43.9272],
+      units: 105, siteCount: 1, launchpad: false,
+      sites: [
+        { name: 'Keele Street', units: 105, lp: false, typology: 'Urban density' }
+      ]
+    },
+    {
+      city: 'Barrie', province: 'ON',
+      coords: [-79.6903, 44.3894],
+      units: 1024, siteCount: 4, launchpad: true,
+      sites: [
+        { name: '844 Veterans Drive', units: 78,  lp: true,  typology: 'Ground-oriented townhomes' },
+        { name: 'Mapleview Drive',    units: 46,  lp: false, typology: 'Ground-oriented' },
+        { name: 'Anne Street',        units: 700, lp: false, typology: 'Master-planned' },
+        { name: 'Essa County Road',   units: 200, lp: false, typology: 'Master-planned' }
+      ]
+    },
+    {
+      city: 'Angus', province: 'ON',
+      coords: [-79.8762, 44.3214],
+      units: 148, siteCount: 1, launchpad: false,
+      sites: [
+        { name: 'Mill Street', units: 148, lp: false, typology: 'Ground-oriented' }
+      ]
+    },
+    {
+      city: 'Listowel', province: 'ON',
+      coords: [-80.9512, 43.7385],
+      units: 24, siteCount: 1, launchpad: true,
+      sites: [
+        { name: 'Main Street', units: 24, lp: true, typology: 'Mixed-use / gentle density' }
+      ]
+    },
+    {
+      city: 'Penetanguishene', province: 'ON',
+      coords: [-79.9325, 44.7691],
+      units: 560, siteCount: 1, launchpad: false,
+      sites: [
+        { name: 'Penetanguishene', units: 560, lp: false, typology: 'Master-planned community' }
+      ]
+    },
+    {
+      city: 'Port Severn', province: 'ON',
+      coords: [-79.7144, 44.7989],
+      units: 416, siteCount: 1, launchpad: false,
+      sites: [
+        { name: 'Honey Harbour', units: 416, lp: false, typology: 'Master-planned community' }
+      ]
+    }
+  ];
+
+  // ----- Initialize map -----
+  const map = new mapboxgl.Map({
+    container: 'ontario-map-canvas',
+    style: 'mapbox://styles/mapbox/light-v11',
+    center: [-79.6, 44.0],   // centred on southern Ontario corridor
+    zoom: 6.6,
+    minZoom: 3,
+    maxZoom: 14,
+    attributionControl: true,
+    cooperativeGestures: true     // requires Ctrl/Cmd+scroll to zoom — better UX
+  });
+
+  // Navigation controls (zoom in/out, compass)
+  map.addControl(new mapboxgl.NavigationControl({ showCompass: true, visualizePitch: false }), 'top-right');
+
+  // ----- Apply brand colour overrides once style loads -----
+  map.on('style.load', () => {
+    const setSafe = (id, prop, val) => {
+      try { if (map.getLayer(id)) map.setPaintProperty(id, prop, val); } catch (e) { /* layer not present in style */ }
+    };
+
+    // background — paper
+    setSafe('background', 'background-color', '#ebdfc4');
+    // land / landuse — slightly warmer
+    setSafe('land', 'background-color', '#ebdfc4');
+    setSafe('landuse', 'fill-color', '#e3d4b3');
+    setSafe('national-park', 'fill-color', '#d8c69e');
+    // water — soft sea tone
+    setSafe('water', 'fill-color', '#9fb6c0');
+    setSafe('waterway', 'line-color', '#9fb6c0');
+    // borders — soil
+    setSafe('admin-0-boundary', 'line-color', '#6e4524');
+    setSafe('admin-0-boundary-disputed', 'line-color', '#6e4524');
+    setSafe('admin-1-boundary', 'line-color', '#8a5a32');
+    setSafe('admin-1-boundary-bg', 'line-color', '#cdc1a8');
+    // labels — muted ink
+    setSafe('country-label', 'text-color', '#3a2d22');
+    setSafe('state-label', 'text-color', '#3a2d22');
+    setSafe('settlement-label', 'text-color', '#3a2d22');
+    setSafe('settlement-major-label', 'text-color', '#3a2d22');
+    setSafe('settlement-minor-label', 'text-color', '#6e4524');
+    setSafe('water-line-label', 'text-color', '#2d5266');
+    setSafe('water-point-label', 'text-color', '#2d5266');
+    setSafe('natural-point-label', 'text-color', '#6e4524');
+    // roads — toned down so pins pop
+    setSafe('road-primary', 'line-color', '#cdc1a8');
+    setSafe('road-secondary-tertiary', 'line-color', '#d8c69e');
+    setSafe('road-minor', 'line-color', '#e3d4b3');
+  });
+
+  // ----- Add markers + popups -----
+  map.on('load', () => {
+    PIPELINE.forEach(city => {
+      // marker size: 16px base + sqrt(units) * 1.3, capped at 64px
+      const size = Math.min(64, Math.max(20, 16 + Math.sqrt(city.units) * 1.3));
+
+      const el = document.createElement('div');
+      el.className = `city-marker ${city.launchpad ? 'launchpad' : 'pipeline'}`;
+      el.style.width = `${size}px`;
+      el.style.height = `${size}px`;
+      el.style.fontSize = `${Math.max(9, size * 0.22)}px`;
+
+      // initials inside the pin (city short code)
+      const initials = city.city.split(' ').map(w => w[0]).join('').slice(0, 3);
+      el.innerHTML = `
+        <span class="marker-label">${city.city}</span>
+        <span>${city.units >= 1000 ? (city.units / 1000).toFixed(1) + 'k' : city.units}</span>
+      `;
+
+      // Popup HTML
+      const sitesHTML = city.sites.map(s => `
+        <div class="site-row ${s.lp ? 'lp' : ''}">
+          <span class="site-name">${s.name}${s.lp ? ' · Launchpad' : ''}</span>
+          <span class="site-units">${s.units} u</span>
+        </div>
+      `).join('');
+
+      const popupHTML = `
+        <div class="popup-eyebrow">${city.launchpad ? 'Launchpad city · 2026 ground-break' : 'Pipeline city'}</div>
+        <h3 class="popup-title">${city.city}, ${city.province}</h3>
+        <div class="popup-stat">${city.units.toLocaleString()} units &middot; ${city.siteCount} site${city.siteCount > 1 ? 's' : ''}</div>
+        <div class="popup-sites">${sitesHTML}</div>
+      `;
+
+      const popup = new mapboxgl.Popup({ offset: size / 2 + 12, closeButton: true, closeOnClick: true })
+        .setHTML(popupHTML);
+
+      new mapboxgl.Marker(el, { anchor: 'center' })
+        .setLngLat(city.coords)
+        .setPopup(popup)
+        .addTo(map);
+    });
+  });
+
+  // Graceful fallback — if Mapbox fails to load, reveal the static SVG.
+  map.on('error', (e) => {
+    console.warn('Mapbox error:', e);
+    const fallback = document.querySelector('.ontario-map svg');
+    const canvas = document.getElementById('ontario-map-canvas');
+    if (fallback && canvas) {
+      canvas.style.display = 'none';
+      fallback.style.display = 'block';
+    }
+  });
+</script>
 
 <!-- ============== LAUNCHPAD COHORT ============== -->
 <section class="band cream">
