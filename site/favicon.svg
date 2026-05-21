@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#1f1612"/>
+  <text x="32" y="46"
+    text-anchor="middle"
+    font-family="Newsreader, Georgia, serif"
+    font-size="44"
+    font-weight="500"
+    letter-spacing="-1"
+    fill="#ebdfc4">U</text>
+  <circle cx="48" cy="14" r="3.5" fill="#d4a04a"/>
+</svg>

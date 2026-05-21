@@ -83,41 +83,74 @@ img { max-width: 100%; display: block; }
   .topnav nav { display: none; }
 }
 
-/* ---------- hero ---------- */
+/* ---------- hero — wordmark-centred, establishing ---------- */
 .hero {
   background: var(--navy);
   color: var(--paper);
-  padding: 96px 0 88px;
+  padding: 88px 0 80px;
   position: relative;
   overflow: hidden;
+  /* subtle savannah grain texture */
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(212,160,74,0.06) 0%, transparent 38%),
+    radial-gradient(circle at 82% 78%, rgba(110,69,36,0.10) 0%, transparent 42%),
+    linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 60%);
 }
 .hero .eyebrow {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  letter-spacing: .18em;
+  letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 32px;
+  margin-bottom: 36px;
   display: inline-block;
+}
+.hero .wm-hero {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  letter-spacing: -.028em;
+  line-height: .9;
+  color: var(--paper);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .18em;
+  font-size: clamp(72px, 14vw, 200px);
+}
+.hero .wm-hero .descriptor {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: .118em;
+  letter-spacing: .26em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.hero .divider {
+  height: 1px;
+  background: rgba(245,236,214,0.18);
+  margin: 56px 0 36px;
+  max-width: 720px;
 }
 .hero h1 {
   font-family: 'Newsreader', serif;
-  font-size: clamp(48px, 7vw, 96px);
-  line-height: .98;
-  letter-spacing: -.025em;
+  font-size: clamp(34px, 4.4vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -.02em;
   font-weight: 300;
   margin: 0;
-  max-width: 18ch;
+  max-width: 26ch;
   color: var(--paper);
 }
 .hero h1 em { font-style: italic; color: var(--gold); font-weight: 300; }
 .hero .deck {
-  font-size: 22px;
-  line-height: 1.45;
+  font-size: 18px;
+  line-height: 1.5;
   font-weight: 300;
-  margin-top: 32px;
-  max-width: 56ch;
-  color: rgba(245, 236, 214, 0.85);
+  margin-top: 24px;
+  max-width: 60ch;
+  color: rgba(245, 236, 214, 0.82);
 }
 .hero .stats {
   margin-top: 56px;
@@ -643,3 +676,131 @@ section.band.dark .step p { color: rgba(245, 236, 214, 0.7); }
   color: var(--ink);
 }
 .prose .pull em { font-style: italic; color: var(--gold); font-weight: 300; }
+
+/* ============================================================
+   Ontario corridor map (Pipeline page)
+   ============================================================ */
+.ontario-map {
+  margin-top: 48px;
+  background: var(--paper-pure);
+  border: .5px solid var(--rule);
+  padding: 32px;
+  position: relative;
+}
+.ontario-map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 560px;
+}
+.map-legend {
+  display: flex;
+  gap: 28px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.map-legend .item { display: flex; align-items: center; gap: 8px; }
+.map-legend .dot {
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.map-legend .dot.lp { background: var(--terra); }
+.map-legend .dot.s { width: 6px; height: 6px; }
+.map-legend .dot.m { width: 10px; height: 10px; }
+.map-legend .dot.l { width: 16px; height: 16px; }
+
+/* ============================================================
+   CGI Flow diagram (Common Ground page)
+   ============================================================ */
+.flow {
+  margin-top: 48px;
+  background: var(--paper-pure);
+  border: .5px solid var(--rule);
+  padding: 40px 32px;
+}
+.flow svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 320px;
+}
+.flow-caption {
+  margin-top: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* ============================================================
+   Team photo placeholder treatment
+   ============================================================ */
+.member-portrait {
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.member-portrait .initials {
+  font-family: 'Newsreader', serif;
+  font-weight: 300;
+  font-size: 96px;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+.member-portrait .corner-mark {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+.member-portrait .pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .35;
+}
+
+/* portrait palette variants */
+.member-portrait.tone-paper { background: var(--paper-pure); color: var(--soil); }
+.member-portrait.tone-soil { background: var(--soil); color: var(--gold-tint); }
+.member-portrait.tone-gold { background: var(--gold); color: var(--ink); }
+.member-portrait.tone-terra { background: var(--terra); color: var(--gold-tint); }
+.member-portrait.tone-stone { background: var(--stone); color: var(--soil); }
+.member-portrait.tone-umber { background: var(--umber); color: var(--gold-tint); }
+
+/* large bio cards on team page get bigger portraits */
+.bio-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  padding: 48px 0;
+  border-top: .5px solid var(--rule);
+  align-items: start;
+}
+.bio-row:last-child { border-bottom: .5px solid var(--rule); }
+.bio-row .meta-col .member-portrait {
+  width: 240px;
+  margin-bottom: 20px;
+}
+.bio-row .meta-col .member-portrait .initials { font-size: 84px; }
+@media (max-width: 760px) {
+  .bio-row { grid-template-columns: 1fr; gap: 24px; }
+  .bio-row .meta-col .member-portrait { width: 180px; }
+  .bio-row .meta-col .member-portrait .initials { font-size: 64px; }
+}

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- background -->
+  <defs>
+    <radialGradient id="bg" cx="0.2" cy="0.15" r="0.9">
+      <stop offset="0%" stop-color="#3a2a1e" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#1f1612" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg2" cx="0.85" cy="0.85" r="0.7">
+      <stop offset="0%" stop-color="#6e4524" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#1f1612" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#1f1612"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+
+  <!-- top eyebrow -->
+  <text x="80" y="80"
+    font-family="JetBrains Mono, monospace"
+    font-size="16"
+    letter-spacing="3.5"
+    font-weight="500"
+    fill="#d4a04a">UBUNTU LTD &#183; COMMON GROUND INITIATIVE</text>
+
+  <!-- wordmark -->
+  <text x="80" y="240"
+    font-family="Newsreader, Georgia, serif"
+    font-size="180"
+    font-weight="500"
+    letter-spacing="-5"
+    fill="#ebdfc4">Ubuntu</text>
+  <text x="80" y="288"
+    font-family="JetBrains Mono, monospace"
+    font-size="22"
+    letter-spacing="5.5"
+    font-weight="500"
+    fill="#d4a04a">LAND TRUST &amp; DEVELOPMENTS</text>
+
+  <!-- divider -->
+  <line x1="80" y1="345" x2="720" y2="345" stroke="#ebdfc4" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- tagline -->
+  <text x="80" y="400"
+    font-family="Newsreader, Georgia, serif"
+    font-size="38"
+    font-weight="300"
+    letter-spacing="-0.5"
+    fill="#ebdfc4">Unlocking land for affordable housing</text>
+  <text x="80" y="448"
+    font-family="Newsreader, Georgia, serif"
+    font-size="38"
+    font-weight="300"
+    font-style="italic"
+    letter-spacing="-0.5"
+    fill="#d4a04a">at scale across Canada.</text>
+
+  <!-- stats row -->
+  <g transform="translate(80, 525)">
+    <text font-family="Newsreader, Georgia, serif" font-size="56" font-weight="300" letter-spacing="-1.5" fill="#d4a04a">5,131</text>
+    <text x="0" y="38" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="2.5" font-weight="500" fill="#ebdfc4" fill-opacity="0.65">HOMES IN PIPELINE</text>
+  </g>
+  <g transform="translate(380, 525)">
+    <text font-family="Newsreader, Georgia, serif" font-size="56" font-weight="300" letter-spacing="-1.5" fill="#d4a04a">18</text>
+    <text x="0" y="38" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="2.5" font-weight="500" fill="#ebdfc4" fill-opacity="0.65">ENTITLED SITES</text>
+  </g>
+  <g transform="translate(580, 525)">
+    <text font-family="Newsreader, Georgia, serif" font-size="56" font-weight="300" letter-spacing="-1.5" fill="#d4a04a">156</text>
+    <text x="0" y="38" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="2.5" font-weight="500" fill="#ebdfc4" fill-opacity="0.65">BREAKING GROUND 2026</text>
+  </g>
+
+  <!-- right edge dot -->
+  <circle cx="1080" cy="125" r="8" fill="#d4a04a"/>
+  <text x="1120" y="132"
+    font-family="JetBrains Mono, monospace"
+    font-size="13"
+    letter-spacing="2.5"
+    font-weight="500"
+    fill="#ebdfc4" fill-opacity="0.6"
+    text-anchor="end">V1.0</text>
+
+  <!-- url bottom right -->
+  <text x="1120" y="595"
+    font-family="JetBrains Mono, monospace"
+    font-size="14"
+    letter-spacing="3"
+    font-weight="500"
+    fill="#ebdfc4" fill-opacity="0.55"
+    text-anchor="end">UBUNTULTD.COM</text>
+</svg>
