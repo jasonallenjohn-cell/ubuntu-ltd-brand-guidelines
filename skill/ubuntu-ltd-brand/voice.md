@@ -3,14 +3,14 @@
 ## Three voice principles
 
 1. **Plain, precise, generous.** Short Anglo-Saxon words over long Latinate ones. Specific over abstract. Generous in describing partners; never preachy.
-2. **Numbers carry the argument.** When a number can do the work, let it. "5,131 homes across 18 sites" is a sentence. Don't pad it.
+2. **Numbers carry the argument.** When a number can do the work, let it. "5,156 homes across 18 sites" is a sentence. Don't pad it.
 3. **Institution, not start-up.** Ubuntu LTD speaks as an institution from day one. Not "we're going to build" — "we are building." Not "innovative platform" — "platform." Not "disrupting affordable housing" — "running the math."
 
 ## What we sound like
 
 > Land contributed as equity is land that carries the math.
 
-> The Common Ground Initiative closed the year with eighteen entitled sites and 5,131 units of permanent affordable housing in pipeline across Canada.
+> The Common Ground Initiative closed the year with eighteen entitled sites and 5,156 units of permanent affordable housing in pipeline across Canada.
 
 > Non-profit operators own the buildings day one. The land transfers to them at Year 20.
 
@@ -60,7 +60,7 @@ These are the corporate-aspirational register we reject. Read them and notice: n
 
 **Year-20 land purchase.** The redemption event in the Common Ground mechanic. Twenty years of mortgage paydown together with the equity remaining in the deal cover a fair price for the landowner and leave the non-profit owning both the building and the land beneath it. A clean exit for the contributor; a strong balance sheet for the operator going forward.
 
-**Launchpad cohort.** The first four sites to break ground (2026): 844 Veterans Drive (Barrie), Main Street (Listowel), Oakwood Avenue (Toronto), 27 Blake Street (Toronto). 156 homes total. Deliver by 2028.
+**Launchpad cohort.** The first four sites to break ground (2026): 844 Veterans Drive (Barrie · ground-oriented townhomes), Main Street (Listowel · seniors residence, 88 beds), Grahams Lane (Burlington · high-rise), 27 Blake Street (Toronto · mid-rise urban rental). 906 homes total. Deliver by 2028.
 
 **SPV (Special Purpose Vehicle).** The project-level legal entity that holds the contributed land, takes on construction financing, and houses the building. Each site has its own SPV.
 

@@ -1,6 +1,6 @@
 ---
 name: ubuntu-ltd-brand
-description: Use this skill any time you draft external-facing material for Ubuntu Land Trust and Developments (Ubuntu LTD) or the Common Ground Initiative — including letters, emails, press releases, social posts, deck slides, Letters of Intent, term sheets, web copy, board memos, funder briefings, NFP partner communications, or any artifact that will be read by someone outside the organization. Apply the brand voice, factual ground-truth (5,131 units / 18 sites / Year-20 land purchase mechanic), team attributions, vocabulary, and document-specific templates defined in the supporting files. TRIGGERS — "Ubuntu LTD", "Ubuntu Land Trust", "Common Ground Initiative", "CGI", "Land Trust and Developments", "write a letter for Ubuntu", "draft an LOI for Ubuntu", "Ubuntu pitch deck", "Ubuntu boilerplate", "Ubuntu press release", "Ubuntu site write-up", "draft for Kizito/Jonathan/Kemi/Amanuel/Nadine", or any document referencing the 5,131 / 18 sites / 156 Launchpad numbers, the Year-20 land purchase, CMHC + BCH financing, or the named Launchpad addresses (844 Veterans Drive Barrie, Main Street Listowel, Oakwood Avenue Toronto, 27 Blake Street Toronto).
+description: Use this skill any time you draft external-facing material for Ubuntu Land Trust and Developments (Ubuntu LTD) or the Common Ground Initiative — including letters, emails, press releases, social posts, deck slides, Letters of Intent, term sheets, web copy, board memos, funder briefings, NFP partner communications, or any artifact that will be read by someone outside the organization. Apply the brand voice, factual ground-truth (5,156 units / 18 sites / Year-20 land purchase mechanic), team attributions, vocabulary, and document-specific templates defined in the supporting files. TRIGGERS — "Ubuntu LTD", "Ubuntu Land Trust", "Common Ground Initiative", "CGI", "Land Trust and Developments", "write a letter for Ubuntu", "draft an LOI for Ubuntu", "Ubuntu pitch deck", "Ubuntu boilerplate", "Ubuntu press release", "Ubuntu site write-up", "draft for Kizito/Jonathan/Kemi/Amanuel/Nadine", or any document referencing the 5,156 / 18 sites / 906 Launchpad numbers, the Year-20 land purchase, CMHC + BCH financing, or the named Launchpad addresses (844 Veterans Drive Barrie, Main Street Listowel, Grahams Lane Burlington, 27 Blake Street Toronto).
 ---
 
 # Ubuntu LTD Brand Skill
@@ -26,8 +26,8 @@ Any time you generate text or visuals that will be read by someone OUTSIDE Ubunt
 - Use **Canadian spelling**: colour, honour, programme, organisation, optimise
 - Domain is **ubuntultd.com** — not .ca, not any other variant
 - Ubuntu LTD is a **service provider / platform / coordinator** — NOT a fund, holding company, REIT, or land trust in the mutual-fund sense
-- The pipeline is **5,131 homes across 18 entitled sites** as of May 2026
-- The Launchpad cohort is **156 homes across 4 sites** breaking ground in 2026
+- The pipeline is **5,156 homes across 18 entitled sites** as of May 2026
+- The Launchpad cohort is **906 homes across 4 sites** breaking ground in 2026
 - The model is the **Common Ground Initiative** — Ubuntu LTD is the entity, CGI is the programme. Don't conflate them
 - Numbers should be set in **tabular numerals** if the medium supports it
 - The wordmark is **stacked, sturdy, no italics**: "Ubuntu" stacked over "LAND TRUST & DEVELOPMENTS"

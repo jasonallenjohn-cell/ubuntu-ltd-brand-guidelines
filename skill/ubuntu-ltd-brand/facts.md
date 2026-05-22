@@ -17,14 +17,14 @@ This is ground truth. If a fact you need isn't here, ask — don't invent.
 
 | Number | What it is |
 |---|---|
-| **5,131** | Homes in pipeline (total units across all 18 sites) |
+| **5,156** | Homes in pipeline (total units across all 18 sites) |
 | **18** | Entitled sites under binding agreement or binding LOI |
-| **156** | Launchpad cohort homes — breaking ground 2026 |
+| **906** | Launchpad cohort homes — breaking ground 2026 |
 | **4** | Launchpad cohort sites |
 | **2028** | First deliveries |
 | **10** | Cities and townships represented in pipeline |
-| **$106M** | Launchpad cohort total development cost (verified) |
-| **~$3.5B** | Full pipeline estimated development cost (Launchpad cost-per-unit × 5,131) |
+| **~$615M** | Launchpad cohort estimated development cost (blended $681K/unit) |
+| **~$3.5B** | Full pipeline estimated development cost (Launchpad cost-per-unit × 5,156) |
 | **2024** | Year of incorporation |
 
 ## Regional distribution
@@ -33,26 +33,27 @@ This is ground truth. If a fact you need isn't here, ask — don't invent.
 |---|---|---|
 | GTA & Hamilton | 8 | 2,854 |
 | Simcoe & North | 9 | 2,253 |
-| Regional centres | 1 | 24 |
-| **Total** | **18** | **5,131** |
+| Regional centres | 1 | 49 |
+| **Total** | **18** | **5,156** |
 
-## The Launchpad cohort (4 sites, 156 homes, ground-break 2026)
+## The Launchpad cohort (4 sites, 906 homes, ground-break 2026)
 
 | Address | City | Typology | Units | Status |
 |---|---|---|---|---|
 | 844 Veterans Drive | Barrie, ON | Ground-oriented townhomes | 78 | Binding agreement |
-| Main Street | Listowel, ON | Mixed-use, gentle density | 24 | Binding LOI |
-| Oakwood Avenue | Toronto, ON | Missing-middle infill | 19 | Binding LOI |
+| Main Street | Listowel, ON | Seniors residence · 88 beds | 49 | Binding LOI |
+| Grahams Lane | Burlington, ON | High-rise | 744 | Binding LOI |
 | 27 Blake Street | Toronto, ON | Mid-rise urban rental | 35 | Binding agreement |
 
 **844 Veterans Drive Launchpad reference deal**: 78 units, $10.28M land contributed, $55.4M total dev cost, breaks ground 2026, delivers by 2028.
 
-## The full pipeline (14 additional sites, 4,975 homes)
+## The full pipeline (14 additional sites, 4,250 homes)
 
 | # | Address | City | Typology | Units |
 |---|---|---|---|---|
 | P03 | Mapleview Drive | Barrie ON | Ground-oriented | 46 |
 | P04 | Mill Street | Angus ON | Ground-oriented | 148 |
+| P05 | Oakwood Avenue | Toronto ON | Missing-middle infill | 19 |
 | P06 | Penetanguishene | Simcoe County ON | Master-planned | 560 |
 | P07 | Anne Street | Barrie ON | Master-planned | 700 |
 | P08 | Essa County Road | Barrie ON | Master-planned | 200 |
@@ -62,7 +63,6 @@ This is ground truth. If a fact you need isn't here, ask — don't invent.
 | P12 | Queen Street East | Brampton ON | Master-planned | 940 |
 | P13 | 150 Standford | Hamilton ON | Master-planned | 149 |
 | P15 | Lakeshore Boulevard | Toronto ON | Urban density | 300 |
-| P16 | Grahams Lane | Burlington ON | High-rise | 744 |
 | P17 | Kingston Road | Toronto ON | Urban density | 95 |
 | P18 | Keele Street | King City ON | Urban density | 105 |
 
@@ -121,7 +121,7 @@ Twenty years of mortgage paydown together with the equity remaining in the deal 
 
 ## Confidentiality posture
 
-**Public:** the model, the site list (address + units + typology + binding status), the team, the governance structure, the 5,131 / 18 / 156 numbers, the regional distribution.
+**Public:** the model, the site list (address + units + typology + binding status), the team, the governance structure, the 5,156 / 18 / 906 numbers, the regional distribution.
 
 **Partner-only (deal rooms):** site-level financial models, landowner identities, operator pairings, construction-period reporting.
 
