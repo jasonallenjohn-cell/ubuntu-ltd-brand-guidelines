@@ -17,24 +17,24 @@ This is ground truth. If a fact you need isn't here, ask — don't invent.
 
 | Number | What it is |
 |---|---|
-| **5,156** | Homes in pipeline (total units across all 18 sites) |
-| **18** | Entitled sites under binding agreement or binding LOI |
+| **5,623** | Homes in pipeline (total units across all 21 sites) |
+| **21** | Entitled sites under binding agreement or binding LOI |
 | **906** | Launchpad cohort homes — breaking ground 2026 |
 | **4** | Launchpad cohort sites |
 | **2028** | First deliveries |
-| **10** | Cities and townships represented in pipeline |
+| **11** | Cities and townships represented in pipeline (10 plus Scarborough cluster) |
 | **~$615M** | Launchpad cohort estimated development cost (blended $681K/unit) |
-| **~$3.5B** | Full pipeline estimated development cost (Launchpad cost-per-unit × 5,156) |
+| **~$3.8B** | Full pipeline estimated development cost (blended $681K/unit × 5,623) |
 | **2024** | Year of incorporation |
 
 ## Regional distribution
 
 | Region | Sites | Homes |
 |---|---|---|
-| GTA & Hamilton | 8 | 2,854 |
+| GTA, Scarborough & Hamilton | 11 | 3,321 |
 | Simcoe & North | 9 | 2,253 |
 | Regional centres | 1 | 49 |
-| **Total** | **18** | **5,156** |
+| **Total** | **21** | **5,623** |
 
 ## The Launchpad cohort (4 sites, 906 homes, ground-break 2026)
 
@@ -47,7 +47,7 @@ This is ground truth. If a fact you need isn't here, ask — don't invent.
 
 **844 Veterans Drive Launchpad reference deal**: 78 units, $10.28M land contributed, $55.4M total dev cost, breaks ground 2026, delivers by 2028.
 
-## The full pipeline (14 additional sites, 4,250 homes)
+## The full pipeline (17 additional sites, 4,717 homes)
 
 | # | Address | City | Typology | Units |
 |---|---|---|---|---|
@@ -65,8 +65,21 @@ This is ground truth. If a fact you need isn't here, ask — don't invent.
 | P15 | Lakeshore Boulevard | Toronto ON | Urban density | 300 |
 | P17 | Kingston Road | Toronto ON | Urban density | 95 |
 | P18 | Keele Street | King City ON | Urban density | 105 |
+| **P19** | **2008 Brimley Road** | **Scarborough ON** | **Family-housing pilot · 6-storey + rear** | **30** |
+| **P20** | **4140 Finch Avenue East (NAMF Cultural Centre)** | **Scarborough ON** | **32-storey mixed-use · community anchor (mosque, school, retail, medical)** | **243** |
+| **P21** | **3175–3181 Sheppard Avenue East** | **Scarborough ON** | **14-storey mixed-use · Avenues corridor** | **194** |
 
 All under binding LOI.
+
+## Scarborough sub-cluster (added May 2026)
+
+| # | Address | Landowner / Titleholder | Architect | Operator | Status |
+|---|---|---|---|---|---|
+| P19 | 2008 Brimley Road | Gary Loughlin | Office Ou Ltd. | Our Greenway Conservancy | Feasibility complete · PAC submission drawings · shovel-ready in 6–12 months |
+| P20 | 4140 Finch Ave E | North American Muslim Foundation (NAMF) | r. Varacalli Architect Inc. | NAMF | PAC architectural plans issued Feb 28, 2025 · entitlements advancing |
+| P21 | 3175–3181 Sheppard Ave E | Doran Design Build Inc. (Khosrow Masoumi) | — | Community operator partner (in discussion) | ZBA in process · LOI in negotiation · land appraised $12.2M (Colliers Mar 2024) |
+
+Scarborough sub-total: 3 sites · 467 homes · in Northpine's home geography.
 
 ## The four-step model (Common Ground Initiative mechanic)
 
@@ -121,7 +134,7 @@ Twenty years of mortgage paydown together with the equity remaining in the deal 
 
 ## Confidentiality posture
 
-**Public:** the model, the site list (address + units + typology + binding status), the team, the governance structure, the 5,156 / 18 / 906 numbers, the regional distribution.
+**Public:** the model, the site list (address + units + typology + binding status), the team, the governance structure, the 5,623 / 21 / 906 numbers, the regional distribution.
 
 **Partner-only (deal rooms):** site-level financial models, landowner identities, operator pairings, construction-period reporting.
 

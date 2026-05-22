@@ -26,7 +26,7 @@ Source: Brand Guidelines §39. Last updated 2026-05-20.
 **For:** press releases, "About" sections, grant applications
 **Status:** Approved 2026-04-22
 
-> Ubuntu Land Trust & Developments ("Ubuntu LTD") is a Canadian organization that unlocks privately-owned land for inclusive, permanent affordable housing. Through the Common Ground Initiative, landowners contribute entitled, shovel-ready parcels as equity into project SPVs developed by non-profit and co-op operators; CMHC and Build Canada Homes provide the wedge capital that closes the gap. The operator owns the building from day one and acquires the land, fee simple, at Year 20. The model has 18 sites and 5,156 units in pipeline as of May 2026, with a 906-home Launchpad cohort breaking ground in 2026.
+> Ubuntu Land Trust & Developments ("Ubuntu LTD") is a Canadian organization that unlocks privately-owned land for inclusive, permanent affordable housing. Through the Common Ground Initiative, landowners contribute entitled, shovel-ready parcels as equity into project SPVs developed by non-profit and co-op operators; CMHC and Build Canada Homes provide the wedge capital that closes the gap. The operator owns the building from day one and acquires the land, fee simple, at Year 20. The model has 21 sites and 5,623 units in pipeline as of May 2026, with a 906-home Launchpad cohort breaking ground in 2026.
 
 ---
 
@@ -38,7 +38,7 @@ Source: Brand Guidelines §39. Last updated 2026-05-20.
 >
 > Ubuntu LTD's primary vehicle is the Common Ground Initiative, a partnership model that brings four parties to one table: a landowner, a non-profit or co-op operator, public-capital agencies (CMHC and Build Canada Homes), and Ubuntu LTD itself. The landowner contributes the parcel as equity into a project special-purpose vehicle in exchange for preferred-equity units. The operator builds and owns the housing from day one. Public capital — through CMHC's Apartment Construction Loan Program, the Affordable Housing Fund, and Build Canada Homes wedge equity — closes the funding gap that conventional debt cannot. At Year 20, preferred-equity units are redeemed and title to the land transfers, fee simple, to the operator.
 >
-> As of May 2026, Ubuntu LTD has 18 sites and 5,156 units of permanent affordable housing in pipeline across Canada. Four Launchpad sites — 844 Veterans Drive in Barrie (ground-oriented townhomes, 78), Main Street in Listowel (seniors residence, 49 units / 88 beds), Grahams Lane in Burlington (high-rise, 744), and 27 Blake Street in Toronto (mid-rise urban rental, 35) — break ground in 2026 and deliver 906 units by 2028. Ubuntu LTD does not develop, build, or operate housing itself; it sits at the seam between land, operators, and public capital, and does the legal and financial paperwork that lets the math move.
+> As of May 2026, Ubuntu LTD has 21 sites and 5,623 units of permanent affordable housing in pipeline across Canada. Four Launchpad sites — 844 Veterans Drive in Barrie (ground-oriented townhomes, 78), Main Street in Listowel (seniors residence, 49 units / 88 beds), Grahams Lane in Burlington (high-rise, 744), and 27 Blake Street in Toronto (mid-rise urban rental, 35) — break ground in 2026 and deliver 906 units by 2028. Ubuntu LTD does not develop, build, or operate housing itself; it sits at the seam between land, operators, and public capital, and does the legal and financial paperwork that lets the math move.
 
 ---
 

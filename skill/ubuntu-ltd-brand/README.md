@@ -81,7 +81,7 @@ Just ask normally. Examples:
 >
 > "I need an email to the Network for the Advancement of Black Communities thanking Amanuel for the introduction to a potential operator."
 >
-> "Draft a one-paragraph LinkedIn post about hitting 5,156 units in pipeline."
+> "Draft a one-paragraph LinkedIn post about hitting 5,623 units in pipeline."
 >
 > "What's our approved 100-word boilerplate?"
 >

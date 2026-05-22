@@ -56,11 +56,11 @@
 
   <!-- stats row -->
   <g transform="translate(80, 525)">
-    <text font-family="Newsreader, Georgia, serif" font-size="56" font-weight="300" letter-spacing="-1.5" fill="#d4a04a">5,156</text>
+    <text font-family="Newsreader, Georgia, serif" font-size="56" font-weight="300" letter-spacing="-1.5" fill="#d4a04a">5,623</text>
     <text x="0" y="38" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="2.5" font-weight="500" fill="#ebdfc4" fill-opacity="0.65">HOMES IN PIPELINE</text>
   </g>
   <g transform="translate(380, 525)">
-    <text font-family="Newsreader, Georgia, serif" font-size="56" font-weight="300" letter-spacing="-1.5" fill="#d4a04a">18</text>
+    <text font-family="Newsreader, Georgia, serif" font-size="56" font-weight="300" letter-spacing="-1.5" fill="#d4a04a">21</text>
     <text x="0" y="38" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="2.5" font-weight="500" fill="#ebdfc4" fill-opacity="0.65">ENTITLED SITES</text>
   </g>
   <g transform="translate(580, 525)">

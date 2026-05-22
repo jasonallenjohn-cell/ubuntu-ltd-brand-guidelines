@@ -3,14 +3,14 @@
 ## Three voice principles
 
 1. **Plain, precise, generous.** Short Anglo-Saxon words over long Latinate ones. Specific over abstract. Generous in describing partners; never preachy.
-2. **Numbers carry the argument.** When a number can do the work, let it. "5,156 homes across 18 sites" is a sentence. Don't pad it.
+2. **Numbers carry the argument.** When a number can do the work, let it. "5,623 homes across 21 sites" is a sentence. Don't pad it.
 3. **Institution, not start-up.** Ubuntu LTD speaks as an institution from day one. Not "we're going to build" — "we are building." Not "innovative platform" — "platform." Not "disrupting affordable housing" — "running the math."
 
 ## What we sound like
 
 > Land contributed as equity is land that carries the math.
 
-> The Common Ground Initiative closed the year with eighteen entitled sites and 5,156 units of permanent affordable housing in pipeline across Canada.
+> The Common Ground Initiative closed the year with twenty-one entitled sites and 5,623 units of permanent affordable housing in pipeline across Canada.
 
 > Non-profit operators own the buildings day one. The land transfers to them at Year 20.
 
