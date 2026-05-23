@@ -71,6 +71,22 @@ This is ground truth. If a fact you need isn't here, ask — don't invent.
 
 All under binding LOI.
 
+## Non-profit operator network
+
+The community-based non-profits that take 100% title and operate the housing permanently. Each brings its own mandate, service relationships, and operating capacity.
+
+| Operator | Role / context |
+|---|---|
+| **Rwandan Canadian Healing Centre (RCHC)** | Co-founder of Ubuntu LTD. ED Kizito Musabimana led the ACAH Village (CMHC Solutions Lab origin). Refugee-focused operator across the platform. |
+| **WoodGreen Community Services** | One of Toronto's largest social service organisations with deep experience in affordable and supportive housing delivery. |
+| **St. Clair's** | Community housing and services operator with established Toronto-area programmes. |
+| **New Nakfa (Eritrean Community Network)** | Community-based non-profit chaired by Jonathan Okubay (MD). Serves the Eritrean and broader African-Canadian community in Toronto. |
+| **North American Muslim Foundation (NAMF)** | Operator and titleholder of the 4140 Finch Avenue East Cultural Centre project (P20 Scarborough). |
+| **Our Greenway Conservancy** | Proposed operator of the 2008 Brimley Road family-housing pilot (P19 Scarborough). |
+| **Tropicana Community Services** | Scarborough-rooted community organisation serving Black and Caribbean families. |
+
+Add new operators here as they join the platform.
+
 ## Scarborough sub-cluster (added May 2026)
 
 | # | Address | Landowner / Titleholder | Architect | Operator | Status |
@@ -103,7 +119,11 @@ Twenty years of mortgage paydown together with the equity remaining in the deal 
 
 **Amanuel Melles — Director.** Executive Director of the Network for the Advancement of Black Communities (NABC). Nationally recognized ecosystem and policy leader. Senior leadership history at United Way Toronto, Family Service Toronto, Ontario Council of Agencies Serving Immigrants, and New Heights Community Health Centre. Has served on boards of the Toronto Region Immigrant Employment Council, Ontario Council for International Cooperation, Distress Centres Toronto, and the Community Social Planning Council of Toronto.
 
-**Nadine Miller — Director.** Executive Director of Pilgrim's Feast Tabernacle Church. Senior community leader with experience in faith-based leadership, governance, and community stewardship.
+**Nadine Miller — Director.** Senior community leader and organisational executive with experience in faith-based leadership, governance, and community stewardship. Executive Director of Pilgrim's Feast Tabernacle Church, where she oversees organisational leadership, program delivery, and community engagement.
+
+In her role, Nadine manages governance structures, operational teams, and community-focused initiatives serving families and vulnerable populations through pastoral care, outreach, and social programming. Her leadership emphasises ethical governance, accountability, and long-term institutional sustainability.
+
+As a Director of Ubuntu Land Trust and Developments, Nadine contributes values-based leadership, governance insight, and a deep understanding of community dynamics essential to inclusive and sustainable housing initiatives.
 
 ### Executive Management
 
