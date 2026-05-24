@@ -133,15 +133,19 @@ As a Director of Ubuntu Land Trust and Developments, Nadine contributes values-b
 
 ### Advisory & Professional Services
 
-**Jason Allen-John — Development Consultant & Strategic Partner / Mortgage broker · CMHC financing specialist.** Real-estate finance professional with a background in banking and financial services. Leads project structuring, financial strategy, feasibility analysis, and CMHC capital alignment across the Ubuntu LTD pipeline.
+The named professionals below lead specialist functions across the Ubuntu LTD pipeline — bringing GTA development experience and a track record of delivered projects.
 
-**Joseph Cordiano — Lead developer (4140 Finch · P20).** Founding partner of Cityzen Development Group and former Minister of Economic Development and Trade for Ontario. Leads the 4140 Finch Avenue East Cultural Centre development with Roy Varacalli. Combined team brings 50+ years in development, design, and construction, with oversight of over $5 billion in completed housing projects across the GTA and internationally.
+**Joseph Cordiano — Lead developer (4140 Finch · P20) · Cityzen Development Group.** Founding partner of Cityzen Development Group and former Minister of Economic Development and Trade for Ontario. Joined Cityzen as a principal in 2006; leads sales, marketing, and new business development across the GTA portfolio. Notable Cityzen projects: **L Tower** (Yonge and The Esplanade), **Pier 27** (Toronto waterfront), **Backstage Condos** (36 storeys), **D'or Condominiums** at 878 Yonge — partnering with internationally recognised architects including Daniel Libeskind.
 
-**Roy Varacalli — Architect (4140 Finch · P20).** Canadian architect of r. Varacalli Architect Inc. Lead architect of the NAMF Cultural Centre. Long track record across major housing projects.
+**Roy Varacalli — Architect (4140 Finch · P20) · r. Varacalli Architect Inc. / Architect-Partner, Bazis.** Notable Toronto projects: **Exhibit Residences** (32-storey condo at Yonge and Bloor with rotated stacked slabs), **E Condos** (mixed-use mid-town towers at Yonge and Eglinton), **1 Yorkville** (heritage restoration with new architecture), **Emerald Park** (mixed-use city-block development in North York), **750 Mt Pleasant** (35-storey at Davisville). Lead architect on the NAMF Cultural Centre at 4140 Finch.
 
-**Darren Vella — Planning & municipal execution.** 25 years of land-planning experience. Currently managing several active sites in Barrie, including 407–419 Mapleview Drive (46 units) and 910 Veterans Drive (48 units). Across the Ubuntu LTD pipeline: land planning, zoning approvals, and municipal execution.
+**Combined Cordiano + Varacalli experience: 50+ years in development, design, and construction; oversight of over $5 billion in completed housing projects across the GTA and internationally.**
 
-**Justin Bahou — CEO, Cube Building Systems.** Operates Ubuntu LTD's 100,000-square-foot modular prefab facility partner in Brampton. Pre-development facilitation and cost-certainty oversight across the construction programme. Cube Building Systems is also listed under Construction Partners.
+**Darren Vella — Planning & municipal execution · IPS Consulting (Innovative Planning Solutions) · MCIP, RPP.** President and Director of Planning at IPS Consulting in Barrie. 25 years of land-planning experience. Past and active planning consultant on Barrie sites including the Veterans Drive and Mapleview Drive corridors. Across the Ubuntu LTD pipeline (including 844 Veterans Drive Launchpad and Mapleview Drive): land planning, zoning approvals, and municipal execution.
+
+**Justin Bahou — CEO, Cube Building Systems.** Operates Ubuntu LTD's modular construction partner. Cube Building Systems, founded 2017, runs a 100,000-square-foot prefab facility in the Greater Toronto Area. Pre-development facilitation, fixed-price contracts, schedule guarantees, and cost-certainty oversight across the construction programme.
+
+**Jason Allen-John — Development Consultant & Strategic Partner / Mortgage broker · CMHC financing specialist.** Real-estate finance professional with a background in banking and financial services. Leads project structuring, financial strategy, feasibility analysis, and CMHC capital alignment across the pipeline.
 
 **John Fox — Counsel, Robins Appleby LLP.** External counsel. Responsible for the legal architecture of every project — SPV formation, ground-lease structuring, affordability covenants, and CMHC-compliant documentation.
 
