@@ -151,6 +151,12 @@ The named professionals below lead specialist functions across the Ubuntu LTD pi
 
 **Ryan Adams — Public affairs, Wellington DuPont Group.** Government relations and stakeholder engagement across federal, provincial, and municipal channels — packaging submissions, advancing approvals, and supporting institutional partnerships.
 
+### Education & Capacity-Building Partner
+
+**Monumental** (monumentalprojects.ca) — Co-founded by Kofi Hope and Zahra Ebrahim. Toronto-based social-purpose consulting and design studio focused on equitable urban development, BIPOC leadership development, and participatory policy-making. **Ubuntu LTD's education and capacity-building partner.** Through its **FutureBUILDS** programme — a real estate development initiative for BIPOC professionals — Monumental builds the operator and professional pipeline that the Common Ground Initiative depends on as it scales. Monumental's broader network includes the City of Toronto, City of London, Toronto Community Housing, George Brown College, the University of Toronto's School of Cities, the Infrastructure Institute, and the Federation of Canadian Municipalities.
+
+Role: developing the next generation of BIPOC real estate professionals and operator leadership across the Ubuntu LTD pipeline.
+
 ## Governance positioning
 
 - **Black-led** Board of Directors and Executive Management — central to the institutional identity
