@@ -131,9 +131,21 @@ As a Director of Ubuntu Land Trust and Developments, Nadine contributes values-b
 
 **Jonathan Okubay — Managing Director (MD).** Principal architect of the platform model. Real estate development strategy, construction management, financial structuring, institutional partnerships. Also Chair of the Eritrean Community Network (operating as New Nakfa). Leads platform design, strategic partnerships, capital alignment, and institutional readiness.
 
-### Advisory
+### Advisory & Professional Services
 
-**Jason Allen-John — Development Consultant & Strategic Partner.** Real estate finance professional and development advisor. Background in banking and financial services; experience in financial analysis, risk assessment, and capital structuring. Provides advisory on project structuring, feasibility, and capital alignment.
+**Jason Allen-John — Development Consultant & Strategic Partner / Mortgage broker · CMHC financing specialist.** Real-estate finance professional with a background in banking and financial services. Leads project structuring, financial strategy, feasibility analysis, and CMHC capital alignment across the Ubuntu LTD pipeline.
+
+**Joseph Cordiano — Lead developer (4140 Finch · P20).** Founding partner of Cityzen Development Group and former Minister of Economic Development and Trade for Ontario. Leads the 4140 Finch Avenue East Cultural Centre development with Roy Varacalli. Combined team brings 50+ years in development, design, and construction, with oversight of over $5 billion in completed housing projects across the GTA and internationally.
+
+**Roy Varacalli — Architect (4140 Finch · P20).** Canadian architect of r. Varacalli Architect Inc. Lead architect of the NAMF Cultural Centre. Long track record across major housing projects.
+
+**Darren Vella — Planning & municipal execution.** 25 years of land-planning experience. Currently managing several active sites in Barrie, including 407–419 Mapleview Drive (46 units) and 910 Veterans Drive (48 units). Across the Ubuntu LTD pipeline: land planning, zoning approvals, and municipal execution.
+
+**Justin Bahou — CEO, Cube Building Systems.** Operates Ubuntu LTD's 100,000-square-foot modular prefab facility partner in Brampton. Pre-development facilitation and cost-certainty oversight across the construction programme. Cube Building Systems is also listed under Construction Partners.
+
+**John Fox — Counsel, Robins Appleby LLP.** External counsel. Responsible for the legal architecture of every project — SPV formation, ground-lease structuring, affordability covenants, and CMHC-compliant documentation.
+
+**Ryan Adams — Public affairs, Wellington DuPont Group.** Government relations and stakeholder engagement across federal, provincial, and municipal channels — packaging submissions, advancing approvals, and supporting institutional partnerships.
 
 ## Governance positioning
 
