@@ -863,7 +863,7 @@ section.band.dark .step p { color: rgba(245, 236, 214, 0.7); }
   width: 100%;
   height: auto;
   display: block;
-  max-height: 320px;
+  max-height: 380px;
 }
 .flow-caption {
   margin-top: 24px;
