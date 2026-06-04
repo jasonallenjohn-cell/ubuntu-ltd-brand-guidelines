@@ -521,7 +521,7 @@ section.band.dark .step p { color: rgba(245, 236, 214, 0.7); }
 }
 .site-footer .grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 32px;
   padding-bottom: 56px;
   border-bottom: .5px solid rgba(245, 236, 214, 0.2);
