@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Long Branch Tower · How It Works</title><link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap' rel='stylesheet'><style>
+:root{--espresso:#1f1612;--espresso2:#2a1f18;--cream:#f3ead6;--cream2:#f7efdb;--gold:#c89344;--gold2:#b07f33;--ink:#161210;--muted:#6b5d4f;--line:#e0d5bd;--creamtxt:#f7efdb;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Newsreader',Georgia,serif;color:var(--ink);background:var(--cream);line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.gold{color:var(--gold)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 26px}
+header.top{background:var(--cream);border-bottom:1px solid var(--line);padding:17px 0}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.brand{font-family:'Newsreader',serif;font-size:21px;color:var(--ink);font-weight:600;letter-spacing:.01em}
+.brand span{font-weight:300}
+.navlinks{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero{background:var(--espresso);color:var(--creamtxt);padding:62px 0 54px}
+.kick{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.hero h1{font-family:'Newsreader',serif;font-weight:300;font-size:58px;line-height:1.04;margin:20px 0 18px;color:var(--cream);letter-spacing:-.01em}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p{max-width:730px;color:#d8cdb5;font-size:18px;font-weight:300}
+.hero p b{color:var(--gold);font-weight:500}
+.stripe{display:flex;flex-wrap:wrap;border:1px solid rgba(200,147,68,.32);border-radius:2px;margin:32px 0 0;overflow:hidden}
+.stripe .cell{flex:1 1 0;min-width:150px;padding:18px 20px;border-right:1px solid rgba(200,147,68,.2)}
+.stripe .cell:last-child{border-right:0}
+.stripe .v{font-family:'Newsreader',serif;font-size:30px;color:var(--cream);font-weight:300;line-height:1}
+.stripe .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#a99878;margin-top:8px}
+section{padding:42px 0;border-top:1px solid var(--line)}
+.secno{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--gold2);text-transform:uppercase}
+h2{font-family:'Newsreader',serif;font-size:38px;font-weight:300;color:var(--ink);margin:10px 0 16px;letter-spacing:-.012em}
+h2 em{font-style:italic;color:var(--gold)}
+h3{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--espresso);margin:24px 0 10px}
+p.lead{font-size:18px;color:#3a3128;max-width:790px;font-weight:300}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+th{background:var(--espresso);color:var(--cream);font-family:'JetBrains Mono',monospace;font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+td{font-family:'Newsreader',serif}
+td.r,th.r{text-align:right}
+tr:nth-child(even) td{background:var(--cream2)}
+tr.tot td{font-weight:600;color:var(--espresso);background:#efe1c1;border-top:2px solid var(--gold)}
+.cards{display:flex;flex-wrap:wrap;gap:16px;margin:20px 0}
+.card{flex:1 1 220px;background:var(--cream2);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:2px;padding:18px 20px}
+.card .who{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.card h4{font-family:'Newsreader',serif;color:var(--espresso);font-size:20px;font-weight:400;margin:6px 0 10px;font-style:italic}
+.card .big{font-family:'Newsreader',serif;font-size:27px;color:var(--gold2);font-weight:400}
+.card small{color:var(--muted);font-size:13px;font-family:'Newsreader',serif}
+.note{background:var(--cream2);border-left:3px solid var(--gold);padding:14px 18px;margin:16px 0;font-size:15px;color:#3a3128}
+.src{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.03em;color:#8a7c6a;line-height:1.6}
+.flag{color:#a23b2c;font-weight:600}.ok{color:#5c6e2f;font-weight:600}
+footer{background:var(--espresso);color:#bdae93;padding:34px 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;line-height:1.8}
+footer .gold{color:var(--gold)}
+.arterial{display:inline-block;background:var(--gold);color:#1f1612;border-radius:2px;padding:1px 7px;font-size:9.5px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle}
+</style></head><body>
+<header class="top"><div class="wrap"><span class="brand">Ubuntu Land Trust <span>&amp; Developments</span></span>
+<span class="navlinks">Common Ground Initiative · Arterial-grounded</span></div></header>
+<div class="hero"><div class="wrap"><span class="kick">Common Ground Initiative · The Whole Solution</span>
+<h1>One site. <em>Everyone</em> moves forward.</h1>
+<p>Long Branch Tower · 490 homes · 3807-3829 Lake Shore Blvd. W, Etobicoke (Long Branch), Toronto, ON M8W 1R3 — how the landowner, the non-profit operator, governments and residents
+each win from the same structure. Figures grounded in Arterial.</p></div></div>
+<div class="wrap"><section style="border-top:0"><h2>What each party puts in — and <em>takes out.</em></h2><div class="cards">
+  <div class="card"><div class="who">Landowner</div><h4>$65.0M all-in by Year 10</h4>
+    <div class="big">$19,386,000</div><small>Day-1 cash (60% of appraisal) + $29,457,728 cash-flow share (Yrs 1–10) + $16,174,450 Year-10 buyout — plus $3,519,153 of appraised value donated to affordability.</small></div>
+  <div class="card"><div class="who">Non-profit operator</div><h4>490 homes, $0 down</h4>
+    <div class="big">$257.3M</div><small>100% building ownership Day 1 · $52,257,509 cash-flow share · fee-simple land at Year 10 · net equity at Year 20.</small></div>
+  <div class="card"><div class="who">Governments</div><h4>Self-funding</h4>
+    <div class="big">$75,238,780</div><small>BCH split tranche: $41,005,135 contribution (vests vs deep affordability) + $34,233,645 mezz repaid with interest at BoC+100. CMHC-insured 50% + City ($9,404,848).</small></div>
+  <div class="card"><div class="who">Residents</div><h4>Permanent affordability</h4>
+    <div class="big">147 homes</div><small>30% of units at 80% of median market rent, secured permanently once the non-profit owns land and building.</small></div>
+</div>
+<h2 style="margin-top:24px">Twenty years, <em>three moves.</em></h2>
+<div class="cards">
+ <div class="card"><div class="who">Day 1 · Close</div><h4>Structure &amp; build</h4>
+   <small>Landowner leases land in via an SPV; draws $19,386,000 cash. BCH + CMHC + City fund the $188.1M build. Non-profit takes 100% ownership of the building.</small></div>
+ <div class="card"><div class="who">Years 1–20 · Operate</div><h4>Run &amp; share</h4>
+   <small>490 homes operate; 147 held at 80% MMR. One $94,048,474 CMHC mortgage at 1.80× DSCR. Cash flow split 60/40.</small></div>
+ <div class="card"><div class="who">Year 10 · The pivot</div><h4>Land secured early</h4>
+   <small>Landowner fully bought out ($16,174,450); non-profit takes fee-simple title a decade early. BCH steps into the 60% seat, is repaid by Year 20 (~$257.3M net non-profit equity).</small></div></div>
+<div class="note">The affordability earns the financing: 30% at 80% MMR unlocks the CMHC MLI Select terms the whole stack relies on.</div>
+</section></div>
+<footer><div class="wrap"><b class="gold">Ubuntu Land Trust &amp; Developments</b> &nbsp;·&nbsp; "I am because we are"<br><br>
+Illustrative underwriting for Long Branch Tower — 3807-3829 Lake Shore Blvd. W, Etobicoke (Long Branch), Toronto, ON M8W 1R3. Program, construction cost, development charges, CMHC rents and
+property tax are sourced from the <span class="arterial">Arterial</span> connector; land value is the client's appraisal.
+Cap rate, vacancy, operating ratios and financing terms are modelling assumptions — not a valuation, appraisal, offer, or
+financial advice. Subject to a QS budget, verified rent schedule, and third-party approvals (CMHC MLI Select, Build Canada
+Homes, City of Toronto).</div></footer></body></html>
