@@ -1,82 +1,63 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Long Branch Tower · How It Works</title><link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap' rel='stylesheet'><style>
-:root{--espresso:#1f1612;--espresso2:#2a1f18;--cream:#f3ead6;--cream2:#f7efdb;--gold:#c89344;--gold2:#b07f33;--ink:#161210;--muted:#6b5d4f;--line:#e0d5bd;--creamtxt:#f7efdb;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Newsreader',Georgia,serif;color:var(--ink);background:var(--cream);line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased}
-.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
-.gold{color:var(--gold)}
-.wrap{max-width:1000px;margin:0 auto;padding:0 26px}
-header.top{background:var(--cream);border-bottom:1px solid var(--line);padding:17px 0}
-header.top .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.brand{font-family:'Newsreader',serif;font-size:21px;color:var(--ink);font-weight:600;letter-spacing:.01em}
-.brand span{font-weight:300}
-.navlinks{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.hero{background:var(--espresso);color:var(--creamtxt);padding:62px 0 54px}
-.kick{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
-.hero h1{font-family:'Newsreader',serif;font-weight:300;font-size:58px;line-height:1.04;margin:20px 0 18px;color:var(--cream);letter-spacing:-.01em}
-.hero h1 em{color:var(--gold);font-style:italic}
-.hero p{max-width:730px;color:#d8cdb5;font-size:18px;font-weight:300}
-.hero p b{color:var(--gold);font-weight:500}
-.stripe{display:flex;flex-wrap:wrap;border:1px solid rgba(200,147,68,.32);border-radius:2px;margin:32px 0 0;overflow:hidden}
-.stripe .cell{flex:1 1 0;min-width:150px;padding:18px 20px;border-right:1px solid rgba(200,147,68,.2)}
-.stripe .cell:last-child{border-right:0}
-.stripe .v{font-family:'Newsreader',serif;font-size:30px;color:var(--cream);font-weight:300;line-height:1}
-.stripe .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#a99878;margin-top:8px}
-section{padding:42px 0;border-top:1px solid var(--line)}
-.secno{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--gold2);text-transform:uppercase}
-h2{font-family:'Newsreader',serif;font-size:38px;font-weight:300;color:var(--ink);margin:10px 0 16px;letter-spacing:-.012em}
-h2 em{font-style:italic;color:var(--gold)}
-h3{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--espresso);margin:24px 0 10px}
-p.lead{font-size:18px;color:#3a3128;max-width:790px;font-weight:300}
-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}
-th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
-th{background:var(--espresso);color:var(--cream);font-family:'JetBrains Mono',monospace;font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
-td{font-family:'Newsreader',serif}
-td.r,th.r{text-align:right}
-tr:nth-child(even) td{background:var(--cream2)}
-tr.tot td{font-weight:600;color:var(--espresso);background:#efe1c1;border-top:2px solid var(--gold)}
-.cards{display:flex;flex-wrap:wrap;gap:16px;margin:20px 0}
-.card{flex:1 1 220px;background:var(--cream2);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:2px;padding:18px 20px}
-.card .who{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.card h4{font-family:'Newsreader',serif;color:var(--espresso);font-size:20px;font-weight:400;margin:6px 0 10px;font-style:italic}
-.card .big{font-family:'Newsreader',serif;font-size:27px;color:var(--gold2);font-weight:400}
-.card small{color:var(--muted);font-size:13px;font-family:'Newsreader',serif}
-.note{background:var(--cream2);border-left:3px solid var(--gold);padding:14px 18px;margin:16px 0;font-size:15px;color:#3a3128}
-.src{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.03em;color:#8a7c6a;line-height:1.6}
-.flag{color:#a23b2c;font-weight:600}.ok{color:#5c6e2f;font-weight:600}
-footer{background:var(--espresso);color:#bdae93;padding:34px 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;line-height:1.8}
-footer .gold{color:var(--gold)}
-.arterial{display:inline-block;background:var(--gold);color:#1f1612;border-radius:2px;padding:1px 7px;font-size:9.5px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Long Branch Tower · How It Works</title>
+<style>
+:root{--espresso:#3a2a1e;--cream:#f4ede3;--gold:#b8863b;--ink:#2b2018;}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--espresso);color:var(--cream);font-family:'Newsreader',Georgia,serif;
+display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px}
+.card{max-width:420px;width:100%;text-align:center}
+.mark{font:500 13px/1 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+h1{font-weight:400;font-size:26px;margin:0 0 6px}
+p{opacity:.72;font-size:15px;margin:0 0 24px;line-height:1.5}
+form{display:flex;gap:10px}
+input{flex:1;padding:13px 15px;border-radius:8px;border:1px solid rgba(244,237,227,.25);
+background:rgba(244,237,227,.06);color:var(--cream);font-size:16px;font-family:inherit}
+input:focus{outline:none;border-color:var(--gold)}
+button{padding:13px 20px;border:none;border-radius:8px;background:var(--gold);color:var(--ink);
+font:500 15px 'JetBrains Mono',monospace;cursor:pointer}
+button:hover{filter:brightness(1.07)}
+.err{color:#e6a08a;font-size:14px;min-height:20px;margin-top:14px;font-family:'JetBrains Mono',monospace}
+.lock{font-size:30px;margin-bottom:14px;opacity:.9}
 </style></head><body>
-<header class="top"><div class="wrap"><span class="brand">Ubuntu Land Trust <span>&amp; Developments</span></span>
-<span class="navlinks">Common Ground Initiative · Arterial-grounded</span></div></header>
-<div class="hero"><div class="wrap"><span class="kick">Common Ground Initiative · The Whole Solution</span>
-<h1>One site. <em>Everyone</em> moves forward.</h1>
-<p>Long Branch Tower · 490 homes · 3807-3829 Lake Shore Blvd. W, Etobicoke (Long Branch), Toronto, ON M8W 1R3 — how the landowner, the non-profit operator, governments and residents
-each win from the same structure. Figures grounded in Arterial.</p></div></div>
-<div class="wrap"><section style="border-top:0"><h2>What each party puts in — and <em>takes out.</em></h2><div class="cards">
-  <div class="card"><div class="who">Landowner</div><h4>$65.0M all-in by Year 10</h4>
-    <div class="big">$19,386,000</div><small>Day-1 cash (60% of appraisal) + $29,457,728 cash-flow share (Yrs 1–10) + $16,174,450 Year-10 buyout — plus $3,519,153 of appraised value donated to affordability.</small></div>
-  <div class="card"><div class="who">Non-profit operator</div><h4>490 homes, $0 down</h4>
-    <div class="big">$257.3M</div><small>100% building ownership Day 1 · $52,257,509 cash-flow share · fee-simple land at Year 10 · net equity at Year 20.</small></div>
-  <div class="card"><div class="who">Governments</div><h4>Self-funding</h4>
-    <div class="big">$75,238,780</div><small>BCH split tranche: $41,005,135 contribution (vests vs deep affordability) + $34,233,645 mezz repaid with interest at BoC+100. CMHC-insured 50% + City ($9,404,848).</small></div>
-  <div class="card"><div class="who">Residents</div><h4>Permanent affordability</h4>
-    <div class="big">147 homes</div><small>30% of units at 80% of median market rent, secured permanently once the non-profit owns land and building.</small></div>
+<div class="card">
+<div class="mark">Ubuntu Land Trust · Common Ground</div>
+<div class="lock">&#128274;</div>
+<h1>Long Branch Tower · How It Works</h1>
+<p>This document is confidential. Enter the access password to view it.</p>
+<form id="f" autocomplete="off">
+<input id="pw" type="password" placeholder="Password" autofocus aria-label="Password">
+<button type="submit">Unlock</button>
+</form>
+<div class="err" id="e"></div>
 </div>
-<h2 style="margin-top:24px">Twenty years, <em>three moves.</em></h2>
-<div class="cards">
- <div class="card"><div class="who">Day 1 · Close</div><h4>Structure &amp; build</h4>
-   <small>Landowner leases land in via an SPV; draws $19,386,000 cash. BCH + CMHC + City fund the $188.1M build. Non-profit takes 100% ownership of the building.</small></div>
- <div class="card"><div class="who">Years 1–20 · Operate</div><h4>Run &amp; share</h4>
-   <small>490 homes operate; 147 held at 80% MMR. One $94,048,474 CMHC mortgage at 1.80× DSCR. Cash flow split 60/40.</small></div>
- <div class="card"><div class="who">Year 10 · The pivot</div><h4>Land secured early</h4>
-   <small>Landowner fully bought out ($16,174,450); non-profit takes fee-simple title a decade early. BCH steps into the 60% seat, is repaid by Year 20 (~$257.3M net non-profit equity).</small></div></div>
-<div class="note">The affordability earns the financing: 30% at 80% MMR unlocks the CMHC MLI Select terms the whole stack relies on.</div>
-</section></div>
-<footer><div class="wrap"><b class="gold">Ubuntu Land Trust &amp; Developments</b> &nbsp;·&nbsp; "I am because we are"<br><br>
-Illustrative underwriting for Long Branch Tower — 3807-3829 Lake Shore Blvd. W, Etobicoke (Long Branch), Toronto, ON M8W 1R3. Program, construction cost, development charges, CMHC rents and
-property tax are sourced from the <span class="arterial">Arterial</span> connector; land value is the client's appraisal.
-Cap rate, vacancy, operating ratios and financing terms are modelling assumptions — not a valuation, appraisal, offer, or
-financial advice. Subject to a QS budget, verified rent schedule, and third-party approvals (CMHC MLI Select, Build Canada
-Homes, City of Toronto).</div></footer></body></html>
+<script>
+var PAYLOAD="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", ITER=250000, KEYNAME="lbt_access_pw";
+function b64(s){var b=atob(s),a=new Uint8Array(b.length);for(var i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return a;}
+async function unlock(pw){
+  var d=b64(PAYLOAD), salt=d.slice(0,16), iv=d.slice(16,28), ct=d.slice(28);
+  var enc=new TextEncoder();
+  var bk=await crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',false,['deriveKey']);
+  var key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:salt,iterations:ITER,hash:'SHA-256'},bk,{name:'AES-GCM',length:256},false,['decrypt']);
+  var pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:iv},key,ct);
+  return new TextDecoder().decode(pt);
+}
+function render(htmlDoc){ document.open(); document.write(htmlDoc); document.close(); }
+document.getElementById('f').addEventListener('submit',async function(ev){
+  ev.preventDefault();
+  var e=document.getElementById('e'), pw=document.getElementById('pw').value; e.textContent='Decrypting\u2026';
+  try{
+    var htmlDoc=await unlock(pw);
+    try{ sessionStorage.setItem(KEYNAME,pw); }catch(_){ }
+    render(htmlDoc);
+  }catch(err){ e.textContent='Incorrect password. Please try again.'; document.getElementById('pw').value=''; document.getElementById('pw').focus(); }
+});
+// Auto-unlock if this session already entered the password on another page.
+(async function(){
+  var pw; try{ pw=sessionStorage.getItem(KEYNAME); }catch(_){ }
+  if(!pw) return;
+  try{ render(await unlock(pw)); }catch(err){ try{ sessionStorage.removeItem(KEYNAME); }catch(_){ } }
+})();
+</script></body></html>
