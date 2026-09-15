@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Basemap comparison — Ubuntu LTD pipeline</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.js"></script>
+<style>
+  body { margin:0; background:var(--paper); color:var(--ink);
+         font-family:'Newsreader',Georgia,serif; }
+  .wrap { max-width:1240px; margin:0 auto; padding:40px 24px 64px; }
+  .eyebrow { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em;
+             text-transform:uppercase; color:var(--soil); }
+  h1 { font-size:clamp(28px,4vw,42px); font-weight:400; letter-spacing:-.02em;
+       margin:.3em 0 .2em; text-wrap:balance; }
+  h1 em { font-style:italic; color:var(--gold); }
+  .deck { max-width:62ch; font-size:16px; line-height:1.6; color:var(--ink-soft); margin:0 0 28px; }
+  .switch { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+  .switch button { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em;
+    text-transform:uppercase; padding:9px 16px; cursor:pointer; background:transparent;
+    color:var(--ink-soft); border:.5px solid var(--rule); transition:background .15s,color .15s; }
+  .switch button:hover { background:rgba(31,22,18,.06); }
+  .switch button.on { background:var(--navy); color:var(--paper); border-color:var(--navy); }
+  .mapbox-frame { border:.5px solid var(--rule); background:var(--paper-pure); position:relative; }
+  #map { width:100%; height:min(68vh,640px); }
+  .note { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em;
+          text-transform:uppercase; color:var(--ink-soft); padding:10px 14px;
+          border-top:.5px solid var(--rule); margin:0; }
+  .legend { display:flex; gap:26px; flex-wrap:wrap; align-items:center; margin-top:18px;
+            font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em;
+            text-transform:uppercase; color:var(--ink-soft); }
+  .legend .item { display:flex; align-items:center; gap:8px; }
+  .dot { width:11px; height:11px; border-radius:50%; background:var(--gold);
+         border:1px solid var(--rule); display:inline-block; }
+  .dot.lp { background:var(--terra); }
+  .callout { margin-top:36px; border-left:2px solid var(--gold); padding:4px 0 4px 18px;
+             max-width:62ch; font-size:15px; line-height:1.65; color:var(--ink-soft); }
+  .callout strong { color:var(--ink); }
+  .maplibregl-popup-content { background:var(--navy); color:var(--paper); border-radius:0;
+    padding:18px 20px; font-family:'Newsreader',serif; box-shadow:0 8px 24px rgba(31,22,18,.4); }
+  .maplibregl-popup-close-button { color:var(--paper); font-size:20px; padding:2px 8px; }
+  .pop-eyebrow { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em;
+                 text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+  .pop-title { font-size:21px; margin:0 0 3px; font-weight:400; }
+  .pop-stat { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.08em;
+              text-transform:uppercase; color:rgba(245,236,214,.65); margin-bottom:12px; }
+  .pop-row { display:flex; justify-content:space-between; gap:14px; padding:3px 0; font-size:13px;
+             color:rgba(245,236,214,.85); border-top:.5px solid rgba(245,236,214,.18); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="eyebrow">Evaluation page &middot; not linked from the site</span>
+  <h1>Same pipeline, <em>no token required.</em></h1>
+  <p class="deck">
+    This is MapLibre GL with free CARTO basemaps &mdash; no Mapbox account, no access
+    token, no URL allow-list. Identical data and identical pin logic to the live
+    pipeline map: eleven city-level pins, area proportional to homes, terracotta for
+    the Launchpad cohort. Switch basemaps below to compare.
+  </p>
+
+  <div class="switch" id="switch"></div>
+
+  <div class="mapbox-frame">
+    <div id="map"></div>
+    <p class="note">Pins are plotted at city level &mdash; individual site locations are never exposed.</p>
+  </div>
+
+  <div class="legend">
+    <div class="item"><span class="dot lp"></span> Launchpad &middot; ground-break 2026</div>
+    <div class="item"><span class="dot"></span> Pipeline</div>
+    <div class="item">Circle area &prop; homes</div>
+  </div>
+
+  <div class="callout">
+    <strong>What to compare.</strong> Basemap colour and how well it sits against the
+    cream page; how legible the city labels are at corridor zoom; whether the pin
+    sizes read correctly. If you prefer one of these, the live pipeline map can be
+    switched over in about an hour &mdash; and the Mapbox token problem disappears
+    permanently. Delete this page once you&rsquo;ve decided.
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var CITIES = [
+    { city:'Toronto',         lng:-79.3832, lat:43.6532, units:449,  sites:4, lp:1,
+      list:[['27 Blake Street',35,1],['Oakwood Avenue',19,0],['Lakeshore Boulevard',300,0],['Kingston Road',95,0]] },
+    { city:'Scarborough',     lng:-79.2870, lat:43.7900, units:467,  sites:3, lp:0,
+      list:[['4140 Finch Avenue East',243,0],['3175–3181 Sheppard Avenue East',194,0],['2008 Brimley Road',30,0]] },
+    { city:'Brampton',        lng:-79.7624, lat:43.7315, units:940,  sites:1, lp:0,
+      list:[['Queen Street East',940,0]] },
+    { city:'Burlington',      lng:-79.7990, lat:43.3255, units:744,  sites:1, lp:1,
+      list:[['Grahams Lane',744,1]] },
+    { city:'Hamilton',        lng:-79.8711, lat:43.2557, units:721,  sites:3, lp:0,
+      list:[['Park Street South',136,0],['Main Street East',436,0],['150 Standford',149,0]] },
+    { city:'King City',       lng:-79.5305, lat:43.9272, units:105,  sites:1, lp:0,
+      list:[['Keele Street',105,0]] },
+    { city:'Barrie',          lng:-79.6903, lat:44.3894, units:1024, sites:4, lp:1,
+      list:[['844 Veterans Drive',78,1],['Mapleview Drive',46,0],['Anne Street',700,0],['Essa County Road',200,0]] },
+    { city:'Angus',           lng:-79.8762, lat:44.3214, units:148,  sites:1, lp:0,
+      list:[['Mill Street',148,0]] },
+    { city:'Penetanguishene', lng:-79.9325, lat:44.7691, units:560,  sites:1, lp:0,
+      list:[['Penetanguishene',560,0]] },
+    { city:'Port Severn',     lng:-79.7144, lat:44.7989, units:416,  sites:1, lp:0,
+      list:[['Honey Harbour',416,0]] },
+    { city:'Listowel',        lng:-80.9512, lat:43.7385, units:49,   sites:1, lp:1,
+      list:[['Main Street',49,1]] }
+  ];
+
+  var STYLES = [
+    ['Positron',     'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json'],
+    ['Voyager',      'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json'],
+    ['Dark Matter',  'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json']
+  ];
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  var fc = { type:'FeatureCollection', features: CITIES.map(function (c) {
+    var rows = c.list.map(function (s) {
+      return '<div class="pop-row"><span>' + esc(s[0]) + (s[2] ? ' · Launchpad' : '') +
+             '</span><span>' + s[1].toLocaleString() + ' u</span></div>';
+    }).join('');
+    return { type:'Feature', geometry:{ type:'Point', coordinates:[c.lng,c.lat] },
+      properties:{ city:c.city, units:c.units, siteCount:c.sites, lp:c.lp,
+        popup:'<div class="pop-eyebrow">' + (c.lp ? 'Launchpad city' : 'Pipeline city') + '</div>' +
+              '<h3 class="pop-title">' + esc(c.city) + ', ON</h3>' +
+              '<div class="pop-stat">' + c.units.toLocaleString() + ' homes · ' + c.sites +
+              ' site' + (c.sites>1?'s':'') + '</div>' + rows } };
+  })};
+
+  var lngs = CITIES.map(function(c){return c.lng;}), lats = CITIES.map(function(c){return c.lat;});
+  var bounds = [[Math.min.apply(null,lngs),Math.min.apply(null,lats)],
+                [Math.max.apply(null,lngs),Math.max.apply(null,lats)]];
+
+  var map = new maplibregl.Map({
+    container:'map', style:STYLES[0][1], bounds:bounds,
+    fitBoundsOptions:{ padding:{top:60,bottom:60,left:50,right:50} },
+    minZoom:4, maxZoom:13, cooperativeGestures:true,
+    attributionControl:{ customAttribution:'© OpenStreetMap contributors © CARTO' }
+  });
+  map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');
+
+  // CARTO glyph stacks — Mapbox's DIN Pro is not available here.
+  var FONT = ['Open Sans Bold','Noto Sans Bold'];
+
+  function addLayers() {
+    if (map.getSource('pipeline')) return;
+    map.addSource('pipeline', { type:'geojson', data:fc, cluster:true,
+      clusterRadius:52, clusterMaxZoom:9,
+      clusterProperties:{ units:['+',['get','units']], siteCount:['+',['get','siteCount']],
+                          lp:['max',['get','lp']] } });
+
+    var siteRadius = ['max',6,['min',27,['*',['sqrt',['max',['get','units'],1]],0.85]]];
+    var clusterRadius = ['step',['get','point_count'],17,3,21,5,25];
+    var fill = ['case',['>',['get','lp'],0],'#a14a23','#d4a04a'];
+
+    map.addLayer({ id:'clusters', type:'circle', source:'pipeline', filter:['has','point_count'],
+      paint:{ 'circle-color':fill,'circle-radius':clusterRadius,'circle-opacity':.92,
+              'circle-stroke-width':1.5,'circle-stroke-color':'#1f1612' } });
+    map.addLayer({ id:'cluster-count', type:'symbol', source:'pipeline', filter:['has','point_count'],
+      layout:{ 'text-field':['to-string',['get','siteCount']],'text-font':FONT,
+               'text-size':13,'text-allow-overlap':true },
+      paint:{ 'text-color':['case',['>',['get','lp'],0],'#f5ecd6','#1f1612'] } });
+    map.addLayer({ id:'cluster-label', type:'symbol', source:'pipeline', filter:['has','point_count'],
+      layout:{ 'text-field':['concat',['number-format',['get','units'],{}],' homes'],
+               'text-font':FONT,'text-size':10,'text-offset':[0,1.7],'text-anchor':'top',
+               'text-letter-spacing':.08,'text-allow-overlap':false },
+      paint:{ 'text-color':'#3a2d22','text-halo-color':'#f5ecd6','text-halo-width':1.6 } });
+    map.addLayer({ id:'sites', type:'circle', source:'pipeline', filter:['!',['has','point_count']],
+      paint:{ 'circle-color':fill,'circle-radius':siteRadius,'circle-opacity':.92,
+              'circle-stroke-width':1.5,'circle-stroke-color':'#1f1612' } });
+    map.addLayer({ id:'site-label', type:'symbol', source:'pipeline', filter:['!',['has','point_count']],
+      layout:{ 'text-field':['concat',['get','city'],'  ',['number-format',['get','units'],{}]],
+               'text-font':FONT,'text-size':12,
+               'text-variable-anchor':['top','bottom','left','right'],
+               'text-radial-offset':1.25,'text-justify':'auto',
+               'text-allow-overlap':false,'text-padding':3 },
+      paint:{ 'text-color':'#1f1612','text-halo-color':'#f5ecd6','text-halo-width':1.8 } });
+
+    var popup = new maplibregl.Popup({ offset:16, maxWidth:'320px' });
+    map.on('click','sites',function(e){
+      popup.setLngLat(e.features[0].geometry.coordinates)
+           .setHTML(e.features[0].properties.popup).addTo(map); });
+    map.on('click','clusters',function(e){
+      var f = map.queryRenderedFeatures(e.point,{layers:['clusters']})[0];
+      map.getSource('pipeline').getClusterExpansionZoom(f.properties.cluster_id)
+         .then(function(z){ map.easeTo({center:f.geometry.coordinates, zoom:z+0.25}); })
+         .catch(function(){}); });
+    ['sites','clusters'].forEach(function(id){
+      map.on('mouseenter',id,function(){ map.getCanvas().style.cursor='pointer'; });
+      map.on('mouseleave',id,function(){ map.getCanvas().style.cursor=''; }); });
+  }
+
+  map.on('load', addLayers);
+  // Re-add after a basemap swap: setStyle wipes custom sources and layers.
+  map.on('styledata', function () { if (map.isStyleLoaded()) addLayers(); });
+
+  var sw = document.getElementById('switch');
+  STYLES.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.textContent = s[0]; b.className = i === 0 ? 'on' : '';
+    b.addEventListener('click', function () {
+      [].forEach.call(sw.children, function(o){ o.classList.toggle('on', o === b); });
+      map.setStyle(s[1]);
+    });
+    sw.appendChild(b);
+  });
+})();
+</script>
+</body>
+</html>
