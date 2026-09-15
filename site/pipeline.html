@@ -553,21 +553,24 @@
         }
       });
 
-      // radius = sqrt(units) * k  →  circle AREA is proportional to homes.
-      // No constant baseline: that is what flattened the old scale.
-      function radius(k) {
-        return ['*', ['sqrt', ['max', ['get', 'units'], 1]], k];
-      }
-      var zoomScaled = function () {
-        return ['interpolate', ['linear'], ['zoom'],
-                4, radius(0.62), 7, radius(1.06), 11, radius(1.7)];
-      };
+      // Individual city pins: radius = sqrt(units) * k, so circle AREA is
+      // proportional to homes, clamped so the largest stays readable.
+      // Barrie (1,024) lands at r=27, Listowel (49) at r=6 — a 21x area
+      // ratio, matching the 21x difference in homes.
+      var siteRadius = ['max', 6,
+        ['min', 27, ['*', ['sqrt', ['max', ['get', 'units'], 1]], 0.85]]];
+
+      // Clusters must NOT reuse that expression: cluster `units` is the SUM
+      // of its members, so sqrt(3,321) for the GTA drew a 122px blob. Size
+      // clusters by how many sites they hold instead, and put the summed
+      // homes in the label beneath.
+      var clusterRadius = ['step', ['get', 'point_count'], 17, 3, 21, 5, 25];
 
       map.addLayer({
         id: 'clusters', type: 'circle', source: 'pipeline', filter: ['has', 'point_count'],
         paint: {
           'circle-color': ['case', ['>', ['get', 'lp'], 0], '#a14a23', '#d4a04a'],
-          'circle-radius': zoomScaled(),
+          'circle-radius': clusterRadius,
           'circle-opacity': 0.92,
           'circle-stroke-width': 1.5,
           'circle-stroke-color': '#1f1612'
@@ -576,9 +579,9 @@
       map.addLayer({
         id: 'cluster-count', type: 'symbol', source: 'pipeline', filter: ['has', 'point_count'],
         layout: {
-          'text-field': ['number-format', ['get', 'units'], {}],
+          'text-field': ['number-format', ['get', 'siteCount'], {}],
           'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
-          'text-size': 12, 'text-allow-overlap': true
+          'text-size': 13, 'text-allow-overlap': true
         },
         paint: {
           'text-color': ['case', ['>', ['get', 'lp'], 0], '#f5ecd6', '#1f1612']
@@ -587,9 +590,9 @@
       map.addLayer({
         id: 'cluster-label', type: 'symbol', source: 'pipeline', filter: ['has', 'point_count'],
         layout: {
-          'text-field': ['concat', ['to-string', ['get', 'siteCount']], ' sites'],
+          'text-field': ['concat', ['number-format', ['get', 'units'], {}], ' homes'],
           'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
-          'text-size': 10, 'text-offset': [0, 1.9], 'text-anchor': 'top',
+          'text-size': 10, 'text-offset': [0, 1.7], 'text-anchor': 'top',
           'text-letter-spacing': 0.08, 'text-allow-overlap': false
         },
         paint: {
@@ -601,7 +604,7 @@
         id: 'sites', type: 'circle', source: 'pipeline', filter: ['!', ['has', 'point_count']],
         paint: {
           'circle-color': ['case', ['>', ['get', 'lp'], 0], '#a14a23', '#d4a04a'],
-          'circle-radius': zoomScaled(),
+          'circle-radius': siteRadius,
           'circle-opacity': 0.92,
           'circle-stroke-width': 1.5,
           'circle-stroke-color': '#1f1612'
