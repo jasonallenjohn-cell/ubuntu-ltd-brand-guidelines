@@ -6,19 +6,22 @@
 <title>Pipeline — Ubuntu Land Trust &amp; Developments</title>
 <meta name="description" content="21 entitled sites. 5,623 homes. 906 in construction by 2026. The full Ubuntu LTD pipeline of permanent affordable housing across the Ontario corridor.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ubuntultd.ca/site/pipeline.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pipeline — Ubuntu LTD &middot; 18 sites, 5,623 homes">
+<meta property="og:title" content="Pipeline — Ubuntu LTD &middot; 21 sites, 5,623 homes">
 <meta property="og:description" content="The Common Ground Initiative pipeline across the Toronto–Hamilton–Barrie corridor. Every site under binding agreement or binding LOI.">
-<meta property="og:image" content="og-image.svg">
-<meta property="og:url" content="https://ubuntultd.com/pipeline">
+<meta property="og:image" content="https://ubuntultd.ca/site/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://ubuntultd.ca/site/pipeline.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pipeline — Ubuntu LTD">
-<meta name="twitter:description" content="18 sites · 5,623 homes · 906 breaking ground 2026.">
-<meta name="twitter:image" content="og-image.svg">
+<meta name="twitter:description" content="21 sites · 5,623 homes · 906 breaking ground 2026.">
+<meta name="twitter:image" content="https://ubuntultd.ca/site/og-image.png">
 <link rel="stylesheet" href="../assets/tokens.css">
 <link rel="stylesheet" href="style.css">
 <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
+<script defer src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
 </head>
 <body>
 
@@ -35,7 +38,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="common-ground.html">Common Ground</a>
-      <a href="pipeline.html" class="active">Pipeline</a>
+      <a href="pipeline.html">Pipeline</a>
       <a href="team.html">Team</a>
     </nav>
     <a href="#contact" class="cta">Contact</a>
@@ -46,7 +49,7 @@
 <section class="page-head">
   <div class="shell">
     <span class="eyebrow">Pipeline &middot; as of May 2026</span>
-    <h1>Eighteen sites. <em>Five thousand homes.</em></h1>
+    <h1>Twenty-one sites. <em>Five thousand homes.</em></h1>
     <p class="deck">
       The Common Ground Initiative pipeline. Every site below is under a
       binding agreement or binding letter of intent. The four-site
@@ -56,19 +59,19 @@
 
     <div class="kpi-row">
       <div class="kpi">
-        <span class="v">5,623</span>
+        <span class="v" data-stat="units">5,623</span>
         <span class="l">Homes in pipeline</span>
       </div>
       <div class="kpi">
-        <span class="v">21</span>
+        <span class="v" data-stat="sites">21</span>
         <span class="l">Entitled sites</span>
       </div>
       <div class="kpi">
-        <span class="v">906</span>
+        <span class="v" data-stat="lpUnits">906</span>
         <span class="l">Launchpad &middot; 2026</span>
       </div>
       <div class="kpi">
-        <span class="v">~$3.5B</span>
+        <span class="v" data-stat="cost">~$3.8B</span>
         <span class="l">Full pipeline &middot; est.</span>
       </div>
     </div>
@@ -87,7 +90,7 @@
 <section class="band">
   <div class="shell">
     <span class="sec-label">01 &middot; Where the sites sit</span>
-    <h2 class="sec-h">Ten cities. <em>One corridor.</em></h2>
+    <h2 class="sec-h">Eleven cities. <em>One corridor.</em></h2>
     <p class="sec-intro">
       Every site in the pipeline sits within the southern Ontario
       development corridor &mdash; concentrated in the Greater Toronto Area,
@@ -97,450 +100,616 @@
     </p>
 
     <div class="ontario-map">
-      <div id="ontario-map-canvas" role="img" aria-label="Interactive Ontario map showing all 18 Ubuntu LTD pipeline sites clustered in the southern corridor."></div>
-      <!-- Hidden fallback SVG retained below the map for if Mapbox fails to load. -->
-      <svg style="display:none" viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="map-title">
-        <title id="map-title">Ontario — Ubuntu LTD pipeline distribution map. All 18 sites cluster in the southern corridor.</title>
-
-        <!-- subtle latitude reference lines -->
-        <line x1="0" y1="200" x2="900" y2="200" stroke="#1f1612" stroke-opacity="0.05" stroke-width="0.5" stroke-dasharray="1,4"/>
-        <line x1="0" y1="400" x2="900" y2="400" stroke="#1f1612" stroke-opacity="0.05" stroke-width="0.5" stroke-dasharray="1,4"/>
-        <line x1="0" y1="600" x2="900" y2="600" stroke="#1f1612" stroke-opacity="0.05" stroke-width="0.5" stroke-dasharray="1,4"/>
-
-        <!-- Hudson Bay (top, outside Ontario) -->
-        <rect x="0" y="0" width="900" height="95" fill="#9fb6c0" fill-opacity="0.18"/>
-        <text x="450" y="42" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="3.5"
-              fill="#1a3848" fill-opacity="0.55" text-anchor="middle">HUDSON BAY</text>
-
-        <!-- Quebec border indicator (right edge) -->
-        <text x="845" y="370" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2.5"
-              fill="#1f1612" fill-opacity="0.4" text-anchor="middle" transform="rotate(90 845 370)">QUEBEC →</text>
-
-        <!-- Manitoba border indicator (left edge) -->
-        <text x="22" y="280" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2.5"
-              fill="#1f1612" fill-opacity="0.4" text-anchor="middle" transform="rotate(-90 22 280)">← MANITOBA</text>
-
-        <!-- ============= ONTARIO SILHOUETTE ============= -->
-        <path d="
-          M 70,100
-          C 220,82 380,72 520,82
-          C 620,92 680,118 700,160
-          C 712,210 692,275 678,320
-          C 700,355 730,395 760,430
-          C 790,470 808,500 808,535
-          L 768,548
-          C 705,565 640,580 575,598
-          L 552,632
-          L 540,668
-          C 522,688 482,694 442,684
-          C 360,678 280,664 210,640
-          L 152,620 118,592
-          L 132,548
-          C 168,512 208,488 248,464
-          L 263,418 273,366
-          C 290,355 310,365 314,402
-          L 322,456
-          C 292,488 240,500 195,498
-          C 138,494 88,472 70,442
-          L 58,395 48,310 52,200 70,100 Z
-        " fill="#ebdfc4" stroke="#6e4524" stroke-width="1.2" stroke-opacity="0.55"/>
-
-        <!-- Inner shading for depth -->
-        <path d="
-          M 70,100
-          C 220,82 380,72 520,82
-          C 620,92 680,118 700,160
-          C 712,210 692,275 678,320
-        " fill="none" stroke="#6e4524" stroke-width="0.5" stroke-opacity="0.2"/>
-
-        <!-- ============= GREAT LAKES (overlays) ============= -->
-
-        <!-- Lake Superior -->
-        <path d="M 25,330 C 100,308 200,310 252,360 C 240,418 145,452 85,442 C 50,425 22,388 25,330 Z"
-              fill="#9fb6c0" fill-opacity="0.5" stroke="#2d5266" stroke-width="0.6" stroke-opacity="0.4"/>
-        <text x="130" y="385" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2.5"
-              fill="#1a3848" fill-opacity="0.65" text-anchor="middle">LAKE SUPERIOR</text>
-
-        <!-- Lake Huron -->
-        <path d="M 70,470 C 130,450 195,470 235,510 C 248,548 222,585 175,592 C 122,582 85,545 80,505 C 78,492 75,478 70,470 Z"
-              fill="#9fb6c0" fill-opacity="0.5" stroke="#2d5266" stroke-width="0.6" stroke-opacity="0.4"/>
-        <text x="155" y="548" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2.5"
-              fill="#1a3848" fill-opacity="0.65" text-anchor="middle">LAKE HURON</text>
-
-        <!-- Georgian Bay (bay extending into Ontario) -->
-        <path d="M 325,415 C 385,425 430,440 458,470 C 450,508 408,528 362,520 C 330,510 312,470 325,415 Z"
-              fill="#9fb6c0" fill-opacity="0.55" stroke="#2d5266" stroke-width="0.6" stroke-opacity="0.4"/>
-        <text x="395" y="488" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="2"
-              fill="#1a3848" fill-opacity="0.6" text-anchor="middle">GEORGIAN BAY</text>
-
-        <!-- Lake Simcoe (small, inside province) -->
-        <ellipse cx="560" cy="560" rx="22" ry="14" fill="#9fb6c0" fill-opacity="0.55"
-                 stroke="#2d5266" stroke-width="0.4" stroke-opacity="0.4"/>
-        <text x="560" y="588" font-family="JetBrains Mono, monospace" font-size="6.5" letter-spacing="1"
-              fill="#1a3848" fill-opacity="0.55" text-anchor="middle">L. SIMCOE</text>
-
-        <!-- Lake Ontario -->
-        <path d="M 580,640 C 660,625 760,625 832,650 C 820,682 740,696 660,690 C 600,680 575,665 580,640 Z"
-              fill="#9fb6c0" fill-opacity="0.55" stroke="#2d5266" stroke-width="0.6" stroke-opacity="0.4"/>
-        <text x="720" y="675" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2.5"
-              fill="#1a3848" fill-opacity="0.7" text-anchor="middle">LAKE ONTARIO</text>
-
-        <!-- Lake Erie -->
-        <path d="M 195,690 C 305,675 470,672 555,688 C 575,710 470,718 340,718 C 250,718 195,710 195,690 Z"
-              fill="#9fb6c0" fill-opacity="0.5" stroke="#2d5266" stroke-width="0.6" stroke-opacity="0.4"/>
-        <text x="380" y="710" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2.5"
-              fill="#1a3848" fill-opacity="0.65" text-anchor="middle">LAKE ERIE</text>
-
-        <!-- ============= ONTARIO label in empty north ============= -->
-        <text x="430" y="230" font-family="Newsreader, serif" font-size="56" font-weight="300" letter-spacing="8"
-              fill="#6e4524" fill-opacity="0.13" text-anchor="middle">ONTARIO</text>
-        <text x="430" y="260" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="4"
-              fill="#6e4524" fill-opacity="0.35" text-anchor="middle">PIPELINE · 18 SITES · 5,623 HOMES</text>
-
-        <!-- Subtle "concentrated in the south" hint -->
-        <text x="450" y="320" font-family="Newsreader, serif" font-size="13" font-style="italic" font-weight="300"
-              fill="#6e4524" fill-opacity="0.45" text-anchor="middle">All sites cluster along the southern corridor →</text>
-
-        <!-- ============= CITY PINS ============= -->
-
-        <!-- Port Severn: 416 units, north -->
-        <g transform="translate(495, 478)">
-          <circle r="11" fill="#d4a04a" stroke="#1f1612" stroke-width="0.7"/>
-          <line x1="0" y1="-12" x2="0" y2="-28" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="0" y="-35" font-family="Newsreader, serif" font-size="12" font-weight="500" fill="#1f1612" text-anchor="middle">Port Severn</text>
-          <text x="0" y="-22" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#3a2d22" text-anchor="middle">416</text>
-        </g>
-
-        <!-- Penetanguishene: 560 units -->
-        <g transform="translate(478, 510)">
-          <circle r="13" fill="#d4a04a" stroke="#1f1612" stroke-width="0.7"/>
-          <line x1="-13" y1="-2" x2="-32" y2="-10" stroke="#1f1612" stroke-width="0.5"/>
-          <text x="-36" y="-13" font-family="Newsreader, serif" font-size="11" font-weight="500" fill="#1f1612" text-anchor="end">Penetanguishene</text>
-          <text x="-36" y="-1" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#3a2d22" text-anchor="end">560</text>
-        </g>
-
-        <!-- Barrie: 1024 units (4 sites — biggest pin, Launchpad terracotta) -->
-        <g transform="translate(548, 545)">
-          <circle r="20" fill="#a14a23" stroke="#1f1612" stroke-width="0.8"/>
-          <line x1="20" y1="0" x2="44" y2="0" stroke="#1f1612" stroke-width="0.6"/>
-          <text x="50" y="-3" font-family="Newsreader, serif" font-size="14" font-weight="500" fill="#1f1612" text-anchor="start">Barrie</text>
-          <text x="50" y="11" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="start">1,024 · 4 sites</text>
-        </g>
-
-        <!-- Angus: 148 units, SW of Barrie -->
-        <g transform="translate(498, 582)">
-          <circle r="7" fill="#d4a04a" stroke="#1f1612" stroke-width="0.6"/>
-          <line x1="-7" y1="0" x2="-22" y2="0" stroke="#1f1612" stroke-width="0.4"/>
-          <text x="-26" y="-2" font-family="Newsreader, serif" font-size="10" font-weight="500" fill="#1f1612" text-anchor="end">Angus</text>
-          <text x="-26" y="10" font-family="JetBrains Mono, monospace" font-size="8" font-weight="500" fill="#3a2d22" text-anchor="end">148</text>
-        </g>
-
-        <!-- King City: 105 units, between Barrie and Toronto -->
-        <g transform="translate(580, 588)">
-          <circle r="6" fill="#d4a04a" stroke="#1f1612" stroke-width="0.6"/>
-          <line x1="6" y1="0" x2="24" y2="0" stroke="#1f1612" stroke-width="0.4"/>
-          <text x="28" y="-2" font-family="Newsreader, serif" font-size="10" font-weight="500" fill="#1f1612" text-anchor="start">King City</text>
-          <text x="28" y="10" font-family="JetBrains Mono, monospace" font-size="8" font-weight="500" fill="#3a2d22" text-anchor="start">105</text>
-        </g>
-
-        <!-- Listowel: 24 units, west (Launchpad terracotta) -->
-        <g transform="translate(348, 578)">
-          <circle r="5" fill="#a14a23" stroke="#1f1612" stroke-width="0.6"/>
-          <line x1="0" y1="-5" x2="0" y2="-20" stroke="#1f1612" stroke-width="0.4"/>
-          <text x="0" y="-27" font-family="Newsreader, serif" font-size="10" font-weight="500" fill="#1f1612" text-anchor="middle">Listowel</text>
-          <text x="0" y="-14" font-family="JetBrains Mono, monospace" font-size="8" font-weight="500" fill="#3a2d22" text-anchor="middle">24</text>
-        </g>
-
-        <!-- Brampton: 940 units -->
-        <g transform="translate(495, 618)">
-          <circle r="19" fill="#d4a04a" stroke="#1f1612" stroke-width="0.8"/>
-          <line x1="-19" y1="0" x2="-38" y2="0" stroke="#1f1612" stroke-width="0.6"/>
-          <text x="-42" y="-3" font-family="Newsreader, serif" font-size="13" font-weight="500" fill="#1f1612" text-anchor="end">Brampton</text>
-          <text x="-42" y="10" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="end">940</text>
-        </g>
-
-        <!-- Toronto: 449 units (4 sites, 2 Launchpad — terracotta) -->
-        <g transform="translate(608, 625)">
-          <circle r="15" fill="#a14a23" stroke="#1f1612" stroke-width="0.8"/>
-          <line x1="15" y1="-5" x2="40" y2="-22" stroke="#1f1612" stroke-width="0.6"/>
-          <text x="45" y="-24" font-family="Newsreader, serif" font-size="14" font-weight="500" fill="#1f1612" text-anchor="start">Toronto</text>
-          <text x="45" y="-10" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="start">449 · 4 sites</text>
-        </g>
-
-        <!-- Burlington: 744 units -->
-        <g transform="translate(538, 658)">
-          <circle r="17" fill="#d4a04a" stroke="#1f1612" stroke-width="0.8"/>
-          <line x1="-17" y1="-5" x2="-38" y2="-28" stroke="#1f1612" stroke-width="0.6"/>
-          <text x="-42" y="-31" font-family="Newsreader, serif" font-size="13" font-weight="500" fill="#1f1612" text-anchor="end">Burlington</text>
-          <text x="-42" y="-18" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="end">744</text>
-        </g>
-
-        <!-- Hamilton: 721 units (3 sites) -->
-        <g transform="translate(465, 662)">
-          <circle r="17" fill="#d4a04a" stroke="#1f1612" stroke-width="0.8"/>
-          <line x1="-17" y1="5" x2="-38" y2="22" stroke="#1f1612" stroke-width="0.6"/>
-          <text x="-42" y="20" font-family="Newsreader, serif" font-size="13" font-weight="500" fill="#1f1612" text-anchor="end">Hamilton</text>
-          <text x="-42" y="33" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#3a2d22" text-anchor="end">721 · 3 sites</text>
-        </g>
-
-        <!-- ============= COMPASS ============= -->
-        <g transform="translate(830, 120)">
-          <text x="0" y="0" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2"
-                fill="#3a2d22" fill-opacity="0.7" text-anchor="middle">N</text>
-          <line x1="0" y1="8" x2="0" y2="38" stroke="#1f1612" stroke-width="0.6" stroke-opacity="0.5"/>
-          <polygon points="-4,14 0,5 4,14" fill="#1f1612" fill-opacity="0.6"/>
-        </g>
-
-        <!-- ============= SCALE BAR ============= -->
-        <g transform="translate(720, 60)">
-          <line x1="0" y1="0" x2="80" y2="0" stroke="#1f1612" stroke-width="1.2" stroke-opacity="0.5"/>
-          <line x1="0" y1="-4" x2="0" y2="4" stroke="#1f1612" stroke-width="0.8" stroke-opacity="0.5"/>
-          <line x1="80" y1="-4" x2="80" y2="4" stroke="#1f1612" stroke-width="0.8" stroke-opacity="0.5"/>
-          <text x="40" y="-8" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.5"
-                fill="#3a2d22" fill-opacity="0.7" text-anchor="middle">~ 300 KM</text>
-        </g>
-
-        <!-- ============= CARTOUCHE (bottom corner) ============= -->
-        <g transform="translate(50, 695)">
-          <text x="0" y="0" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="2"
-                fill="#3a2d22" fill-opacity="0.55">UBUNTU LTD · PIPELINE MAP · MAY 2026</text>
-        </g>
-
-      </svg>
+      <div id="ontario-map-canvas"></div>
+      <div id="map-fallback" class="map-fallback" hidden>
+        <p class="mf-title">The interactive map could not be loaded.</p>
+        <p class="mf-body">Every site, city and unit count is listed in the
+        table below &mdash; nothing on this page depends on the map.</p>
+      </div>
+      <p class="map-note">
+        Pins are plotted at city level. Individual site locations are listed
+        in the schedule below.
+      </p>
 
       <div class="map-legend">
-        <div class="item"><span class="dot lp m"></span> Launchpad cohort &middot; ground-break 2026</div>
-        <div class="item"><span class="dot s"></span> Small &middot; &lt;200 units</div>
-        <div class="item"><span class="dot m"></span> Medium &middot; 200&ndash;500 units</div>
-        <div class="item"><span class="dot l"></span> Large &middot; &gt;500 units</div>
+        <div class="item"><span class="dot lp"></span> Launchpad cohort &middot; ground-break 2026</div>
+        <div class="item"><span class="dot"></span> Pipeline</div>
+        <div class="item legend-scale">
+          <svg width="86" height="34" aria-hidden="true">
+            <circle cx="9"  cy="24" r="7.4"  class="lc"/>
+            <circle cx="34" cy="20" r="11.9" class="lc"/>
+            <circle cx="68" cy="17" r="16.8" class="lc"/>
+          </svg>
+          <span>Circle area &prop; homes &middot; 50 / 500 / 1,000</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============== SITE SCHEDULE ============== -->
+<section class="band cream">
+  <div class="shell">
+    <span class="sec-label">02 &middot; The schedule</span>
+    <h2 class="sec-h">Every site, <em>on the record.</em></h2>
+    <p class="sec-intro">
+      All twenty-one sites, their unit counts and their typologies. Click any
+      row to locate it on the map. Click a column heading to sort.
+    </p>
+
+    <div class="table-controls">
+      <button class="chip is-on" data-filter="all">All sites</button>
+      <button class="chip" data-filter="lp">Launchpad only</button>
+      <span class="table-count" id="table-count"></span>
+    </div>
+
+    <div class="table-wrap">
+      <table class="site-table" id="site-table">
+        <caption class="sr-only">Ubuntu LTD pipeline — 21 entitled sites across 11 Ontario cities, 5,623 homes.</caption>
+        <thead>
+          <tr>
+            <th scope="col" data-sort="str"  aria-sort="none">Site</th>
+            <th scope="col" data-sort="str"  aria-sort="none">City</th>
+            <th scope="col" data-sort="str"  aria-sort="none">Region</th>
+            <th scope="col" data-sort="num"  aria-sort="none" class="num">Homes</th>
+            <th scope="col" data-sort="str"  aria-sort="none">Typology</th>
+            <th scope="col" data-sort="str"  aria-sort="none">Cohort</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-city="Toronto" data-lat="43.6532" data-lng="-79.3832" data-units="35" data-lp="true" data-region="gta">
+            <th scope="row">27 Blake Street</th>
+            <td>Toronto</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">35</td>
+            <td class="typ">Mid-rise urban rental</td>
+            <td><span class="tag lp">Launchpad</span></td>
+          </tr>
+          <tr data-city="Toronto" data-lat="43.6532" data-lng="-79.3832" data-units="19" data-lp="false" data-region="gta">
+            <th scope="row">Oakwood Avenue</th>
+            <td>Toronto</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">19</td>
+            <td class="typ">Missing-middle infill</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Toronto" data-lat="43.6532" data-lng="-79.3832" data-units="300" data-lp="false" data-region="gta">
+            <th scope="row">Lakeshore Boulevard</th>
+            <td>Toronto</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">300</td>
+            <td class="typ">Urban density</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Toronto" data-lat="43.6532" data-lng="-79.3832" data-units="95" data-lp="false" data-region="gta">
+            <th scope="row">Kingston Road</th>
+            <td>Toronto</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">95</td>
+            <td class="typ">Urban density</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Scarborough" data-lat="43.79" data-lng="-79.287" data-units="243" data-lp="false" data-region="gta">
+            <th scope="row">4140 Finch Avenue East (NAMF)</th>
+            <td>Scarborough</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">243</td>
+            <td class="typ">32-storey mixed-use · community anchor</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Scarborough" data-lat="43.79" data-lng="-79.287" data-units="194" data-lp="false" data-region="gta">
+            <th scope="row">3175–3181 Sheppard Avenue East</th>
+            <td>Scarborough</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">194</td>
+            <td class="typ">14-storey mixed-use · Avenues corridor</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Scarborough" data-lat="43.79" data-lng="-79.287" data-units="30" data-lp="false" data-region="gta">
+            <th scope="row">2008 Brimley Road</th>
+            <td>Scarborough</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">30</td>
+            <td class="typ">6-storey family-housing pilot</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Brampton" data-lat="43.7315" data-lng="-79.7624" data-units="940" data-lp="false" data-region="gta">
+            <th scope="row">Queen Street East</th>
+            <td>Brampton</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">940</td>
+            <td class="typ">Master-planned community</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Burlington" data-lat="43.3255" data-lng="-79.799" data-units="744" data-lp="true" data-region="gta">
+            <th scope="row">Grahams Lane</th>
+            <td>Burlington</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">744</td>
+            <td class="typ">High-rise</td>
+            <td><span class="tag lp">Launchpad</span></td>
+          </tr>
+          <tr data-city="Hamilton" data-lat="43.2557" data-lng="-79.8711" data-units="136" data-lp="false" data-region="gta">
+            <th scope="row">Park Street South</th>
+            <td>Hamilton</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">136</td>
+            <td class="typ">Master-planned</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Hamilton" data-lat="43.2557" data-lng="-79.8711" data-units="436" data-lp="false" data-region="gta">
+            <th scope="row">Main Street East</th>
+            <td>Hamilton</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">436</td>
+            <td class="typ">Master-planned</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Hamilton" data-lat="43.2557" data-lng="-79.8711" data-units="149" data-lp="false" data-region="gta">
+            <th scope="row">150 Standford</th>
+            <td>Hamilton</td>
+            <td>GTA &amp; Hamilton</td>
+            <td class="num">149</td>
+            <td class="typ">Master-planned</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="King City" data-lat="43.9272" data-lng="-79.5305" data-units="105" data-lp="false" data-region="north">
+            <th scope="row">Keele Street</th>
+            <td>King City</td>
+            <td>York, Simcoe &amp; Georgian Bay</td>
+            <td class="num">105</td>
+            <td class="typ">Urban density</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Barrie" data-lat="44.3894" data-lng="-79.6903" data-units="78" data-lp="true" data-region="north">
+            <th scope="row">844 Veterans Drive</th>
+            <td>Barrie</td>
+            <td>York, Simcoe &amp; Georgian Bay</td>
+            <td class="num">78</td>
+            <td class="typ">Ground-oriented townhomes</td>
+            <td><span class="tag lp">Launchpad</span></td>
+          </tr>
+          <tr data-city="Barrie" data-lat="44.3894" data-lng="-79.6903" data-units="46" data-lp="false" data-region="north">
+            <th scope="row">Mapleview Drive</th>
+            <td>Barrie</td>
+            <td>York, Simcoe &amp; Georgian Bay</td>
+            <td class="num">46</td>
+            <td class="typ">Ground-oriented</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Barrie" data-lat="44.3894" data-lng="-79.6903" data-units="700" data-lp="false" data-region="north">
+            <th scope="row">Anne Street</th>
+            <td>Barrie</td>
+            <td>York, Simcoe &amp; Georgian Bay</td>
+            <td class="num">700</td>
+            <td class="typ">Master-planned</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Barrie" data-lat="44.3894" data-lng="-79.6903" data-units="200" data-lp="false" data-region="north">
+            <th scope="row">Essa County Road</th>
+            <td>Barrie</td>
+            <td>York, Simcoe &amp; Georgian Bay</td>
+            <td class="num">200</td>
+            <td class="typ">Master-planned</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Angus" data-lat="44.3214" data-lng="-79.8762" data-units="148" data-lp="false" data-region="north">
+            <th scope="row">Mill Street</th>
+            <td>Angus</td>
+            <td>York, Simcoe &amp; Georgian Bay</td>
+            <td class="num">148</td>
+            <td class="typ">Ground-oriented</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Penetanguishene" data-lat="44.7691" data-lng="-79.9325" data-units="560" data-lp="false" data-region="north">
+            <th scope="row">Penetanguishene</th>
+            <td>Penetanguishene</td>
+            <td>York, Simcoe &amp; Georgian Bay</td>
+            <td class="num">560</td>
+            <td class="typ">Master-planned community</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Port Severn" data-lat="44.7989" data-lng="-79.7144" data-units="416" data-lp="false" data-region="north">
+            <th scope="row">Honey Harbour</th>
+            <td>Port Severn</td>
+            <td>York, Simcoe &amp; Georgian Bay</td>
+            <td class="num">416</td>
+            <td class="typ">Master-planned community</td>
+            <td><span class="tag">Pipeline</span></td>
+          </tr>
+          <tr data-city="Listowel" data-lat="43.7385" data-lng="-80.9512" data-units="49" data-lp="true" data-region="sw">
+            <th scope="row">Main Street</th>
+            <td>Listowel</td>
+            <td>Southwestern Ontario</td>
+            <td class="num">49</td>
+            <td class="typ">Seniors residence · 88 beds</td>
+            <td><span class="tag lp">Launchpad</span></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row" colspan="3">Total</th>
+            <td class="num" data-stat="units">5,623</td>
+            <td colspan="2"><span data-stat="sites">21</span> sites &middot; <span data-stat="cities">11</span> cities</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>
 <!-- =================================================================
-     Mapbox GL JS initialisation
-     Token is a public (pk.*) token, restricted by domain at the
-     Mapbox account level so embedding it client-side is safe.
+     Pipeline map + schedule.
+     The <table id="site-table"> above is the single source of truth:
+     the map, the KPI figures and the totals are all derived from it,
+     so they cannot drift apart. Token is injected at deploy time by
+     .github/workflows/deploy.yml from the MAPBOX_TOKEN repo secret.
      ================================================================= -->
 <script>
-  // Token is injected at deploy time by the GitHub Actions workflow
-  // (.github/workflows/deploy.yml) from the MAPBOX_TOKEN repo secret.
-  // Never lives in committed source — bypasses GitHub's secret scanner.
-  mapboxgl.accessToken = '__MAPBOX_TOKEN__';
+(function () {
+  'use strict';
 
-  // ----- Pipeline data: cities aggregated, sites listed -----
-  const PIPELINE = [
-    {
-      city: 'Toronto', province: 'ON',
-      coords: [-79.3832, 43.6532],
-      units: 449, siteCount: 4, launchpad: true,
-      sites: [
-        { name: '27 Blake Street',  units: 35,  lp: true,  typology: 'Mid-rise urban rental' },
-        { name: 'Oakwood Avenue',   units: 19,  lp: false, typology: 'Missing-middle infill' },
-        { name: 'Lakeshore Blvd',   units: 300, lp: false, typology: 'Urban density' },
-        { name: 'Kingston Road',    units: 95,  lp: false, typology: 'Urban density' }
-      ]
-    },
-    {
-      city: 'Brampton', province: 'ON',
-      coords: [-79.7624, 43.7315],
-      units: 940, siteCount: 1, launchpad: false,
-      sites: [
-        { name: 'Queen Street East', units: 940, lp: false, typology: 'Master-planned community' }
-      ]
-    },
-    {
-      city: 'Burlington', province: 'ON',
-      coords: [-79.7990, 43.3255],
-      units: 744, siteCount: 1, launchpad: true,
-      sites: [
-        { name: 'Grahams Lane', units: 744, lp: true, typology: 'High-rise' }
-      ]
-    },
-    {
-      city: 'Hamilton', province: 'ON',
-      coords: [-79.8711, 43.2557],
-      units: 721, siteCount: 3, launchpad: false,
-      sites: [
-        { name: 'Park Street South', units: 136, lp: false, typology: 'Master-planned' },
-        { name: 'Main Street East',  units: 436, lp: false, typology: 'Master-planned' },
-        { name: '150 Standford',     units: 149, lp: false, typology: 'Master-planned' }
-      ]
-    },
-    {
-      city: 'King City', province: 'ON',
-      coords: [-79.5305, 43.9272],
-      units: 105, siteCount: 1, launchpad: false,
-      sites: [
-        { name: 'Keele Street', units: 105, lp: false, typology: 'Urban density' }
-      ]
-    },
-    {
-      city: 'Barrie', province: 'ON',
-      coords: [-79.6903, 44.3894],
-      units: 1024, siteCount: 4, launchpad: true,
-      sites: [
-        { name: '844 Veterans Drive', units: 78,  lp: true,  typology: 'Ground-oriented townhomes' },
-        { name: 'Mapleview Drive',    units: 46,  lp: false, typology: 'Ground-oriented' },
-        { name: 'Anne Street',        units: 700, lp: false, typology: 'Master-planned' },
-        { name: 'Essa County Road',   units: 200, lp: false, typology: 'Master-planned' }
-      ]
-    },
-    {
-      city: 'Angus', province: 'ON',
-      coords: [-79.8762, 44.3214],
-      units: 148, siteCount: 1, launchpad: false,
-      sites: [
-        { name: 'Mill Street', units: 148, lp: false, typology: 'Ground-oriented' }
-      ]
-    },
-    {
-      city: 'Listowel', province: 'ON',
-      coords: [-80.9512, 43.7385],
-      units: 49, siteCount: 1, launchpad: true,
-      sites: [
-        { name: 'Main Street', units: 49, lp: true, typology: 'Seniors residence · 88 beds' }
-      ]
-    },
-    {
-      city: 'Penetanguishene', province: 'ON',
-      coords: [-79.9325, 44.7691],
-      units: 560, siteCount: 1, launchpad: false,
-      sites: [
-        { name: 'Penetanguishene', units: 560, lp: false, typology: 'Master-planned community' }
-      ]
-    },
-    {
-      city: 'Port Severn', province: 'ON',
-      coords: [-79.7144, 44.7989],
-      units: 416, siteCount: 1, launchpad: false,
-      sites: [
-        { name: 'Honey Harbour', units: 416, lp: false, typology: 'Master-planned community' }
-      ]
-    },
-    {
-      city: 'Scarborough', province: 'ON',
-      coords: [-79.2870, 43.7900],
-      units: 467, siteCount: 3, launchpad: false,
-      sites: [
-        { name: '4140 Finch Avenue East (NAMF)', units: 243, lp: false, typology: '32-storey mixed-use · community anchor (mosque, school, retail)' },
-        { name: '3175–3181 Sheppard Avenue East', units: 194, lp: false, typology: '14-storey mixed-use · Avenues corridor' },
-        { name: '2008 Brimley Road',              units: 30,  lp: false, typology: '6-storey family-housing pilot' }
-      ]
-    }
-  ];
+  var TOKEN = '__MAPBOX_TOKEN__';
+  var COST_PER_UNIT = 681000;
 
-  // ----- Initialize map -----
-  const map = new mapboxgl.Map({
-    container: 'ontario-map-canvas',
-    style: 'mapbox://styles/mapbox/light-v11',
-    center: [-79.6, 44.0],   // centred on southern Ontario corridor
-    zoom: 6.6,
-    minZoom: 3,
-    maxZoom: 14,
-    attributionControl: true,
-    cooperativeGestures: true     // requires Ctrl/Cmd+scroll to zoom — better UX
-  });
-
-  // Navigation controls (zoom in/out, compass)
-  map.addControl(new mapboxgl.NavigationControl({ showCompass: true, visualizePitch: false }), 'top-right');
-
-  // ----- Apply brand colour overrides once style loads -----
-  map.on('style.load', () => {
-    const setSafe = (id, prop, val) => {
-      try { if (map.getLayer(id)) map.setPaintProperty(id, prop, val); } catch (e) { /* layer not present in style */ }
+  // ---------- Read the table: one source of truth ----------
+  var rows = [].slice.call(document.querySelectorAll('#site-table tbody tr'));
+  var sites = rows.map(function (tr) {
+    return {
+      tr: tr,
+      name: tr.querySelector('th').textContent.trim(),
+      city: tr.dataset.city,
+      region: tr.dataset.region,
+      units: +tr.dataset.units,
+      lp: tr.dataset.lp === 'true',
+      typology: tr.querySelector('.typ').textContent.trim(),
+      lat: +tr.dataset.lat,
+      lng: +tr.dataset.lng
     };
-
-    // background — paper
-    setSafe('background', 'background-color', '#ebdfc4');
-    // land / landuse — slightly warmer
-    setSafe('land', 'background-color', '#ebdfc4');
-    setSafe('landuse', 'fill-color', '#e3d4b3');
-    setSafe('national-park', 'fill-color', '#d8c69e');
-    // water — soft sea tone
-    setSafe('water', 'fill-color', '#9fb6c0');
-    setSafe('waterway', 'line-color', '#9fb6c0');
-    // borders — soil
-    setSafe('admin-0-boundary', 'line-color', '#6e4524');
-    setSafe('admin-0-boundary-disputed', 'line-color', '#6e4524');
-    setSafe('admin-1-boundary', 'line-color', '#8a5a32');
-    setSafe('admin-1-boundary-bg', 'line-color', '#cdc1a8');
-    // labels — muted ink
-    setSafe('country-label', 'text-color', '#3a2d22');
-    setSafe('state-label', 'text-color', '#3a2d22');
-    setSafe('settlement-label', 'text-color', '#3a2d22');
-    setSafe('settlement-major-label', 'text-color', '#3a2d22');
-    setSafe('settlement-minor-label', 'text-color', '#6e4524');
-    setSafe('water-line-label', 'text-color', '#2d5266');
-    setSafe('water-point-label', 'text-color', '#2d5266');
-    setSafe('natural-point-label', 'text-color', '#6e4524');
-    // roads — toned down so pins pop
-    setSafe('road-primary', 'line-color', '#cdc1a8');
-    setSafe('road-secondary-tertiary', 'line-color', '#d8c69e');
-    setSafe('road-minor', 'line-color', '#e3d4b3');
   });
 
-  // ----- Add markers + popups -----
-  map.on('load', () => {
-    PIPELINE.forEach(city => {
-      // marker size: 16px base + sqrt(units) * 1.3, capped at 64px
-      const size = Math.min(64, Math.max(20, 16 + Math.sqrt(city.units) * 1.3));
+  var totalUnits = sites.reduce(function (n, s) { return n + s.units; }, 0);
+  var lpSites = sites.filter(function (s) { return s.lp; });
+  var lpUnits = lpSites.reduce(function (n, s) { return n + s.units; }, 0);
+  var cityNames = sites.map(function (s) { return s.city; })
+                       .filter(function (c, i, a) { return a.indexOf(c) === i; });
 
-      const el = document.createElement('div');
-      el.className = `city-marker ${city.launchpad ? 'launchpad' : 'pipeline'}`;
-      el.style.width = `${size}px`;
-      el.style.height = `${size}px`;
-      el.style.fontSize = `${Math.max(9, size * 0.22)}px`;
-
-      // initials inside the pin (city short code)
-      const initials = city.city.split(' ').map(w => w[0]).join('').slice(0, 3);
-      el.innerHTML = `
-        <span class="marker-label">${city.city}</span>
-        <span>${city.units >= 1000 ? (city.units / 1000).toFixed(1) + 'k' : city.units}</span>
-      `;
-
-      // Popup HTML
-      const sitesHTML = city.sites.map(s => `
-        <div class="site-row ${s.lp ? 'lp' : ''}">
-          <span class="site-name">${s.name}${s.lp ? ' · Launchpad' : ''}</span>
-          <span class="site-units">${s.units} u</span>
-        </div>
-      `).join('');
-
-      const popupHTML = `
-        <div class="popup-eyebrow">${city.launchpad ? 'Launchpad city · 2026 ground-break' : 'Pipeline city'}</div>
-        <h3 class="popup-title">${city.city}, ${city.province}</h3>
-        <div class="popup-stat">${city.units.toLocaleString()} units &middot; ${city.siteCount} site${city.siteCount > 1 ? 's' : ''}</div>
-        <div class="popup-sites">${sitesHTML}</div>
-      `;
-
-      const popup = new mapboxgl.Popup({ offset: size / 2 + 12, closeButton: true, closeOnClick: true })
-        .setHTML(popupHTML);
-
-      new mapboxgl.Marker(el, { anchor: 'center' })
-        .setLngLat(city.coords)
-        .setPopup(popup)
-        .addTo(map);
+  // ---------- Publish the derived figures into the page ----------
+  var stats = {
+    units: totalUnits.toLocaleString(),
+    sites: String(sites.length),
+    cities: String(cityNames.length),
+    lpUnits: lpUnits.toLocaleString(),
+    cost: '~$' + (totalUnits * COST_PER_UNIT / 1e9).toFixed(1) + 'B'
+  };
+  ['gta', 'north', 'sw'].forEach(function (r) {
+    var inRegion = sites.filter(function (s) { return s.region === r; });
+    stats[r + 'Units'] = inRegion.reduce(function (n, s) { return n + s.units; }, 0).toLocaleString();
+    stats[r + 'Sites'] = String(inRegion.length);
+  });
+  Object.keys(stats).forEach(function (k) {
+    [].forEach.call(document.querySelectorAll('[data-stat="' + k + '"]'), function (el) {
+      if (el.textContent.trim() !== stats[k]) {
+        console.warn('pipeline: hard-coded "' + k + '" was "' + el.textContent.trim() +
+                     '", corrected to "' + stats[k] + '"');
+      }
+      el.textContent = stats[k];
     });
   });
 
-  // Graceful fallback — if Mapbox fails to load, reveal the static SVG.
-  map.on('error', (e) => {
-    console.warn('Mapbox error:', e);
-    const fallback = document.querySelector('.ontario-map svg');
-    const canvas = document.getElementById('ontario-map-canvas');
-    if (fallback && canvas) {
-      canvas.style.display = 'none';
-      fallback.style.display = 'block';
-    }
+  // ---------- Aggregate sites to city points for the map ----------
+  var byCity = {};
+  sites.forEach(function (s) {
+    var c = byCity[s.city] || (byCity[s.city] = {
+      city: s.city, lat: s.lat, lng: s.lng, units: 0, siteCount: 0, lp: false, sites: []
+    });
+    c.units += s.units;
+    c.siteCount += 1;
+    c.lp = c.lp || s.lp;
+    c.sites.push(s);
   });
+
+  var features = Object.keys(byCity).map(function (k) {
+    var c = byCity[k];
+    return {
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [c.lng, c.lat] },
+      properties: {
+        city: c.city, units: c.units, siteCount: c.siteCount, lp: c.lp ? 1 : 0,
+        popup: popupHTML(c)
+      }
+    };
+  });
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (ch) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch];
+    });
+  }
+
+  function popupHTML(c) {
+    var list = c.sites.map(function (s) {
+      return '<div class="site-row' + (s.lp ? ' lp' : '') + '">' +
+               '<span class="site-name">' + esc(s.name) + (s.lp ? ' &middot; Launchpad' : '') + '</span>' +
+               '<span class="site-units">' + s.units.toLocaleString() + ' u</span>' +
+             '</div>';
+    }).join('');
+    return '<div class="popup-eyebrow">' +
+             (c.lp ? 'Launchpad city &middot; 2026 ground-break' : 'Pipeline city') +
+           '</div>' +
+           '<h3 class="popup-title">' + esc(c.city) + ', ON</h3>' +
+           '<div class="popup-stat">' + c.units.toLocaleString() + ' homes &middot; ' +
+             c.siteCount + ' site' + (c.siteCount > 1 ? 's' : '') + '</div>' +
+           '<div class="popup-sites">' + list + '</div>';
+  }
+
+  // ---------- Fallback ----------
+  var canvas = document.getElementById('ontario-map-canvas');
+  var fallbackEl = document.getElementById('map-fallback');
+  var noteEl = document.querySelector('.map-note');
+  var legendEl = document.querySelector('.map-legend');
+  var fellBack = false;
+
+  function fallback(why) {
+    if (fellBack) return;
+    fellBack = true;
+    console.warn('pipeline map fallback:', why);
+    if (canvas) canvas.style.display = 'none';
+    if (noteEl) noteEl.hidden = true;
+    if (legendEl) legendEl.hidden = true;
+    if (fallbackEl) fallbackEl.hidden = false;
+  }
+
+  function start() {
+    if (typeof mapboxgl === 'undefined') { return fallback('mapbox-gl.js did not load'); }
+    if (!mapboxgl.supported || !mapboxgl.supported()) { return fallback('WebGL unsupported'); }
+    if (!TOKEN || TOKEN.charAt(0) === '_' || TOKEN === 'MISSING-TOKEN') {
+      return fallback('Mapbox token was not injected at deploy time');
+    }
+    try { build(); } catch (err) { fallback(err && err.message || err); }
+  }
+
+  function build() {
+    mapboxgl.accessToken = TOKEN;
+
+    var lats = features.map(function (f) { return f.geometry.coordinates[1]; });
+    var lngs = features.map(function (f) { return f.geometry.coordinates[0]; });
+    var bounds = [[Math.min.apply(null, lngs), Math.min.apply(null, lats)],
+                  [Math.max.apply(null, lngs), Math.max.apply(null, lats)]];
+
+    var map = new mapboxgl.Map({
+      container: 'ontario-map-canvas',
+      style: 'mapbox://styles/mapbox/light-v11',
+      bounds: bounds,
+      fitBoundsOptions: { padding: { top: 70, bottom: 70, left: 60, right: 60 } },
+      minZoom: 4,
+      maxZoom: 14,
+      attributionControl: true,
+      cooperativeGestures: true
+    });
+    window.__pipelineMap = map;
+
+    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-right');
+
+    // Only an auth / style failure is fatal. A late tile 404 is not a
+    // reason to throw away a working map.
+    var styleReady = false;
+    map.on('error', function (e) {
+      var status = e && e.error && e.error.status;
+      if (!styleReady || status === 401 || status === 403) {
+        fallback('Mapbox error' + (status ? ' ' + status : '') +
+                 (status === 401 || status === 403
+                   ? ' — check the token’s allowed URLs for this domain' : ''));
+      } else {
+        console.warn('Mapbox (non-fatal):', e && e.error);
+      }
+    });
+
+    map.on('style.load', function () {
+      styleReady = true;
+      var missing = [];
+      var paint = {
+        background: ['background-color', '#ebdfc4'],
+        land: ['background-color', '#ebdfc4'],
+        landuse: ['fill-color', '#e3d4b3'],
+        'national-park': ['fill-color', '#d8c69e'],
+        water: ['fill-color', '#9fb6c0'],
+        waterway: ['line-color', '#9fb6c0'],
+        'admin-0-boundary': ['line-color', '#6e4524'],
+        'admin-1-boundary': ['line-color', '#8a5a32'],
+        'admin-1-boundary-bg': ['line-color', '#cdc1a8'],
+        'country-label': ['text-color', '#3a2d22'],
+        'state-label': ['text-color', '#3a2d22'],
+        'settlement-label': ['text-color', '#3a2d22'],
+        'settlement-major-label': ['text-color', '#3a2d22'],
+        'settlement-minor-label': ['text-color', '#6e4524'],
+        'water-line-label': ['text-color', '#2d5266'],
+        'water-point-label': ['text-color', '#2d5266'],
+        'road-primary': ['line-color', '#cdc1a8'],
+        'road-secondary-tertiary': ['line-color', '#d8c69e'],
+        'road-minor': ['line-color', '#e3d4b3']
+      };
+      Object.keys(paint).forEach(function (id) {
+        if (!map.getLayer(id)) { missing.push(id); return; }
+        try { map.setPaintProperty(id, paint[id][0], paint[id][1]); }
+        catch (e) { missing.push(id); }
+      });
+      // Silent failure here is what leaves half the basemap default grey.
+      if (missing.length) {
+        console.warn('pipeline map: brand override skipped for layers →', missing.join(', '));
+      }
+    });
+
+    map.on('load', function () {
+      map.addSource('pipeline', {
+        type: 'geojson',
+        data: { type: 'FeatureCollection', features: features },
+        cluster: true,
+        clusterRadius: 52,
+        clusterMaxZoom: 9,
+        clusterProperties: {
+          units: ['+', ['get', 'units']],
+          siteCount: ['+', ['get', 'siteCount']],
+          lp: ['max', ['get', 'lp']]
+        }
+      });
+
+      // radius = sqrt(units) * k  →  circle AREA is proportional to homes.
+      // No constant baseline: that is what flattened the old scale.
+      function radius(k) {
+        return ['*', ['sqrt', ['max', ['get', 'units'], 1]], k];
+      }
+      var zoomScaled = function () {
+        return ['interpolate', ['linear'], ['zoom'],
+                4, radius(0.62), 7, radius(1.06), 11, radius(1.7)];
+      };
+
+      map.addLayer({
+        id: 'clusters', type: 'circle', source: 'pipeline', filter: ['has', 'point_count'],
+        paint: {
+          'circle-color': ['case', ['>', ['get', 'lp'], 0], '#a14a23', '#d4a04a'],
+          'circle-radius': zoomScaled(),
+          'circle-opacity': 0.92,
+          'circle-stroke-width': 1.5,
+          'circle-stroke-color': '#1f1612'
+        }
+      });
+      map.addLayer({
+        id: 'cluster-count', type: 'symbol', source: 'pipeline', filter: ['has', 'point_count'],
+        layout: {
+          'text-field': ['number-format', ['get', 'units'], {}],
+          'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
+          'text-size': 12, 'text-allow-overlap': true
+        },
+        paint: {
+          'text-color': ['case', ['>', ['get', 'lp'], 0], '#f5ecd6', '#1f1612']
+        }
+      });
+      map.addLayer({
+        id: 'cluster-label', type: 'symbol', source: 'pipeline', filter: ['has', 'point_count'],
+        layout: {
+          'text-field': ['concat', ['to-string', ['get', 'siteCount']], ' sites'],
+          'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
+          'text-size': 10, 'text-offset': [0, 1.9], 'text-anchor': 'top',
+          'text-letter-spacing': 0.08, 'text-allow-overlap': false
+        },
+        paint: {
+          'text-color': '#3a2d22', 'text-halo-color': '#f5ecd6', 'text-halo-width': 1.6
+        }
+      });
+
+      map.addLayer({
+        id: 'sites', type: 'circle', source: 'pipeline', filter: ['!', ['has', 'point_count']],
+        paint: {
+          'circle-color': ['case', ['>', ['get', 'lp'], 0], '#a14a23', '#d4a04a'],
+          'circle-radius': zoomScaled(),
+          'circle-opacity': 0.92,
+          'circle-stroke-width': 1.5,
+          'circle-stroke-color': '#1f1612'
+        }
+      });
+      // Mapbox's collision engine hides labels that would overlap, which is
+      // what the old always-on HTML name plates could not do.
+      map.addLayer({
+        id: 'site-label', type: 'symbol', source: 'pipeline', filter: ['!', ['has', 'point_count']],
+        layout: {
+          'text-field': ['concat', ['get', 'city'], '  ', ['number-format', ['get', 'units'], {}]],
+          'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
+          'text-size': 12,
+          'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+          'text-radial-offset': 1.25,
+          'text-justify': 'auto',
+          'text-allow-overlap': false,
+          'text-padding': 3
+        },
+        paint: {
+          'text-color': '#1f1612', 'text-halo-color': '#f5ecd6', 'text-halo-width': 1.8
+        }
+      });
+
+      var popup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, offset: 16, maxWidth: '320px' });
+
+      map.on('click', 'sites', function (e) {
+        var f = e.features[0];
+        popup.setLngLat(f.geometry.coordinates).setHTML(f.properties.popup).addTo(map);
+      });
+      map.on('click', 'clusters', function (e) {
+        var f = map.queryRenderedFeatures(e.point, { layers: ['clusters'] })[0];
+        map.getSource('pipeline').getClusterExpansionZoom(f.properties.cluster_id, function (err, z) {
+          if (err) return;
+          map.easeTo({ center: f.geometry.coordinates, zoom: z + 0.25 });
+        });
+      });
+      ['sites', 'clusters'].forEach(function (id) {
+        map.on('mouseenter', id, function () { map.getCanvas().style.cursor = 'pointer'; });
+        map.on('mouseleave', id, function () { map.getCanvas().style.cursor = ''; });
+      });
+
+      // Table row → locate on map
+      rows.forEach(function (tr) {
+        tr.addEventListener('click', function () {
+          var c = byCity[tr.dataset.city];
+          if (!c) return;
+          map.easeTo({ center: [c.lng, c.lat], zoom: 10.5 });
+          popup.setLngLat([c.lng, c.lat]).setHTML(popupHTML(c)).addTo(map);
+          document.querySelector('.ontario-map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      });
+    });
+  }
+
+  // ---------- Table: sort + filter ----------
+  var tbody = document.querySelector('#site-table tbody');
+  var countEl = document.getElementById('table-count');
+
+  function refreshCount() {
+    var shown = rows.filter(function (tr) { return !tr.hidden; });
+    var u = shown.reduce(function (n, tr) { return n + (+tr.dataset.units); }, 0);
+    countEl.textContent = shown.length + ' of ' + rows.length + ' sites · ' +
+                          u.toLocaleString() + ' homes';
+  }
+
+  [].forEach.call(document.querySelectorAll('.table-controls .chip'), function (btn) {
+    btn.addEventListener('click', function () {
+      [].forEach.call(document.querySelectorAll('.table-controls .chip'), function (b) {
+        b.classList.toggle('is-on', b === btn);
+      });
+      var lpOnly = btn.dataset.filter === 'lp';
+      rows.forEach(function (tr) { tr.hidden = lpOnly && tr.dataset.lp !== 'true'; });
+      refreshCount();
+    });
+  });
+
+  [].forEach.call(document.querySelectorAll('#site-table thead th'), function (th, i) {
+    th.addEventListener('click', function () {
+      var numeric = th.dataset.sort === 'num';
+      var asc = th.getAttribute('aria-sort') !== 'ascending';
+      [].forEach.call(document.querySelectorAll('#site-table thead th'), function (o) {
+        o.setAttribute('aria-sort', 'none');
+      });
+      th.setAttribute('aria-sort', asc ? 'ascending' : 'descending');
+      rows.slice().sort(function (a, b) {
+        var av = a.children[i].textContent.trim(), bv = b.children[i].textContent.trim();
+        if (numeric) { return (asc ? 1 : -1) * ((+av.replace(/,/g, '')) - (+bv.replace(/,/g, ''))); }
+        return (asc ? 1 : -1) * av.localeCompare(bv);
+      }).forEach(function (tr) { tbody.appendChild(tr); });
+    });
+  });
+
+  refreshCount();
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else { start(); }
+  window.addEventListener('load', function () {
+    if (typeof mapboxgl === 'undefined') fallback('mapbox-gl.js did not load');
+  });
+})();
 </script>
 
 <!-- ============== REGIONAL DISTRIBUTION ============== -->
-<section class="band cream">
+<section class="band">
   <div class="shell">
-    <span class="sec-label">02 &middot; Regional distribution</span>
+    <span class="sec-label">03 &middot; Regional distribution</span>
     <h2 class="sec-h">Three regions, <em>one platform.</em></h2>
     <p class="sec-intro">
       The pipeline concentrates in three regional clusters along the
@@ -550,19 +719,19 @@
 
     <div class="kpi-row">
       <div class="kpi">
-        <span class="v">3,321</span>
-        <span class="l">GTA, Scarborough &amp; Hamilton (11 sites)</span>
+        <span class="v" data-stat="gtaUnits">3,321</span>
+        <span class="l">GTA &amp; Hamilton (<span data-stat="gtaSites">12</span> sites)</span>
       </div>
       <div class="kpi">
-        <span class="v">2,253</span>
-        <span class="l">Simcoe &amp; North (9 sites)</span>
+        <span class="v" data-stat="northUnits">2,253</span>
+        <span class="l">York, Simcoe &amp; Georgian Bay (<span data-stat="northSites">8</span> sites)</span>
       </div>
       <div class="kpi">
-        <span class="v">49</span>
-        <span class="l">Regional centres (1 site)</span>
+        <span class="v" data-stat="swUnits">49</span>
+        <span class="l">Southwestern Ontario (<span data-stat="swSites">1</span> site)</span>
       </div>
       <div class="kpi">
-        <span class="v">11</span>
+        <span class="v" data-stat="cities">11</span>
         <span class="l">Cities &amp; townships</span>
       </div>
     </div>
@@ -574,7 +743,7 @@
   <div class="shell">
     <div class="split">
       <div>
-        <span class="sec-label">03 &middot; Add to the pipeline</span>
+        <span class="sec-label">04 &middot; Add to the pipeline</span>
         <h2 class="sec-h">Have an entitled <em>site?</em></h2>
       </div>
       <div>
@@ -621,7 +790,7 @@
     </div>
     <div class="meta">
       <span>&copy; 2026 Ubuntu Land Trust and Developments</span>
-      <span>v1.0 &middot; Updated 2026-05-20</span>
+      <span>v1.1 &middot; Updated 2026-09-15</span>
     </div>
   </div>
 </footer>
