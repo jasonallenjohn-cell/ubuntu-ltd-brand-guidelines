@@ -27,6 +27,11 @@
   .switch button.on { background:var(--navy); color:var(--paper); border-color:var(--navy); }
   .mapbox-frame { border:.5px solid var(--rule); background:var(--paper-pure); position:relative; }
   #map { width:100%; height:min(68vh,640px); }
+  [hidden] { display:none !important; }
+  .map-fail { padding:56px 28px; text-align:center; }
+  .map-fail .mf-t { font-size:20px; margin:0 0 8px; }
+  .map-fail .mf-b { font-size:14px; color:var(--ink-soft); margin:0 auto; max-width:52ch;
+                    font-family:'JetBrains Mono',monospace; line-height:1.6; }
   .note { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em;
           text-transform:uppercase; color:var(--ink-soft); padding:10px 14px;
           border-top:.5px solid var(--rule); margin:0; }
@@ -67,6 +72,10 @@
 
   <div class="mapbox-frame">
     <div id="map"></div>
+    <div id="map-fail" class="map-fail" hidden>
+      <p class="mf-t">The map could not load.</p>
+      <p class="mf-b" id="map-fail-why"></p>
+    </div>
     <p class="note">Pins are plotted at city level &mdash; individual site locations are never exposed.</p>
   </div>
 
@@ -140,6 +149,31 @@
   var bounds = [[Math.min.apply(null,lngs),Math.min.apply(null,lats)],
                 [Math.max.apply(null,lngs),Math.max.apply(null,lats)]];
 
+  // Build the switcher first: it must exist even if the map never does.
+  var sw = document.getElementById('switch');
+  var buttons = STYLES.map(function (s, i) {
+    var b = document.createElement('button');
+    b.textContent = s[0]; b.className = i === 0 ? 'on' : '';
+    b.disabled = true;
+    sw.appendChild(b);
+    return b;
+  });
+
+  function fail(why) {
+    var box = document.getElementById('map-fail');
+    document.getElementById('map').style.display = 'none';
+    document.getElementById('map-fail-why').textContent = why;
+    box.hidden = false;
+    console.warn('map-demo:', why);
+  }
+
+  if (typeof maplibregl === 'undefined') {
+    return fail('maplibre-gl.js did not load from cdnjs — a network or extension is blocking it.');
+  }
+  if (!maplibregl.supported || !maplibregl.supported()) {
+    return fail('This browser reports no WebGL support, which MapLibre requires.');
+  }
+
   var map = new maplibregl.Map({
     container:'map', style:STYLES[0][1], bounds:bounds,
     fitBoundsOptions:{ padding:{top:60,bottom:60,left:50,right:50} },
@@ -203,15 +237,22 @@
   // Re-add after a basemap swap: setStyle wipes custom sources and layers.
   map.on('styledata', function () { if (map.isStyleLoaded()) addLayers(); });
 
-  var sw = document.getElementById('switch');
-  STYLES.forEach(function (s, i) {
-    var b = document.createElement('button');
-    b.textContent = s[0]; b.className = i === 0 ? 'on' : '';
+  buttons.forEach(function (b, i) {
+    b.disabled = false;
     b.addEventListener('click', function () {
-      [].forEach.call(sw.children, function(o){ o.classList.toggle('on', o === b); });
-      map.setStyle(s[1]);
+      buttons.forEach(function (o) { o.classList.toggle('on', o === b); });
+      map.setStyle(STYLES[i][1]);
     });
-    sw.appendChild(b);
+  });
+
+  // A style that 404s or is blocked should say so, not sit blank.
+  map.on('error', function (e) {
+    var msg = (e && e.error && e.error.message) || 'unknown error';
+    if (!map.isStyleLoaded()) {
+      fail('CARTO basemap failed to load: ' + msg);
+    } else {
+      console.warn('map-demo (non-fatal):', msg);
+    }
   });
 })();
 </script>
