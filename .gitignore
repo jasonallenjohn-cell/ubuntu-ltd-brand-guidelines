@@ -1,3 +1,5 @@
 ubtuntu/
 .claude/
 .DS_Store
+_recalc/
+__pycache__/
