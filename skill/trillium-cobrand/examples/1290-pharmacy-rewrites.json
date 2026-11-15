@@ -1,15 +1,28 @@
 {
   "opportunity": [
-    ["<p style=\"font-size:72px;font-weight:500;letter-spacing:-2px;line-height:1;color:#2A453D\">$252K</p><p style=\"font-size:26px;line-height:1.3\">Refinance surplus after TPI, paid to Trillium</p>",
-     "<p style=\"font-size:72px;font-weight:500;letter-spacing:-2px;line-height:1;color:#2A453D\">$22K</p><p style=\"font-size:26px;line-height:1.3\">Year-1 cash flow after the CMHC mortgage</p>"],
-    ["<aside>", "Figures are projections from the Trillium TPI/TPO model, with development charges paid. Rents, value, CMHC financing and share value are to be confirmed; confirm the 5.00% cap rate with an appraisal."]
+    [
+      "<p style=\"font-size:72px;font-weight:500;letter-spacing:-2px;line-height:1;color:#2A453D\">$362K</p><p style=\"font-size:26px;line-height:1.3\">Refinance surplus after TPI, paid to Trillium</p>",
+      "<p style=\"font-size:72px;font-weight:500;letter-spacing:-2px;line-height:1;color:#2A453D\">$23K</p><p style=\"font-size:26px;line-height:1.3\">Year-1 cash flow after the CMHC mortgage</p>"
+    ],
+    [
+      "<aside>",
+      "Figures are projections from the Trillium TPI/TPO model, with development charges paid. Four corner one-beds per level around one central stair, after the 37 Marydon precedent. Rents, value, CMHC financing and share value are to be confirmed; confirm the 5.00% cap rate with an appraisal."
+    ]
   ],
   "capital": [
-    ["<aside>", "Build at $250/sf plus rental development charges; construction loan 115% of land plus build. TPI earns a targeted 12% a year over an 18-month hold; the owner's $511,196 converts to TPO equity covering 8 of 10 shares. CMHC: 4.25%, 50-year amortization, 1.10 debt coverage. Projections only; not an offer to sell securities."]
+    [
+      "<aside>",
+      "Build at $250/sf plus rental development charges; construction loan 115% of land plus build. TPI earns a targeted 12% a year over an 18-month hold; the owner's $511,196 grows to $603,211 of TPO equity at conversion. CMHC: 4.25%, 50-year amortization, 1.10 debt coverage. Projections only; not an offer to sell securities."
+    ]
   ],
   "options": [
-    ["<tr><td style=\"\">Share value</td><td style=\"text-align:right\">$41K</td><td style=\"text-align:right\">$55K</td><td style=\"text-align:right\">$68K</td></tr>",
-     "<tr><td style=\"\">Share value</td><td style=\"text-align:right\">$41K</td><td style=\"text-align:right\">$55K</td><td style=\"text-align:right\">$68K</td></tr>\n<tr style=\"background:#2A453D\"><td style=\"color:#F2F1E7\">Year-1 cash flow</td><td style=\"text-align:right;color:#F2F1E7\">$13.1K</td><td style=\"text-align:right;color:#F2F1E7\">$17.9K</td><td style=\"text-align:right;color:#F2F1E7\">$22.2K</td></tr>"],
-    ["<aside>", "All three options run on the same Trillium model, the same $250/sf base build cost and the same operating-cost method. 4 + 1: development charges waived. 8 + 1: eight two-beds plus a 3-bed garden suite, subject to confirming a garden suite is allowed with an apartment building. Projections only."]
+    [
+      "<tr><td style=\"\">Share value</td><td style=\"text-align:right\">$41K</td><td style=\"text-align:right\">$55K</td><td style=\"text-align:right\">$69K</td></tr>",
+      "<tr><td style=\"\">Share value</td><td style=\"text-align:right\">$41K</td><td style=\"text-align:right\">$55K</td><td style=\"text-align:right\">$69K</td></tr>\n<tr style=\"background:#2A453D\"><td style=\"color:#F2F1E7\">Year-1 cash flow</td><td style=\"text-align:right;color:#F2F1E7\">$13.1K</td><td style=\"text-align:right;color:#F2F1E7\">$17.9K</td><td style=\"text-align:right;color:#F2F1E7\">$22.7K</td></tr>"
+    ],
+    [
+      "<aside>",
+      "All three options run on the same Trillium model, the same $250/sf base build cost and the same operating-cost method. 4 + 1: development charges waived. 8 + 1: eight two-beds plus a 3-bed garden suite, subject to confirming a garden suite is allowed with an apartment building. 16 units: the central-core plan. Projections only."
+    ]
   ]
 }

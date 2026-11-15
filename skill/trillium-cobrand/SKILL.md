@@ -9,10 +9,11 @@ Trillium stays the main brand: green and gold layout, Archivo, the render, plans
 presenter, in their own dark colour, one accent and their typeface. One realtor profile drives every deal.
 
 ## Files
-- `profiles/<realtor>.json`: one per realtor (start from `profiles/_template.json`). `profiles/my-investor-agent.json`
-  is Colin Poponne, My Investor Agent, eXp Realty.
+- `profiles/<realtor>.json`: one per realtor (start from `profiles/_template.json`). Keep real profiles and deal
+  rewrites OUT of this repo: the Pages workflow publishes the whole repo root to the public site. Store them with the
+  deal files and pass their paths to the script.
 - `scripts/cobrand.py`: `deck`, `onepager`, `check` (run with no arguments for usage).
-- `examples/1290-pharmacy-rewrites.json`: the deal-specific client rewrites for 1290 Pharmacy.
+- `examples/example-rewrites.json`: the shape of a deal's client rewrites (stat swap + speaker notes).
 
 ## Steps
 1. **Profile.** From the realtor's brand guide or design system, fill: name, brand, brokerage, brokerage_legal,
