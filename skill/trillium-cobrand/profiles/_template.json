@@ -1,0 +1,20 @@
+{
+  "id": "realtor-slug",
+  "name": "First Last",
+  "title": "Sales Representative",
+  "brand": "Team or practice name",
+  "brand_mark": "",
+  "brokerage": "Brokerage short name",
+  "brokerage_legal": "Brokerage registered name, Brokerage",
+  "registration": "Independently owned and operated (or the brokerage's required line)",
+  "email": "name@example.com",
+  "phone": "(416) 000-0000",
+  "social": "@handle",
+  "website": "example.com",
+  "presenter_label": "Your advisor on this property",
+  "colors": {"dark": "#15171A", "accent": "#C9A36A", "text": "#F3F1EC", "soft": "#C9C7C1", "muted": "#8E8D88", "line": "#373B41"},
+  "font": {"family": "Inter", "google": "Inter:wght@400;600;700"},
+  "logo_blob": null,
+  "source": "Where the brand values came from",
+  "to_confirm": []
+}
